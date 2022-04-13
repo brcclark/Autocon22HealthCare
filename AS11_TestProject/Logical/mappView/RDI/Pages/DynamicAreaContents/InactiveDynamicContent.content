@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="InactiveDynamicContent" height="660" width="482" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl_Dynamic" top="10" left="10" width="460" height="640" zIndex="0" style="BE_default">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_AdditionalCmds" left="0" width="140" height="50" zIndex="0" multiLine="true" text="Additional Commands" wordWrap="true" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_LevitationMode" top="90" left="60" width="150" height="40" zIndex="0" dataProvider="[{'value':'0','text':'LAND'},{'value':'1','text':'LEVITATE'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_AsmLevitationStart" top="150" left="60" width="150" height="40" zIndex="1" image="Media/play_arrow_black_24dp%20(1).svg" multiLine="true" text="Assembly\nStart" style="Contained" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_LevitationSpeed" top="90" left="250" width="150" height="40" zIndex="2" dataProvider="[{'value':'0','text':'~1.6s'},{'value':'1','text':'~800ms'},{'value':'2','text':'~400ms'},{'value':'3','text':'~200ms'},{'value':'4','text':'~100ms'},{'value':'5','text':'~50ms'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_ShLevitationStart" top="150" left="250" width="150" height="40" zIndex="3" image="Media/play_arrow_black_24dp%20(1).svg" multiLine="true" text="Shuttle\nStart" style="Contained" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_Levitation" top="30" left="10" width="440" zIndex="4" text="- - - - - - - - - - - - - -  Levitation  - - - - - - - - - - - - - -" textAlign="center" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_LevitationCommand" top="60" left="70" width="130" zIndex="5" text="Command:" textAlign="center" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_LevitationSpeed" top="60" left="260" width="130" zIndex="6" text="Speed:" textAlign="center" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_Buffer" top="220" left="10" width="440" zIndex="7" text="- - - - - - - - - - - - - - -  Buffer  - - - - - - - - - - - - - - -" textAlign="center" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_AsmReboot" top="520" left="250" width="190" height="50" zIndex="8" text="Reboot Controller" style="Contained" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_BufferOption" top="260" left="150" width="160" height="40" zIndex="9" dataProvider="[{'value':'0','text':'BLOCK'},{'value':'1','text':'RELEASE'},{'value':'2','text':'CLEAR'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_AsmBufferStart" top="320" left="60" width="150" height="40" zIndex="10" image="Media/play_arrow_black_24dp%20(1).svg" multiLine="true" text="Assembly\nStart" style="Contained" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_ShBufferStart" top="320" left="250" width="150" height="40" zIndex="11" image="Media/play_arrow_black_24dp%20(1).svg" multiLine="true" text="Shuttle\nStart" style="Contained" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_BufferShuttleID" top="380" left="80" width="200" zIndex="12" text="Shuttle ID:" textAlign="left" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_BufferShuttleBufferState" top="410" left="80" width="200" zIndex="13" text="Shuttle Buffer State:" textAlign="left" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_BufferShuttleNumberOfCmds" top="440" left="80" width="200" zIndex="14" text="Number Of Commands:" textAlign="left" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="380" left="260" width="120" zIndex="15" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput2" top="440" left="260" width="120" zIndex="16" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput1" top="410" left="260" width="120" zIndex="17" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="18" x1="20" x2="440" y1="490" y2="490" lineColor="rgba(255, 255, 255, 1)" lineWidth="2px" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_RecoverShuttle" top="520" left="20" width="190" height="50" zIndex="19" text="Recover Shuttle" style="Contained" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_DynamicAsync" left="0" width="140" height="50" zIndex="1" text="Async Table" style="BE_default" visible="false">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.Table" id="Table_AsyncTable" top="10" left="20" width="420" height="460" zIndex="0">
+              <Widgets>
+                <Widget xsi:type="widgets.brease.TableItem" id="TableItem_ShuttleID" zIndex="0" columnWidth="140" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" input="true" text="Shuttle ID" />
+                <Widget xsi:type="widgets.brease.TableItem" id="TableItem_TargetX" zIndex="1" columnWidth="140" input="true" showUnit="true" text="Target X" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" />
+                <Widget xsi:type="widgets.brease.TableItem" id="TableItem_TargetY" zIndex="2" columnWidth="140" input="true" showUnit="true" text="Target Y" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" />
+              </Widgets>
+            </Widget>
+          </Widgets>
+        </Widget>
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

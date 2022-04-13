@@ -1,0 +1,14 @@
+VAR
+	gFB : gFBType; (*6D Interfaces*)
+END_VAR
+VAR CONSTANT
+	NUM_SHUTTLES : USINT := 8;
+	MAX_SH_IDX : USINT := NUM_SHUTTLES - 1;
+END_VAR
+(*********************** Interface Variables*)
+VAR
+	gAcp6DIf : Acp6DIfTyp;
+	gSysRecipe : SystemRecipeIfTyp;
+	gSystemIf : MainIfTyp;
+	gShIfs : ARRAY[0..MAX_SH_IDX] OF ShuttleIfTyp;
+END_VAR

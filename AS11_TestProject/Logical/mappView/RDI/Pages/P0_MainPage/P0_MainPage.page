@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pdef:Page xmlns:pdef="http://www.br-automation.com/iat2015/pageDefinition/v2" id="P0_MainPage" layoutRefId="LayoutMain">
+  <Assignments>
+    <Assignment type="Content" baseContentRefId="SideBarContent" areaRefId="AreaSidebar" backColor="rgba(111, 127, 139, 1)" />
+    <Assignment type="Content" baseContentRefId="P0_MainPageContent" areaRefId="AreaMain" backColor="rgba(56, 70, 79, 1)" />
+    <Assignment type="Content" baseContentRefId="InactiveDynamicContent" areaRefId="AreaDynamic" backColor="rgba(56, 70, 79, 1)" />
+    <Assignment type="Content" baseContentRefId="MoveCtrlContent" areaRefId="AreaMoveCtrl" backColor="rgba(56, 70, 79, 1)" />
+    <Assignment type="Content" baseContentRefId="StatusContent" areaRefId="AreaStatus" backColor="rgba(56, 70, 79, 1)" />
+  </Assignments>
+</pdef:Page>

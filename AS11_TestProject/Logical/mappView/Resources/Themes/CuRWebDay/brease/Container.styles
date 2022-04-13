@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="BuRThemeFlat1containerStylesX" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	
+	<!--fly out-->
+	
+	<Style id="Modal" xsi:type="widgets.brease.FlyOut" 
+		backColor="#FFF" 
+		borderStyle="solid" 
+		borderWidth="0px" 
+		buttonBorderWidth="0px 3px 0px 0px" 
+		buttonBorderColor="#ff8800" 
+		buttonCornerRadius="0px" 
+		buttonBackColor="#d6d6d6"
+	shadow="0 16px 24px 2px rgba(0, 0, 0, 0.14)" />
+	
+	<Style id="Modeless" xsi:type="widgets.brease.FlyOut" 
+		backColor="#FFF" 
+		borderStyle="solid" 
+		borderWidth="0px" 
+		buttonBorderWidth="0px 3px 0px 0px" 
+		buttonBorderColor="#ff8800" 
+		buttonCornerRadius="0px" 
+		buttonBackColor="#d6d6d6"
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.14)" />
+	
+	<!--group box-->
+	
+	<Style id="transparent" xsi:type="widgets.brease.GroupBox" 
+		borderWidth="0px" 
+		backColor="transparent" 
+		fontSize="16px" 
+		bold="false" />
+	
+	<Style id="GroupBox1" xsi:type="widgets.brease.GroupBox" 
+		headerBackColor="#FFFFFF"
+		bold="false"  
+		fontSize="16px" 
+		textColor="#ffffff" 
+		cornerRadius="0px" 
+		borderWidth="1px" 
+		backColor="#FFFFFF" 
+		borderColor="rgba(237, 237, 237, 1)"
+		shadow="0 1px 1px 0 rgba(0, 0, 0, 0.14)"  />
+
+</Styles>

@@ -1,0 +1,6 @@
+VAR
+	state : Acp6DStateEnum;
+	fbs : Acp6DFbsTyp;
+	errorState : Acp6DStateEnum;
+	i : UINT;
+END_VAR

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="MoveCtrlContent" height="258" width="980" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl_MoveCtrl" top="0" left="10" width="960" height="250" zIndex="0" style="BE_default">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_LinearMoveCtrl" left="0" width="140" height="50" zIndex="0" text="Linear" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveLinearMode" top="20" left="25" width="200" zIndex="0" dataProvider="[{'value':'0','text':'Absolute Motion'},{'value':'1','text':'Relative Motion'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveLinearPathType" top="70" left="25" width="200" zIndex="1" dataProvider="[{'value':'0','text':'Direct'},{'value':'1','text':'X, then Y'},{'value':'2','text':'Y, then X'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_LinearTargetX" top="30" left="430" width="110" zIndex="2" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_LinearTargetY" top="80" left="430" width="110" zIndex="3" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_LinearVelocity" top="30" left="680" width="110" zIndex="4" maxValue="1" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_LinearEndVelocity" top="90" left="680" width="110" zIndex="5" maxValue="1" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_LinearAcceleration" top="150" left="680" width="110" zIndex="6" maxValue="10" unit="{'metric':'MSK','imperial':'MSK','imperial-us':'MSK'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="Label1" top="30" left="300" width="110" zIndex="7" text="Target X:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label2" top="80" left="300" width="110" zIndex="8" text="Target Y:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label3" top="30" left="560" width="110" zIndex="9" text="Velocity:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label4" top="90" left="560" width="110" zIndex="10" text="End Velocity:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label5" top="150" left="550" width="120" zIndex="11" text="Acceleration:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StartMoveLinear" top="130" left="870" width="80" height="60" zIndex="12" image="Media/play_arrow_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_ArcMoveCtrl" left="0" width="140" height="50" zIndex="1" text="Arc" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveArcDirection" top="20" left="25" width="200" zIndex="0" dataProvider="[{'value':'0','text':'Clockwise'},{'value':'1','text':'Counter-Clockwise'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveArcMotionMode" top="70" left="25" width="200" zIndex="1" dataProvider="[{'value':'0','text':'Absolute Motion'},{'value':'1','text':'Relative Motion'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveArcType" top="120" left="25" width="200" zIndex="2" dataProvider="[{'value':'0','text':'Minor Arc'},{'value':'1','text':'Major Arc'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcTargetX" top="10" left="395" width="110" zIndex="3" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcTargetY" top="50" left="395" width="110" zIndex="4" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcVelocity" top="90" left="395" width="110" zIndex="5" maxValue="1" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcEndVelocity" top="130" left="395" width="110" zIndex="6" maxValue="1" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcAcceleration" top="170" left="395" width="110" zIndex="7" maxValue="10" unit="{'metric':'MSK','imperial':'MSK','imperial-us':'MSK'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_Target_Center_X" top="10" left="250" width="125" zIndex="8" text="Target X:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_Target_Center_Y" top="50" left="250" width="125" zIndex="9" text="Target Y:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label6" top="90" left="265" width="110" zIndex="10" text="Velocity:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label7" top="130" left="265" width="110" zIndex="11" text="End Velocity:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label8" top="170" left="265" width="110" zIndex="12" text="Acceleration:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveArcDefinition" top="20" left="625" width="200" zIndex="13" dataProvider="[{'value':'0','text':'Target + Radius'},{'value':'1','text':'Center + Angle'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcRadius" top="80" left="725" width="110" zIndex="14" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_Radius_Angle" top="80" left="600" width="110" zIndex="15" text="Radius:" textAlign="right bottom" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StartMoveArc" top="130" left="870" width="80" height="60" zIndex="16" image="Media/play_arrow_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcCenterX" top="10" left="395" width="110" zIndex="17" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" visible="false" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcCenterY" top="50" left="395" width="110" zIndex="18" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" visible="false" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_ArcAngle" top="80" left="725" width="110" zIndex="19" maxValue="300" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" visible="false" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_MoveShortAxisCtrl" left="0" width="140" height="50" zIndex="2" text="Short Axis" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_MoveShortAxisMode" top="20" left="25" width="200" zIndex="0" dataProvider="[{'value':'0','text':'Absolute Motion'},{'value':'1','text':'Relative Motion'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_RotationCenterType" top="70" left="25" width="200" zIndex="1" dataProvider="[{'value':'0','text':'Shuttle Center'},{'value':'1','text':'User Defined'}]" selectedValue="0" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_RotationRz" top="160" left="445" width="110" zIndex="2" maxValue="300" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_SpeedRz" top="160" left="685" width="110" zIndex="3" maxValue="300" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_SpeedZ" top="10" left="685" width="110" zIndex="4" maxValue="1" unit="{'metric':'C16','imperial':'C16','imperial-us':'C16'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_SpeedRx" top="60" left="685" width="110" zIndex="5" maxValue="1" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_SpeedRy" top="110" left="685" width="110" zIndex="6" maxValue="10" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="Label9" top="10" left="370" width="60" zIndex="7" text="Z:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label10" top="60" left="370" width="60" zIndex="8" text="Rx:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label11" top="60" left="560" width="110" zIndex="9" text="Rx Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label12" top="110" left="560" width="110" zIndex="10" text="Ry Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label13" top="160" left="560" width="110" zIndex="11" text="Rz Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StartMoveShortAxis" top="130" left="870" width="80" height="60" zIndex="12" image="Media/play_arrow_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_RotationRy" top="110" left="445" width="110" zIndex="13" maxValue="300" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_RotationRx" top="60" left="445" width="110" zIndex="14" maxValue="300" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_PositionZ" top="10" left="445" width="110" zIndex="15" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_RotCenterPosX" top="120" left="125" width="110" zIndex="16" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" visible="false" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_Short_RotCenterPosY" top="160" left="125" width="110" zIndex="17" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="Label14" top="10" left="560" width="110" zIndex="18" text="Z Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label15" top="110" left="370" width="60" zIndex="19" text="Ry:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label16" top="160" left="370" width="60" zIndex="20" text="Rz:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_CenterPosX" top="120" left="50" width="60" zIndex="21" text="X:" textAlign="right" style="BE_SmallBoldWhite" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_CenterPosY" top="160" left="50" width="60" zIndex="22" text="Y:" textAlign="right" style="BE_SmallBoldWhite" visible="false" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_Move6DOFCtrl" left="0" width="140" height="50" zIndex="3" text="6DOF" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOFTargetX" top="15" left="205" width="110" zIndex="0" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOFTargetY" top="65" left="205" width="110" zIndex="1" maxValue="300" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="Label17" top="15" left="85" width="110" zIndex="2" text="Target X:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label18" top="65" left="85" width="110" zIndex="3" text="Target Y:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label19" top="115" left="85" width="110" zIndex="4" text="Velocity:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label20" top="165" left="75" width="120" zIndex="5" text="Acceleration:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StartMove6DOF" top="130" left="870" width="80" height="60" zIndex="6" image="Media/play_arrow_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOFVelocity" top="115" left="205" width="110" zIndex="7" maxValue="1" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOFAcceleration" top="165" left="205" width="110" zIndex="8" maxValue="10" unit="{'metric':'MSK','imperial':'MSK','imperial-us':'MSK'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_RotationRz" top="165" left="435" width="110" zIndex="9" maxValue="10" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_SpeedRz" top="165" left="665" width="110" zIndex="10" maxValue="20" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_SpeedZ" top="15" left="665" width="110" zIndex="11" maxValue="1" unit="{'metric':'C16','imperial':'C16','imperial-us':'C16'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_SpeedRx" top="65" left="665" width="110" zIndex="12" maxValue="20" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_SpeedRy" top="115" left="665" width="110" zIndex="13" maxValue="20" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="Label21" top="15" left="365" width="60" zIndex="17" text="Z:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label22" top="65" left="365" width="60" zIndex="22" text="Rx:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label23" top="65" left="545" width="110" zIndex="23" text="Rx Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label24" top="115" left="545" width="110" zIndex="24" text="Ry Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label25" top="165" left="545" width="110" zIndex="18" text="Rz Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_RotationRy" top="115" left="435" width="110" zIndex="19" maxValue="10" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_RotationRx" top="65" left="435" width="110" zIndex="20" maxValue="10" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_6DOF_PositionZ" top="15" left="435" width="110" zIndex="21" maxValue="4" unit="{'metric':'MMT','imperial':'MMT','imperial-us':'MMT'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="Label26" top="15" left="545" width="110" zIndex="15" text="Z Speed:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label27" top="115" left="365" width="60" zIndex="16" text="Ry:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label28" top="165" left="365" width="60" zIndex="14" text="Rz:" textAlign="right" style="BE_SmallBoldWhite" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_MoveAsyncCtrl" left="0" width="140" height="50" zIndex="4" text="Async" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_AsyncVelocity" top="60" left="440" width="110" zIndex="0" maxValue="1" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="Input_AsyncAcceleration" top="120" left="440" width="110" zIndex="1" maxValue="10" unit="{'metric':'MSK','imperial':'MSK','imperial-us':'MSK'}" unitAlign="right" style="FavoriteWatch" />
+            <Widget xsi:type="widgets.brease.Label" id="Label29" top="60" left="320" width="110" zIndex="2" text="Velocity:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="Label30" top="120" left="310" width="120" zIndex="3" text="Acceleration:" textAlign="right" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StartMoveAsync" top="130" left="870" width="80" height="60" zIndex="4" image="Media/play_arrow_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+          </Widgets>
+        </Widget>
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

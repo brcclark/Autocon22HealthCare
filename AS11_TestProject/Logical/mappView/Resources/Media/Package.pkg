@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="MediaPackage" PackageType="MediaPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">BR_NoBack.png</Object>
+    <Object Type="File">power_settings_new_black_24dp (1).svg</Object>
+    <Object Type="File">6d.jpg</Object>
+    <Object Type="File">6d2.jpg</Object>
+    <Object Type="File">6d3.jpg</Object>
+    <Object Type="File">6d4.jpg</Object>
+    <Object Type="File">6DPic.png</Object>
+    <Object Type="File">6DPic_V2.png</Object>
+    <Object Type="File">6DPic_V3.png</Object>
+    <Object Type="File">play_arrow_black_24dp (1).svg</Object>
+    <Object Type="File">stop_black_24dp (1).svg</Object>
+    <Object Type="File">replay_black_24dp.svg</Object>
+    <Object Type="File">pause_black_24dp (1).svg</Object>
+    <Object Type="File">ComingSoon.png</Object>
+    <Object Type="File">arrow_drop_down_black_24dp.svg</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="BuRThemeFlat1labelTextsStylesX" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<Style id="Heading1" xsi:type="widgets.brease.Label" 
+		fontSize="96px"
+		fontName="RobotoLight" 
+		textColor="#000000" 
+		backColor="transparent" 
+		borderStyle="none" />
+	
+	<Style id="Heading2" xsi:type="widgets.brease.Label" 
+		fontSize="60px" 
+		textColor="#000000"
+		fontName="RobotoLight"  
+		backColor="transparent"
+		borderStyle="none" />
+	
+	<Style id="Heading3" xsi:type="widgets.brease.Label" 
+		fontSize="48px"
+		fontName="Roboto" 
+		textColor="#000000"
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Heading4" xsi:type="widgets.brease.Label" 
+		fontSize="34px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Heading5" xsi:type="widgets.brease.Label" 
+		fontSize="24px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Heading6" xsi:type="widgets.brease.Label" 
+		fontSize="20px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Subtitle1" xsi:type="widgets.brease.Label" 
+		fontSize="16px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Subtitle2" xsi:type="widgets.brease.Label" 
+		fontSize="14px" 
+		textColor="#000000"
+		fontName="RobotoMedium" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Body1" xsi:type="widgets.brease.Label" 
+		fontSize="16px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Body2" xsi:type="widgets.brease.Label" 
+		fontSize="14px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Caption" xsi:type="widgets.brease.Label" 
+		fontSize="12px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<Style id="Overline" xsi:type="widgets.brease.Label" 
+		fontSize="10px" 
+		textColor="#000000"
+		fontName="Roboto" 
+		bold="false" 
+		backColor="transparent" 
+		borderStyle="none"  />
+	
+	<!--text output-->
+	
+	<Style id="Output" xsi:type="widgets.brease.TextOutput" 
+		textColor="#646464" 
+		fontSize="20px" 
+		backColor="transparent" 
+		bold="false" />
+
+	<Style id="OutputLarge" xsi:type="widgets.brease.TextOutput" 
+		textColor="#646464" 
+		fontSize="32px" 
+		backColor="transparent" 
+		bold="false" />
+		
+	<Style id="Overview" xsi:type="widgets.brease.TextOutput" 
+		textColor="#646464" 
+		fontSize="52px" 
+		bold="false"
+		backColor="transparent" />		
+	
+	<!--text input-->
+	
+	<Style id="Filled" xsi:type="widgets.brease.TextInput"
+		fontName="Roboto"  
+		textAlign="left" 
+		textColor="#000000"
+		borderWidth="0px 0px 2px 0px" 
+		borderColor="#707070" 
+		activeBorderColor="#ff8922" 
+		fontSize="20px" 
+		backColor="#cfcfcf" 
+		activeBackColor="#d6d6d6" 
+		activeTextColor="#ff8800" 
+		bold="false"
+		cornerRadius="3px 3px 0px 0px" />
+
+	<Style id="Outlined" xsi:type="widgets.brease.TextInput"
+		fontName="Roboto"  
+		textAlign="left" 
+		textColor="#000000" 
+		borderWidth="1px 1px 1px 1px" 
+		borderColor="#707070" 
+		activeBorderColor="#ff8922" 
+		fontSize="16px" 
+		backColor="rgba(0,0,0,0)" 
+		activeBackColor="rgba(0,0,0,0)" 
+		activeTextColor="#000000" 
+		bold="false"
+	cornerRadius="3px"  />
+	
+	<!--login info-->
+
+	<Style id="Output" xsi:type="widgets.brease.LoginInfo" 
+	textColor="#646464"
+		borderStyle="solid" 
+		borderWidth="1px" 
+		borderColor="#646464" 
+		fontSize="20px" 
+		backColor="transparent"
+		bold="false" />
+
+
+</Styles>

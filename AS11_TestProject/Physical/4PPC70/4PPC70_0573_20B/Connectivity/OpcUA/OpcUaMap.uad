@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="B4.91">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleName="Everyone" Access="0x005F" />
+      </ACL>
+      <ACL Id="2">
+        <ACE RoleName="Everyone" Access="0x007F" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases>
+      <EngineeringUnit Id="1" UnitId="5067858" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="metre" Symbol="m" />
+      <EngineeringUnit Id="2" UnitId="5067859" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="metre per second" Symbol="m/s" />
+      <EngineeringUnit Id="3" UnitId="5067595" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="metre per second squared" Symbol="m/s²" />
+      <EngineeringUnit Id="4" UnitId="4405297" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="radian" Symbol="rad" />
+      <EngineeringUnit Id="5" UnitId="12865" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="radian per second" Symbol="rad/s" />
+    </EngineeringUnitAliases>
+  </Aliases>
+  <DefaultView AclId="2">
+    <Module Name="&lt;Default&gt;">
+      <Task Name="RDICore">
+        <Variable Name="Vis" AutomaticEnable="True">
+          <Variable Name="Par">
+            <Variable Name="Linear">
+              <Variable Name="Position">
+                <Variable Name="X" EngineeringUnitId="1" />
+                <Variable Name="Y" EngineeringUnitId="1" />
+              </Variable>
+              <Variable Name="Velocity" EngineeringUnitId="2" />
+              <Variable Name="EndVelocity" EngineeringUnitId="2" />
+              <Variable Name="Acceleration" EngineeringUnitId="3" />
+            </Variable>
+            <Variable Name="Arc">
+              <Variable Name="Velocity" EngineeringUnitId="2" />
+              <Variable Name="EndVelocity" EngineeringUnitId="2" />
+              <Variable Name="Acceleration" EngineeringUnitId="3" />
+              <Variable Name="Angular">
+                <Variable Name="Center">
+                  <Variable Name="X" EngineeringUnitId="1" />
+                  <Variable Name="Y" EngineeringUnitId="1" />
+                </Variable>
+                <Variable Name="Angle" EngineeringUnitId="4" />
+              </Variable>
+              <Variable Name="Radius">
+                <Variable Name="Position">
+                  <Variable Name="X" EngineeringUnitId="1" />
+                  <Variable Name="Y" EngineeringUnitId="1" />
+                </Variable>
+                <Variable Name="Radius" EngineeringUnitId="1" />
+              </Variable>
+            </Variable>
+            <Variable Name="ShortAxis">
+              <Variable Name="Position">
+                <Variable Name="Z" EngineeringUnitId="1" />
+                <Variable Name="Rx" EngineeringUnitId="4" />
+                <Variable Name="Ry" EngineeringUnitId="4" />
+                <Variable Name="Rz" EngineeringUnitId="4" />
+              </Variable>
+              <Variable Name="Rotation">
+                <Variable Name="Center">
+                  <Variable Name="X" EngineeringUnitId="1" />
+                  <Variable Name="Y" EngineeringUnitId="1" />
+                </Variable>
+              </Variable>
+              <Variable Name="Velocity">
+                <Variable Name="Z" EngineeringUnitId="2" />
+                <Variable Name="Rx" EngineeringUnitId="5" />
+                <Variable Name="Ry" EngineeringUnitId="5" />
+                <Variable Name="Rz" EngineeringUnitId="5" />
+              </Variable>
+            </Variable>
+            <Variable Name="Async">
+              <Variable Name="Velocity" EngineeringUnitId="2" />
+              <Variable Name="Acceleration" EngineeringUnitId="3" />
+              <Variable Name="ShuttleTable" EnableArrayElements="True" />
+            </Variable>
+            <Variable Name="SixDOF">
+              <Variable Name="InPlane">
+                <Variable Name="Velocity" EngineeringUnitId="2" />
+                <Variable Name="Acceleration" EngineeringUnitId="3" />
+                <Variable Name="Position">
+                  <Variable Name="X" EngineeringUnitId="1" />
+                  <Variable Name="Y" EngineeringUnitId="1" />
+                </Variable>
+              </Variable>
+              <Variable Name="ShortAxis">
+                <Variable Name="Position">
+                  <Variable Name="Z" EngineeringUnitId="1" />
+                  <Variable Name="Rx" EngineeringUnitId="4" />
+                  <Variable Name="Ry" EngineeringUnitId="4" />
+                  <Variable Name="Rz" EngineeringUnitId="4" />
+                </Variable>
+                <Variable Name="Velocity">
+                  <Variable Name="Rx" EngineeringUnitId="5" />
+                  <Variable Name="Ry" EngineeringUnitId="5" />
+                  <Variable Name="Rz" EngineeringUnitId="5" />
+                  <Variable Name="Z" EngineeringUnitId="2" />
+                </Variable>
+              </Variable>
+            </Variable>
+          </Variable>
+          <Variable Name="TableData">
+            <Variable Name="Async">
+              <Variable Name="TargetXArray" EngineeringUnitId="1" />
+              <Variable Name="TargetYArray" EngineeringUnitId="1" />
+            </Variable>
+            <Variable Name="ShuttleStatus">
+              <Variable Name="X" EngineeringUnitId="1" />
+              <Variable Name="Y" EngineeringUnitId="1" />
+              <Variable Name="Z" EngineeringUnitId="1" />
+              <Variable Name="Rx" EngineeringUnitId="4" />
+              <Variable Name="Ry" EngineeringUnitId="4" />
+              <Variable Name="Rz" EngineeringUnitId="4" />
+              <Variable Name="ShuttleIDString" EnableArrayElements="True" />
+            </Variable>
+          </Variable>
+        </Variable>
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

@@ -1,0 +1,3 @@
+PROGRAM _CYCLIC
+	BuildVersion;
+END_PROGRAM

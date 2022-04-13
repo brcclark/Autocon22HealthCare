@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="SideBarContent_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.Power" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btnPower" attribute="value" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.ErrorReset" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btnErrorReset" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.AsmStop" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btn_StopAll" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.ShStop" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btn_StopShuttle" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.AsmResume" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btn_ResumeAll" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.AsmHalt" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btn_HaltAll" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.ShHalt" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btn_HaltShuttle" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.ShResume" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="btn_ResumeShuttle" attribute="value" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.TableData.ShuttleStatus.ShuttleIDString" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="DropDownBox_ShuttleID" attribute="dataProvider" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Status.SelectedShuttleIDString" attribute="value" />
+<Target xsi:type="brease" contentRefId="SideBarContent" widgetRefId="DropDownBox_ShuttleID" attribute="selectedValue" />
+</Binding>
+</Bindings>
+</BindingsSet>

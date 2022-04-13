@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StylesSet id="CuRWebDayStyleSet" xmlns="http://www.br-automation.com/iat2015/stylesset/engineering/v1">
+	<!-- Secondary (Hex): #ff8922 (rgba):rgba(255, 137, 34, 1) -->
+	<!-- SecondaryLight (Hex): #ffba55 (rgba):rgba(255, 186, 85, 1) -->
+	<!-- SecondaryDark (Hex): #c65a00 (rgba):rgba(198, 90, 0, 1) -->
+
+	<Styles refId="BuRThemeFlat1defaultStylesX" />
+	<Styles refId="BuRThemeFlat1systemStylesX" />
+	<Styles refId="BuRThemeFlat1buttonsStylesX" />
+	<Styles refId="BuRThemeFlat1commonStylesX" />
+	<Styles refId="BuRThemeFlat1containerStylesX" />
+	<Styles refId="BuRThemeFlat1numericStylesX" />
+	<Styles refId="BuRThemeFlat1labelTextsStylesX" />
+	<Styles refId="BuRThemeFlat1graphicStylesX" />
+	<Styles refId="BuRThemeFlat1chartsStylesX" />
+	<Styles refId="BuRThemeFlat1sequencerStylesX" />
+	<Styles refId="BuRThemeFlat1ListStylesX" />
+	<Styles refId="BE6DStylesX" />
+	
+</StylesSet>

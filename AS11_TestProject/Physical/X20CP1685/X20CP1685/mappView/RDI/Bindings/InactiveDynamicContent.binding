@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="InactiveDynamicContent_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.TableData.Async.ShuttleIDArray" attribute="node" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="TableItem_ShuttleID" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.TableData.Async.TargetXArray" attribute="node" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="TableItem_TargetX" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.TableData.Async.TargetYArray" attribute="node" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="TableItem_TargetY" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.AsmLevitation" attribute="value" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="MomentaryPushButton_AsmLevitationStart" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Levitation.Level" attribute="value" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="DropDownBox_LevitationMode" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Levitation.Speed" attribute="value" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="DropDownBox_LevitationSpeed" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.ShLevitation" attribute="value" />
+<Target xsi:type="brease" contentRefId="InactiveDynamicContent" widgetRefId="MomentaryPushButton_ShLevitationStart" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

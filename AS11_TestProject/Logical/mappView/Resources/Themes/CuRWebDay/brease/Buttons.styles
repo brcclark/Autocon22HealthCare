@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="BuRThemeFlat1buttonsStylesX" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!--contained button-->
+	<!--backColor="rgba(255, 137, 34, 1)"-->
+	<Style id="Contained" xsi:type="widgets.brease.Button" 
+		fontSize="14px"
+		fontName="Roboto" 
+		bold="false" 
+		textColor="#000000" 
+		mouseDownTextColor="#000000" 
+		borderWidth="0px" 
+		mouseDownBorderWidth="0px"  
+		backColor="rgba(248, 152, 31, 1)" 
+		mouseDownBackColor="rgba(255, 186, 85, 1)" 
+		disabledBackColor="#d1d1d1" 
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.16)"
+		mouseDownShadow="0px 2px 2px rgba(0, 0, 0, 0.14)"
+		padding="0px 16px"
+		cornerRadius="4px"/>
+	
+	<Style id="Contained" xsi:type="widgets.brease.MomentaryPushButton" 
+		fontSize="15px"
+		fontName="Roboto" 
+		bold="true" 
+		textColor="rgba(0, 0, 0, 1)" 
+		mouseDownTextColor="#000000" 
+		borderWidth="2px"
+		borderColor="rgba(0, 0, 0, 1)"
+		mouseDownBorderWidth="0px"  
+		backColor="rgba(248, 152, 31, 1)"
+		mouseDownBackColor="rgba(255, 186, 85, 1)" 
+		disabledBackColor="#d1d1d1" 
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.16)"
+		mouseDownShadow="0px 2px 2px rgba(0, 0, 0, 0.14)"
+		padding="0px 16px"
+	cornerRadius="4px"/>
+	
+	<Style id="Contained" xsi:type="widgets.brease.NavigationButton" 
+		fontSize="14px"
+		fontName="Roboto" 
+		bold="false" 
+		textColor="#000000" 
+		mouseDownTextColor="#000000" 
+		borderWidth="0px" 
+		mouseDownBorderWidth="0px"  
+		backColor="rgba(248, 152, 31, 1)" 
+		mouseDownBackColor="rgba(255, 186, 85, 1)" 
+		disabledBackColor="#d1d1d1" 
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.16)"
+		mouseDownShadow="0px 2px 2px rgba(0, 0, 0, 0.14)"
+		padding="0px 16px"
+	cornerRadius="4px"/>
+	
+	<Style id="Contained" xsi:type="widgets.brease.ToggleButton" 
+		fontSize="14px"
+		fontName="Roboto" 
+		bold="false" 
+		textColor="#000000" 
+		mouseDownTextColor="#000000" 
+		borderWidth="0px" 
+		mouseDownBorderWidth="0px"  
+		backColor="rgba(248, 152, 31, 1)" 
+		mouseDownBackColor="rgba(255, 186, 85, 1)" 
+		disabledBackColor="#d1d1d1" 
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.16)"
+		mouseDownShadow="0px 2px 2px rgba(0, 0, 0, 0.14)"
+		padding="0px 16px"
+		cornerRadius="4px"
+		checkedBackColor="rgba(255, 186, 85, 1)" />
+	
+	<Style id="Contained" xsi:type="widgets.brease.PushButton" 
+		fontSize="14px"
+		fontName="Roboto" 
+		bold="false" 
+		textColor="#000000" 
+		mouseDownTextColor="#000000" 
+		borderWidth="0px" 
+		mouseDownBorderWidth="0px"  
+		backColor="rgba(248, 152, 31, 1)" 
+		mouseDownBackColor="rgba(255, 186, 85, 1)" 
+		disabledBackColor="#d1d1d1" 
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.16)"
+		mouseDownShadow="0px 2px 2px rgba(0, 0, 0, 0.14)"
+		padding="0px 16px"
+	cornerRadius="4px"/>
+	
+	<!--Text button-->
+		
+	<Style id="Text" xsi:type="widgets.brease.Button" 
+		backColor="transparent" 
+		borderWidth="0px" 
+		mouseDownBackColor="transparent" 
+		mouseDownBorderWidth="0px" 
+		fontSize="14px"
+		fontName="Roboto"
+		bold="false" 
+		textColor="rgba(255, 137, 34, 1)" 
+	mouseDownTextColor="rgba(255, 137, 34, 1)" />
+	
+	<Style id="Text" xsi:type="widgets.brease.MomentaryPushButton" 
+		backColor="transparent" 
+		borderWidth="0px" 
+		mouseDownBackColor="transparent" 
+		mouseDownBorderWidth="0px" 
+		fontSize="14px"
+		fontName="Roboto"
+		bold="false" 
+		textColor="rgba(255, 137, 34, 1)" 
+	mouseDownTextColor="rgba(255, 137, 34, 1)" />
+	
+	<Style id="Text" xsi:type="widgets.brease.NavigationButton" 
+		backColor="transparent" 
+		borderWidth="0px" 
+		mouseDownBackColor="transparent" 
+		mouseDownBorderWidth="0px" 
+		fontSize="14px"
+		fontName="Roboto"
+		bold="false" 
+		textColor="rgba(255, 137, 34, 1)" 
+	mouseDownTextColor="rgba(255, 137, 34, 1)" />
+	
+	<Style id="Text" xsi:type="widgets.brease.ToggleButton" 
+		backColor="transparent" 
+		borderWidth="0px" 
+		mouseDownBackColor="transparent" 
+		mouseDownBorderWidth="0px" 
+		fontSize="14px"
+		fontName="Roboto"
+		bold="false" 
+		textColor="rgba(255, 137, 34, 1)" 
+	mouseDownTextColor="rgba(255, 137, 34, 1)" />
+	
+	<Style id="Text" xsi:type="widgets.brease.PushButton" 
+		backColor="transparent" 
+		borderWidth="0px" 
+		mouseDownBackColor="transparent" 
+		mouseDownBorderWidth="0px" 
+		fontSize="14px"
+		fontName="Roboto"
+		bold="false" 
+		textColor="rgba(255, 137, 34, 1)" 
+		mouseDownTextColor="rgba(255, 137, 34, 1)" />
+	
+	<!--radio button-->
+	
+	<Style id="Caption" xsi:type="widgets.brease.RadioButton" 
+		fontSize="16px" 
+		textColor="#646464" 
+		foreColor="#ffffff" 
+		mouseDownTextColor="#646464" 
+		disabledBorderColor="#CCCCCC" 
+		backColor="transparent" 
+		mouseDownBackColor="transparent" 
+	bold="true" />		
+
+	<Style id="Large" xsi:type="widgets.brease.RadioButton" 
+		fontSize="20px" 
+		textColor="#646464" 
+		foreColor="#ffffff" 
+		mouseDownTextColor="#646464" 
+		disabledBorderColor="#CCCCCC" 
+		backColor="transparent" 
+		mouseDownBackColor="transparent" 
+	bold="false" />		
+
+	<Style id="Selected" xsi:type="widgets.brease.RadioButton" 
+		fontSize="16px" 
+		textColor="#646464" 
+		foreColor="#ffffff" 
+		mouseDownTextColor="#ff8800" 
+		disabledBorderColor="#CCCCCC" 
+		backColor="transparent" 
+		mouseDownBackColor="transparent" 
+	bold="false" />		
+	
+	<!--checkbox-->
+	
+	<!--<Style id="Caption" xsi:type="widgets.brease.CheckBox" 
+		borderStyle="none" 
+		fontSize="16px" 
+		textColor="#646464" 
+		mouseDownTextColor="#646464" 
+		backColor="transparent" 
+		mouseDownBackColor="transparent" 
+		disabledBackColor="transparent" 
+		disabledTextColor="#CCCCCC" 
+	bold="true" />		
+
+	<Style id="Large" xsi:type="widgets.brease.CheckBox" 
+		borderStyle="none" 
+		fontSize="20px" 
+		textColor="#646464" 
+		mouseDownTextColor="#646464" 
+		backColor="transparent" 
+		mouseDownBackColor="transparent" 
+		disabledBackColor="transparent" 
+		disabledTextColor="#CCCCCC" 
+	bold="false" />		
+	
+	<Style id="Selected" xsi:type="widgets.brease.CheckBox" 
+		borderStyle="none" 
+		fontSize="16px" 
+		textColor="#646464" 
+		mouseDownTextColor="#ff8800" 
+		backColor="transparent" 
+		mouseDownBackColor="transparent" 
+		disabledBackColor="transparent" 
+		disabledTextColor="#CCCCCC" 
+	bold="false" />-->		
+
+	<!--dropdown-->
+	
+	<Style id="Contained" xsi:type="widgets.brease.DropDownBox" 
+		fontSize="15px"
+		fontName="Roboto" 
+		bold="true" 
+		textColor="#000000" 
+		mouseDownTextColor="#000000" 
+		borderWidth="2px" 
+		mouseDownBorderWidth="0px"  
+		backColor="rgba(248, 152, 31, 1)"
+		activeBackColor="rgba(248, 152, 31, 1)"
+		mouseDownBackColor="rgba(255, 186, 85, 1)" 
+		disabledBackColor="#d1d1d1" 
+		shadow="0 8px 10px 0 rgba(0, 0, 0, 0.16)"
+		padding="0px 16px"
+		cornerRadius="4px" 
+		listSeparatorColor="rgba(255, 255, 255, 1)"
+		borderColor="rgba(0, 0, 0, 1)"
+		listBorderWidth="0px"
+		/>
+	<Style id="Text" xsi:type="widgets.brease.DropDownBox" 
+		backColor="transparent" 
+		borderWidth="0px" 
+		mouseDownBackColor="transparent" 
+		mouseDownBorderWidth="0px" 
+		fontSize="14px"
+		fontName="Roboto"
+		bold="false" 
+		textColor="rgba(255, 137, 34, 1)" 
+		mouseDownTextColor="rgba(255, 137, 34, 1)" 
+		listSeparatorColor="rgba(255, 255, 255, 1)"
+		borderColor="rgba(237, 237, 237, 1)"
+		listBorderWidth="0px"
+	/>
+
+	
+	<!--tab item-->
+	
+	<Style id="TabItem1" xsi:type="widgets.brease.TabItem" 
+		textColor="#646464" 
+		bold="false" 
+		fontSize="16px" 
+		backColor="#ffffff" 
+		activeBackColor="#ff8800" 
+		borderWidth="3px 0px 0px 0px" 
+		activeBorderWidth="3px 0px 0px 0px" 
+		borderColor="#646464" 
+		activeBorderColor="#ff8800" 
+		cornerRadius="0px" 
+		activeTextColor="#ffffff" />
+	
+</Styles>

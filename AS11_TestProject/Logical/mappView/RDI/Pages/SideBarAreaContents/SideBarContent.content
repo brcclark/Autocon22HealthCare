@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="SideBarContent" height="918" width="170" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="0" left="0" width="170" zIndex="0" image="Media/BR_NoBack.png" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="btnPower" top="110" left="40" width="90" height="90" zIndex="1" image="Media/power_settings_new_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" cornerRadius="50px" style="BE_Power" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnErrorReset" top="870" left="10" width="150" height="40" zIndex="2" text="Reset Error" style="Contained" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AssemblyDisabled" top="680" left="30" width="100" height="20" zIndex="3" text="Disabled" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AssemblyReady" top="710" left="30" height="20" zIndex="4" text="Ready" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AssemblyHoming" top="740" left="30" height="20" zIndex="5" text="Homing" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AssemblyStopping" top="770" left="30" height="20" zIndex="6" text="Stopping" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AssemblyStartUp" top="800" left="30" height="20" zIndex="7" text="Start Up" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AssemblyErrorStop" top="830" left="30" width="100" height="20" zIndex="8" text="Error Stop" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_AllShuttlesFound" top="620" left="30" width="150" height="20" zIndex="9" multiLine="true" text="Shuttles Found" style="BE_SmallBold" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AllShuttlesFoundStatus" top="620" left="10" width="20" height="20" zIndex="10" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AsmDisabledStatus" top="680" left="10" width="20" height="20" zIndex="11" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AsmReadyStatus" top="710" left="10" width="20" height="20" zIndex="12" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AsmHomingStatus" top="740" left="10" width="20" height="20" zIndex="13" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AsmStoppingStatus" top="770" left="10" width="20" height="20" zIndex="14" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AsmStartUpStatus" top="800" left="10" width="20" height="20" zIndex="15" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_AsmErrorStopStatus" top="830" left="10" width="20" height="20" zIndex="16" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StopAll" top="210" left="10" width="150" height="60" zIndex="17" image="Media/stop_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_HaltAll" top="280" left="10" width="70" height="60" zIndex="18" image="Media/pause_black_24dp%20(1).svg" imageHeight="50" imageWidth="50" style="Contained" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_StopShuttle" top="450" left="10" width="150" height="40" zIndex="19" image="Media/stop_black_24dp%20(1).svg" multiLine="true" text="Stop\nShuttle" style="Contained" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_HaltShuttle" top="500" left="10" width="150" height="40" zIndex="20" image="Media/pause_black_24dp%20(1).svg" text="Halt Shuttle" style="Contained" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_ResumeAll" top="280" left="90" width="70" height="60" zIndex="21" image="Media/replay_black_24dp.svg" imageHeight="50" imageWidth="50" style="Contained" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btn_ResumeShuttle" top="550" left="10" width="150" height="40" zIndex="22" image="Media/replay_black_24dp.svg" multiLine="true" text="Resume Shuttle" wordWrap="true" style="Contained" />
+    <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="23" x1="10" x2="160" y1="610" y2="610" lineColor="rgba(0, 0, 0, 1)" lineWidth="2px" />
+    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="24" x1="10" x2="160" y1="370" y2="370" lineColor="rgba(0, 0, 0, 1)" lineWidth="2px" />
+    <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox_ShuttleID" top="390" left="10" width="150" height="40" zIndex="25" style="Contained" />
+    <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse_MovementActive" top="650" left="10" width="20" height="20" zIndex="26" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_MovementActive" top="650" left="30" width="150" height="20" zIndex="27" multiLine="true" text="Movement Active" style="BE_SmallBold" />
+  </Widgets>
+</Content>

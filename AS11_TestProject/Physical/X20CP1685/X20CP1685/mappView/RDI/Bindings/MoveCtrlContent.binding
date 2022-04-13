@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MoveCtrlContent_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+		
+		<!-- LINEAR -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.Mode" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveLinearMode" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.Path" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveLinearPathType" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.MoveLinear" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="btn_StartMoveLinear" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.Position.X" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_LinearTargetX" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.Position.Y" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_LinearTargetY" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.Velocity" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_LinearVelocity" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.EndVelocity" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_LinearEndVelocity" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Linear.Acceleration" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_LinearAcceleration" attribute="node" />
+		</Binding>
+		
+		<!--ARC-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Direction" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveArcDirection" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Mode" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveArcMotionMode" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Radius.ArcType" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveArcType" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Option" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveArcDefinition" attribute="selectedIndex" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.MoveArc" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="btn_StartMoveArc" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Velocity" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcVelocity" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Angular.Center.Y" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcCenterY" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Angular.Center.X" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcCenterX" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.EndVelocity" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcEndVelocity" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Acceleration" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcAcceleration" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Radius.Position.X" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcTargetX" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Radius.Position.Y" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcTargetY" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Radius.Radius" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcRadius" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Arc.Angular.Angle" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_ArcAngle" attribute="node" />
+		</Binding>
+		
+		<!--SHORT AXIS-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Mode" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_MoveShortAxisMode" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Rotation.Type" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="DropDownBox_RotationCenterType" attribute="selectedIndex" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.MoveShort" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="btn_StartMoveShortAxis" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Velocity.Ry" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_SpeedRy" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Velocity.Rx" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_SpeedRx" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Velocity.Z" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_SpeedZ" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Position.Rz" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_RotationRz" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Position.Ry" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_RotationRy" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Position.Rx" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_RotationRx" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Position.Z" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_PositionZ" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Rotation.Center.Y" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_RotCenterPosY" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Rotation.Center.X" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_RotCenterPosX" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.ShortAxis.Velocity.Rz" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_Short_SpeedRz" attribute="node" />
+		</Binding>
+		
+		
+		<!--6DOF-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.Move6DOF" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="btn_StartMove6DOF" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Velocity.Rx" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_SpeedRx" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Velocity.Z" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_SpeedZ" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Position.Rz" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_RotationRz" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Position.Ry" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_RotationRy" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Position.Rx" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_RotationRx" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Position.Z" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_PositionZ" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.InPlane.Acceleration" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOFAcceleration" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.InPlane.Velocity" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOFVelocity" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.InPlane.Position.Y" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOFTargetY" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.InPlane.Position.X" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOFTargetX" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Velocity.Ry" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_SpeedRy" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.SixDOF.ShortAxis.Velocity.Rz" attribute="node" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_6DOF_SpeedRz" attribute="node" />
+		</Binding>
+		
+		<!--ASYNC-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Cmd.MoveAsync" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="btn_StartMoveAsync" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Async.Acceleration" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_AsyncAcceleration" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::RDICore:Vis.Par.Async.Velocity" attribute="value" />
+			<Target xsi:type="brease" contentRefId="MoveCtrlContent" widgetRefId="Input_AsyncVelocity" attribute="value" />
+		</Binding>
+		
+</Bindings>
+</BindingsSet>

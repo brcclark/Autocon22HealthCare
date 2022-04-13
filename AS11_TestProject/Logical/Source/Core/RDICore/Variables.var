@@ -1,0 +1,11 @@
+VAR
+	i : UINT;
+	Core : rdi6DCore;
+	Pars : Pars6D_typ;
+	Vis : Vis6D_typ := (Limits:=(Linear:=(X:=(Min:=0.0,Max:=0.42),Y:=(Min:=0.0,Max:=0.18),Velocity:=(Min:=0.0,Max:=1.0),EndVelocity:=(Min:=0.0,Max:=1.0),Acceleration:=(Min:=0.0,Max:=10.0)),Arc:=(AngleX:=(Min:=0.0,Max:=0.42),AngleY:=(Min:=0.0,Max:=0.18),Angle:=(Min:=0.0,Max:=6.28319),RadiusX:=(Min:=0.0,Max:=0.42),RadiusY:=(Min:=0.0,Max:=0.18),Radius:=(Min:=0.0,Max:=0.1),Velocity:=(Min:=0.0,Max:=1.0),EndVelocity:=(Min:=0.0,Max:=1.0),Acceleration:=(Min:=0.0,Max:=10.0)),Short:=(CenterX:=(Min:=0.0,Max:=0.42),CenterY:=(Min:=0.0,Max:=0.18),Z:=(Min:=0.0,Max:=0.003),Rx:=(Min:=0.0,Max:=0.0872665),Ry:=(Min:=0.0,Max:=0.0872665),Rz:=(Min:=0.0,Max:=0.226893),VelZ:=(Min:=0.0,Max:=0.15),VelRx:=(Min:=0.0,Max:=0.1),VelRy:=(Min:=0.0,Max:=0.1),VelRz:=(Min:=0.0,Max:=0.3)),SixDOF:=(X:=(Min:=0.0,Max:=0.42),Y:=(Min:=0.0,Max:=0.18),Velocity:=(Min:=0.0,Max:=1.0),Acceleration:=(Min:=0.0,Max:=10.0),Z:=(Min:=0.0,Max:=0.003),Rx:=(Min:=0.0,Max:=0.0872665),Ry:=(Min:=0.0,Max:=0.0872665),Rz:=(Min:=0.0,Max:=0.226893),VelZ:=(Min:=0.0,Max:=0.15),VelRx:=(Min:=0.0,Max:=0.1),VelRy:=(Min:=0.0,Max:=0.1),VelRz:=(Min:=0.0,Max:=0.3)),Async:=(Velocity:=(Min:=0.0,Max:=1.0),Acceleration:=(Min:=0.0,Max:=10.0),X:=(Min:=0.0,Max:=0.42),Y:=(Min:=0.0,Max:=0.18))));
+	TestStart : BOOL;
+	ShState : McAcp6DShStateEnum;
+	ShStatusTexts : ARRAY[0..15] OF STRING[80] := ['UNDETECTED','DISCOVERING','LANDED','IDLING','DISABLED','MOTION','WAIT','STOPPING','OBSTACLE','HOLD','STOPPED',3(''),'ERROR','RESERVED'];
+	ShBufferStateTexts : ARRAY[0..1] OF STRING[80] := ['OPEN','BLOCKED'];
+	StringPlacehold : STRING[80];
+END_VAR

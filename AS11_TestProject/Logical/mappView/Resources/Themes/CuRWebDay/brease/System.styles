@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="BuRThemeFlat1systemStylesX" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<Style id="default" xsi:type="system.brease.Page" />
+	
+	<Style id="default" xsi:type="system.brease.Dialog"
+		backColor="rgba(255,255,255,1)"
+		headerBackColor="rgba(255,255,255,1)"
+		headerBorderStyle="none" 
+		fontSize="22px"
+		fontName="Roboto"
+		bold="true" 
+		textColor="rgba(0,0,0,0.87)" 
+		cornerRadius="4px"	
+		borderWidth="0px"
+		showCloseButton="false"
+		headerHeight="64px"
+		shadow="0 16px 24px 2px rgba(0, 0, 0, 0.14)" 
+	textAlign="left"/>
+	
+	<Style id="snackBar" xsi:type="system.brease.Dialog"
+		backColor="#707070"
+		headerBackColor="#707070"
+		headerBorderStyle="none" 
+		fontSize="22px"
+		fontName="Roboto"
+		bold="true" 
+		textColor="rgba(0,0,0,0.87)" 
+		cornerRadius="4px"	
+		borderWidth="0px"
+		showCloseButton="false"
+		headerHeight="0px"
+		shadow="0 6px 10px 0 rgba(0, 0, 0, 0.14)" 
+		textAlign="left"/>
+	
+	<Style id="default" xsi:type="system.brease.MessageBox"
+		backColor="rgba(255,255,255,1)"
+		headerBackColor="rgba(255,255,255,1)"
+		headerBold="true"
+		headerFontSize="20px"
+		headerBorderStyle="none"
+		headerTextColor="rgba(0,0,0,0.87)"
+		fontSize="16px"
+		textColor="rgba(0,0,0,0.6)"
+		textAlign="left"
+		fontName="Roboto"
+		cornerRadius="4px"
+		borderWidth="0px"
+		shadow="0 24px 46px 8px rgba(0, 0, 0, 0.14)"
+		buttonBorderStyle="none"
+		mouseDownButtonBorderWidth="0px"
+		buttonBackColor="transparent"
+		mouseDownButtonBackColor="transparent"
+		buttonTextColor="rgba(255, 137, 34, 1)"
+		buttonFontSize="14px"
+		mouseDownButtonTextColor="rgba(255, 137, 34, 1)"
+		buttonFontName="Roboto"
+		padding="0px"	/>
+	
+	<Style id="default" xsi:type="system.brease.Area" 
+		backColor="#e6e6e6" />
+	
+	<Style id="transparent" xsi:type="system.brease.Area" 
+		backColor="transparent" />
+	
+	<Style id="default" xsi:type="system.brease.Scrollbar"
+		backColor="rgba(0,0,0,0.5)"
+		borderColor="rgba(255,255,255,0.9)"	/> 
+
+
+</Styles>

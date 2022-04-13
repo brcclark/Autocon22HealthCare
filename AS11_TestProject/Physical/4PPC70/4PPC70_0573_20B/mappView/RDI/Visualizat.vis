@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vdef:Visualization id="Acp6D_HMI" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+  <StartPage pageRefId="P0_MainPage" />
+  <Pages>
+    <Page refId="P0_MainPage"/>
+  </Pages>
+  <Navigations>
+    <!--<Navigation refId="" />-->
+  </Navigations>  
+  <BindingsSets>
+		<BindingsSet refId="SideBarContent_binding" />
+		<BindingsSet refId="P0_MainPageContent_binding" />
+		<BindingsSet refId="StatusContent_binding" />
+		<BindingsSet refId="MoveCtrlContent_binding" />
+		<BindingsSet refId="InactiveDynamicContent_binding" />
+		
+		
+
+  </BindingsSets>
+  <EventBindingsSets>
+		<EventBindingsSet refId="P0_MainPageContent_eventbinding" />
+		<EventBindingsSet refId="SideBarContent_eventbinding" />
+		<EventBindingsSet refId="MoveCtrlContent_eventbinding" />
+		<EventBindingsSet refId="InactiveDynamicContent_eventbinding" />
+		
+		
+		
+		
+  </EventBindingsSets>
+  <Dialogs>
+    <!--<Dialog refId="" />-->
+  </Dialogs>
+  <Contents>
+	<!--	<Content refId="" />-->
+
+		
+  </Contents>
+  <SnippetsSets>
+    <!--<SnippetsSet refId=""/>-->
+  </SnippetsSets>
+  <ExpressionsSets>
+    <!--<ExpressionsSet refId=""/>-->
+  </ExpressionsSets>
+  <VariablesSets>
+    <VariablesSet refId="svar_0" />
+  </VariablesSets>
+	<StartTheme themeRefId="CuRWebDay" />
+	
+	
+  <Themes>
+		<Theme refId="BuRThemeFlat1"/>
+		<Theme refId="CuRWebDay"/>
+		
+  </Themes>
+  <Configurations>
+    <Configuration key="activityCount" value="false" />
+	  <Gestures>
+		  <!--<SystemGesture1 touchPoints="2" />
+		  <SystemGesture2 touchPoints="2" />
+		  <SystemGesture3 touchPoints="2" />-->
+	  </Gestures>
+    <VirtualKeyboards>
+      <!--<InputProcessing onKeyDown="true" />-->
+    </VirtualKeyboards> 
+  </Configurations>
+</vdef:Visualization>

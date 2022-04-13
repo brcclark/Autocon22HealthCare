@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="StatusContent" height="258" width="482" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl_Status" top="0" left="10" width="460" height="250" zIndex="0" style="BE_default">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem_Status" left="0" width="140" height="50" zIndex="0" text="Status" style="BE_default">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.TextOutput" id="txt_StatusOutput" top="60" left="150" width="300" zIndex="0" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_StatusMessage" top="60" left="0" width="140" zIndex="1" text="Status Message:" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_CurrentState" top="10" left="0" width="140" zIndex="2" text="Current State:" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="txt_CurrentState" top="10" left="150" width="300" zIndex="3" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_ErrorID" top="110" left="0" width="140" zIndex="4" text="Error ID:" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_ErrorID" top="110" left="150" width="260" zIndex="5" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':20},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':20},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':20}}" textAlign="left" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.Label" id="lbl_ErrorText" top="160" left="0" width="140" zIndex="6" text="Error Text:" style="BE_SmallBoldWhite" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="txt_ErrorText" top="160" left="150" width="300" zIndex="7" style="BE_SmallBoldWhite" />
+          </Widgets>
+        </Widget>
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

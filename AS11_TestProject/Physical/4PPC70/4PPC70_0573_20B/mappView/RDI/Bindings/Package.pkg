@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">SideBarContent.binding</Object>
+    <Object Type="File">P0_MainPageContent.binding</Object>
+    <Object Type="File">StatusContent.binding</Object>
+    <Object Type="File">MoveCtrlContent.binding</Object>
+    <Object Type="File">InactiveDynamicContent.binding</Object>
+  </Objects>
+</Package>

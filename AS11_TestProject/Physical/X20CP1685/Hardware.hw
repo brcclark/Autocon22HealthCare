@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.11.1.147 FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="8YFLM01.0000.00I-1" Type="8YFLM01.0000.00I-1" Version="0.0.0.1">
+    <Connection Connector="PLK1" TargetModule="X20CP1685" TargetConnector="IF3" NodeNumber="101">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20CP1685" Type="X20CP1685" Version="1.4.0.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.10.81" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="ActivateSnmp" Value="2" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="OnsiteDemo_C80" />
+    <Parameter ID="TimerDeviceType" Value="EPLX2X" />
+    <Parameter ID="TimerDevice" Value="X20CP1685.IF3" />
+    <Parameter ID="TaskClassIdleTime" Value="2000" />
+    <Parameter ID="Cyclic1Duration" Value="2000" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="4000" />
+    <Parameter ID="Cyclic2Tolerance" Value="4000" />
+    <Parameter ID="Cyclic3Duration" Value="8000" />
+    <Parameter ID="Cyclic3Tolerance" Value="8000" />
+    <Parameter ID="Cyclic4Duration" Value="16000" />
+    <Parameter ID="Cyclic4Tolerance" Value="16000" />
+    <Parameter ID="Cyclic5Duration" Value="32000" />
+    <Parameter ID="Cyclic5Tolerance" Value="32000" />
+    <Parameter ID="Cyclic6Duration" Value="64000" />
+    <Parameter ID="Cyclic6Tolerance" Value="64000" />
+    <Parameter ID="Cyclic7Duration" Value="128000" />
+    <Parameter ID="Cyclic7Tolerance" Value="128000" />
+    <Parameter ID="Cyclic8Duration" Value="2000" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="6DMacro" />
+    <Parameter ID="FileDevicePath1" Value="F:\Macros" />
+    <Group ID="FileDevice2" />
+    <Parameter ID="FileDeviceName2" Value="CNC_PrgDir" />
+    <Parameter ID="FileDevicePath2" Value="F:/Programs/" />
+    <Group ID="FileDevice3" />
+    <Parameter ID="FileDeviceName3" Value="Recipe" />
+    <Parameter ID="FileDevicePath3" Value="F:/Recipes/" />
+    <Group ID="FileDevice4" />
+    <Parameter ID="FileDeviceName4" Value="TeachFileDev" />
+    <Parameter ID="FileDevicePath4" Value="F:/Teach/" />
+    <Group ID="FileDevice5" />
+    <Parameter ID="FileDeviceName5" Value="SvMovies" />
+    <Parameter ID="FileDevicePath5" Value="F:/SvMovie" />
+    <Group ID="FileDevice6" />
+    <Parameter ID="FileDeviceName6" Value="User" />
+    <Parameter ID="FileDevicePath6" Value="F:\" />
+    <Group ID="FileDevice7" />
+    <Parameter ID="FileDeviceName7" Value="6DData" />
+    <Parameter ID="FileDevicePath7" Value="C:\" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="bur" Description="user" />
+    <Parameter ID="FtpUserPassword1" Value="kzPdX7T05qFX/2O0oq22KZRISpE2rDw4PeEeBt2Wff8=" Description="user" />
+    <Parameter ID="FtpUserSalt1" Value="NaiTqhR1" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
+    <Parameter ID="FTPdevice1" Value="ALL" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
+  </Module>
+</Hardware>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="Layout6D_1" Type="layout6d">
+    <Group ID="Segments">
+      <Property ID="SegRow" Value="1" />
+      <Property ID="SegCol" Value="2" />
+      <Group ID="Segment[1]">
+        <Property ID="X" Value="0" />
+        <Property ID="Y" Value="0" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="True" />
+      </Group>
+      <Group ID="Segment[2]">
+        <Property ID="X" Value="1" />
+        <Property ID="Y" Value="0" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="False" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

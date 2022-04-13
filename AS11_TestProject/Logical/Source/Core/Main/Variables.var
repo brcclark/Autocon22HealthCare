@@ -1,0 +1,4 @@
+VAR
+	state : MainSystemStatesEnum;
+	errorState : MainSystemStatesEnum;
+END_VAR
