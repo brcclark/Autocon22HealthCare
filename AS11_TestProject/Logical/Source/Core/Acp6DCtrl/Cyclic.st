@@ -148,4 +148,11 @@ PROGRAM _CYCLIC
 	fbs.AsmGetShuttleFb();
 	fbs.MoveAsyncFb();
 	fbs.AsmStatusFb();
+	
+	testFb.Assembly := ADR(g6dAssembly);
+	testFb.Parameters.AsyncPar[0].Shuttle := ADR(gShIfs[0].Cfg.Shuttle);
+	testFb.Parameters.AsyncPar[1].Shuttle := ADR(gShIfs[1].Cfg.Shuttle);
+	testFb.Parameters.AsyncPar[2].Shuttle := ADR(gShIfs[2].Cfg.Shuttle);
+	testFb();
+
 END_PROGRAM

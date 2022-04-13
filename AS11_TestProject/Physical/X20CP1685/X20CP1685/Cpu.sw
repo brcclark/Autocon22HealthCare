@@ -19,7 +19,11 @@
     <Task Name="ProcessDem" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <Task Name="DanceDemoC" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>
-  <TaskClass Name="Cyclic#2" />
+  <TaskClass Name="Cyclic#2">
+    <Task Name="Program" Source="Source.Core.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="RoutingDef" Source="Source.Core.RoutingDefinitions.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="Stations" Source="Source.Core.Stations.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+  </TaskClass>
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="Main" Source="Source.Core.Main.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
@@ -94,13 +98,16 @@
   </Binaries>
   <Libraries>
     <LibraryObject Name="Acp6dHlpr" Source="Libraries.Acp6dHlpr.lby" Memory="UserROM" Language="IEC" Debugging="true" />
+    <LibraryObject Name="McBase" Source="Libraries.McBase.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="McAcp6D" Source="Libraries.McAcp6D.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="Router6D" Source="Libraries.Router6D.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <LibraryObject Name="AsSem" Source="Libraries.AsSem.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="ArEventLog" Source="Libraries.ArEventLog.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="runtime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="fileio" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="standard" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="mcacp6d" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="mcbase" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asbrstr" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />

@@ -8,7 +8,8 @@
   <Project StoreRuntimeInProject="false" />
   <Variables DefaultInitValue="0" DefaultRetain="false" DefaultVolatile="true" />
   <TechnologyPackages>
-    <mapp6D Version="1.2.47924" />
+    <mapp6D Version="1.2.10000" />
+    <mappFramework Version="1.0.0" />
     <mappMotion McDriveLog="5.17.1" Version="5.17.7506" />
     <mappView Version="5.17.0" />
   </TechnologyPackages>

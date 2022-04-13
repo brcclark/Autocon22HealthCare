@@ -12,3 +12,8 @@ VAR
 	gSystemIf : MainIfTyp;
 	gShIfs : ARRAY[0..MAX_SH_IDX] OF ShuttleIfTyp;
 END_VAR
+(*Routing Variables*)
+VAR
+	gDests : ARRAY[0..9] OF DestTyp;
+	gWps : ARRAY[0..6] OF WaypointTyp;
+END_VAR

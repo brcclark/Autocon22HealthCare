@@ -102,3 +102,48 @@ TYPE
 		ErrorID : UDINT;
 	END_STRUCT;
 END_TYPE
+
+(*Routing Helper Types*)
+
+TYPE
+	DestTyp : 	STRUCT 
+		StationName : STRING[80];
+		Position : rl6dPositionType;
+		Entry : DestPathTyp;
+		Exit : DestPathTyp;
+		RecoveryPts : rl6dPositionType;
+		Destination : rl6dDestinationType;
+	END_STRUCT;
+	DestPathTyp : 	STRUCT 
+		Path : rl6dPathType;
+		PathPoints : ARRAY[0..2]OF rl6dPositionType;
+		Name : STRING[80];
+		Length : USINT;
+	END_STRUCT;
+	DestinationsEnum : 
+		(
+		DEST_DEFAULT,
+		DEST_INCUBATOR,
+		DEST_ANALYZER,
+		DEST_PIPETTE_1,
+		DEST_PIPETTE_2,
+		DEST_TIPS,
+		DEST_DYE
+		);
+	WaypointTyp : 	STRUCT 
+		Position : rl6dPositionType;
+		Name : STRING[80];
+		Waypoint : rl6dWaypointType;
+		Destinations : ARRAY[0..5]OF DestinationsEnum;
+		NextWaypoint : WaypointListEnum;
+	END_STRUCT;
+	WaypointListEnum : 
+		(
+		WP_NONE,
+		WP_1,
+		WP_2,
+		WP_3,
+		WP_4,
+		WP_5
+		);
+END_TYPE

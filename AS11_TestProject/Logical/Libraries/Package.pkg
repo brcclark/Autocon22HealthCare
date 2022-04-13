@@ -17,8 +17,11 @@
     <Object Type="Library" Language="binary" Description="This library contains functionality to execute traces (to sample numeric values periodically for a defined time-span)">CoTrace</Object>
     <Object Type="Library" Language="Binary" Description="Recipe management">MpRecipe</Object>
     <Object Type="Library" Language="IEC">rdiAcp6D</Object>
+    <Object Type="Library" Language="IEC">Acp6dHlpr</Object>
     <Object Type="Library" Language="binary" Description="[mapp 6D] Technology package for Acopos 6D ">McAcp6D</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
-    <Object Type="Library" Language="IEC">Acp6dHlpr</Object>
+    <Object Type="Library" Language="ANSIC" Description="Route shuttles to destinations">Router6D</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs to use semaphores.">AsSem</Object>
+    <Object Type="Library" Language="binary" Description="The ArEventLog library can be used to collect additional error information and for further processing.">ArEventLog</Object>
   </Objects>
 </Package>

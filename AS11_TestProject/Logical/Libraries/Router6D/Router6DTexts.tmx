@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">User/EventLog</prop>
+  </header>
+  <body>
+    <tu tuid="1611595786">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} has started a routed move to {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595787">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} has started a direct move to {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595788">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} is now following path {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595789">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} is now moving to waypoint {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595796">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} has arrived at {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595806">
+      <tuv xml:lang="en">
+        <seg>Router has started to get shuttles on the assembly.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595807">
+      <tuv xml:lang="en">
+        <seg>Router has completed getting shuttles on the assembly. {1} shuttles found.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595808">
+      <tuv xml:lang="en">
+        <seg>Router has started recovery with mode {=$User/EventLog/recovery_mode.{1}}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595809">
+      <tuv xml:lang="en">
+        <seg>Router has completed recovery.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595810">
+      <tuv xml:lang="en">
+        <seg>Router has assigned Shuttle {1} to Destination {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-535887472">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} has encountered an error: {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-535887471">
+      <tuv xml:lang="en">
+        <seg>Router has encountered an error while getting shuttles: {1}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-535887470">
+      <tuv xml:lang="en">
+        <seg>Router has encountered an error while executing MoveInPlaneAsync: {1}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recovery_mode.0">
+      <tuv xml:lang="en">
+        <seg>rl6dRECOVER_MODE_BASIC</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

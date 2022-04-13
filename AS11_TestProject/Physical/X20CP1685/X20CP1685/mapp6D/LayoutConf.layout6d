@@ -3,8 +3,8 @@
 <Configuration>
   <Element ID="Layout6D_1" Type="layout6d">
     <Group ID="Segments">
-      <Property ID="SegRow" Value="1" />
-      <Property ID="SegCol" Value="2" />
+      <Property ID="SegRow" Value="3" />
+      <Property ID="SegCol" Value="3" />
       <Group ID="Segment[1]">
         <Property ID="X" Value="0" />
         <Property ID="Y" Value="0" />
@@ -12,8 +12,38 @@
         <Property ID="IsMaster" Value="True" />
       </Group>
       <Group ID="Segment[2]">
+        <Property ID="X" Value="0" />
+        <Property ID="Y" Value="1" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="False" />
+      </Group>
+      <Group ID="Segment[3]">
+        <Property ID="X" Value="0" />
+        <Property ID="Y" Value="2" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="False" />
+      </Group>
+      <Group ID="Segment[4]">
         <Property ID="X" Value="1" />
         <Property ID="Y" Value="0" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="False" />
+      </Group>
+      <Group ID="Segment[5]">
+        <Property ID="X" Value="1" />
+        <Property ID="Y" Value="1" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="False" />
+      </Group>
+      <Group ID="Segment[6]">
+        <Property ID="X" Value="1" />
+        <Property ID="Y" Value="2" />
+        <Property ID="Name" />
+        <Property ID="IsMaster" Value="False" />
+      </Group>
+      <Group ID="Segment[7]">
+        <Property ID="X" Value="2" />
+        <Property ID="Y" Value="1" />
         <Property ID="Name" />
         <Property ID="IsMaster" Value="False" />
       </Group>

@@ -1,0 +1,11 @@
+VAR CONSTANT
+	numDestinations : USINT := 6;
+	numWaypoints : USINT := 5;
+END_VAR
+VAR
+	state : RoutingDefineEnum;
+	fbs : InitFbsTyp;
+	Init : BOOL;
+	j : USINT;
+	i : USINT;
+END_VAR

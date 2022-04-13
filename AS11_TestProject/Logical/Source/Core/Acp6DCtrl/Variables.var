@@ -3,4 +3,5 @@ VAR
 	fbs : Acp6DFbsTyp;
 	errorState : Acp6DStateEnum;
 	i : UINT;
+	testFb : MC_BR_MoveInPlaneAsync_Acp6D;
 END_VAR

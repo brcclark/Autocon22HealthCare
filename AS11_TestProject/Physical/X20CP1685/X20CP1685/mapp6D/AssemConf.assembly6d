@@ -4,7 +4,7 @@
   <Element ID="g6dAssembly" Type="assembly6d">
     <Property ID="Simulation6D" Value="SimOn" />
     <Group ID="Shuttles">
-      <Property ID="MaxShuttleCount" Value="2" />
+      <Property ID="MaxShuttleCount" Value="1" />
       <Property ID="ShuttleIDMode" Value="RealTimeID" />
       <Group ID="DefaultPosition">
         <Property ID="DefZ" Value="1.0" />

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="ANSIC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Logger Texts">Router6DTexts.tmx</File>
+    <File Description="Router Types">Types.typ</File>
+    <File Description="Router Constants">Variables.var</File>
+    <File Description="Exported functions and function blocks">Router6D.fun</File>
+    <File Description="Check Reference Headers">CheckRef.hpp</File>
+    <File Description="Logging Headers">Logging.hpp</File>
+    <File Description="Router Headers">Router.hpp</File>
+    <File Description="SemMan Headers">SemMan.hpp</File>
+    <File Description="Destination Headers">Destination.hpp</File>
+    <File Description="DestinationIf Headers">DestinationIf.hpp</File>
+    <File Description="Path Headers">Path.hpp</File>
+    <File Description="Waypoint Headers">Waypoint.hpp</File>
+    <File Description="Shuttle Headers">Shuttle.hpp</File>
+    <File Description="ShuttleIf Headers">ShuttleIf.hpp</File>
+    <File Description="Check Reference Implementation">CheckRef.cpp</File>
+    <File Description="Logging Implementation">Logging.cpp</File>
+    <File Description="Router Implementation">Router.cpp</File>
+    <File Description="SemMan Implementation">SemMan.cpp</File>
+    <File Description="Destination Implementation">Destination.cpp</File>
+    <File Description="DestinationIf Implementation">DestinationIf.cpp</File>
+    <File Description="Path Implementation">Path.cpp</File>
+    <File Description="Waypoint Implementation">Waypoint.cpp</File>
+    <File Description="Shuttle Implementation">Shuttle.cpp</File>
+    <File Description="DestinationIf Implementation">ShuttleIf.cpp</File>
+    <File Description="rl6dRouter Implementation">rl6dRouterMan.cpp</File>
+    <File Description="rl6dRouterAddPathFromData Implementation">rl6dRouterAddPathFromData.cpp</File>
+    <File Description="rl6dRouterAddDestination Implementation">rl6dRouterAddDestination.cpp</File>
+    <File Description="rl6dRouterAddWaypoint Implementation">rl6dRouterAddWaypoint.cpp</File>
+    <File Description="rl6dGetDataFromPath Implementation">rl6dPathGetData.cpp</File>
+    <File Description="rl6dRouterAddPathFromData Implementation">rl6dDestAddRecoveryPosFromData.cpp</File>
+    <File Description="rl6dWaypointSetNextWaypoint Implementation">rl6dDestinationSetWaypoint.cpp</File>
+    <File Description="rl6dWaypointAddDestination Implementation">rl6dWaypointAddDestination.cpp</File>
+    <File Description="rl6dWaypointSetNextWaypoint Implementation">rl6dWaypointSetNextWaypoint.cpp</File>
+    <File Description="rl6dRouterAddShFromAsm Implementation">rl6dRouterAddShFromAsm.cpp</File>
+    <File Description="rl6dRouterExecuteRecovery Implementation">rl6dRouterExecuteRecovery.cpp</File>
+    <File Description="rl6dDestinationMonitor Implementation">rl6dDestinationMonitor.cpp</File>
+    <File Description="rl6dDestinationMonitor Implementation">rl6dShuttleMoveDestination.cpp</File>
+    <File Description="rl6dShCopyUserData Implementation">rl6dShCopyUserData.cpp</File>
+    <File Description="rl6dShCopyUserDataSync Implementation">rl6dShCopyUserDataSync.cpp</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="McAcp6D" />
+    <Dependency ObjectName="AsSem" />
+    <Dependency ObjectName="ArEventLog" />
+  </Dependencies>
+</Library>

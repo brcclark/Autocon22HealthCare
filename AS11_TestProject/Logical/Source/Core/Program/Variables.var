@@ -1,0 +1,6 @@
+VAR
+	state : INT;
+	test : BOOL;
+	fbs : FbsTyp;
+	pars : ARRAY[0..9] OF Acp6DMoveListTyp;
+END_VAR
