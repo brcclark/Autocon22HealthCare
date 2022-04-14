@@ -70,8 +70,9 @@ PROGRAM _CYCLIC
 	  					gSysRecipe.StartupPars.MoveAsyncPars.AsyncPar[i].Shuttle := ADR(gShIfs[i].Cfg.Shuttle);
 					END_FOR;
 					fbs.MoveAsyncFb.Parameters := gSysRecipe.StartupPars.MoveAsyncPars;
-					fbs.MoveAsyncFb.Execute := TRUE;
-					state := ACP6D_MOVE_STARTUP;
+					
+					//fbs.MoveAsyncFb.Execute := TRUE;
+					state := ACP6D_OPERATIONAL; //No longer need this when using Routing Library
 				END_IF
 			END_IF
 			

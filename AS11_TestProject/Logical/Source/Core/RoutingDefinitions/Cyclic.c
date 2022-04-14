@@ -201,7 +201,6 @@ void _CYCLIC ProgramCyclic(void)
 					fbs.createWaypointFb.Router = &fbs.routerFb.Router;
 					fbs.createWaypointFb.Position = gWps[i].Position;
 					brsstrcpy(&fbs.createWaypointFb.Name,gWps[i].Name);
-					fbs.createWaypointFb.Execute = TRUE;
 				}
 				
 			}

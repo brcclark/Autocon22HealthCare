@@ -5,6 +5,61 @@
 	#include <AsDefault.h>
 #endif
 
+
+
+/*
+	//Incubator station
+		When requested send the shuttle away to the requested destination
+
+	//Analyzer		
+		When requested, empty the completed well plate, reload the fresh one
+		Make decision on if you should send to Pipette 1, 2 or a garage station
+
+	//Pipette 1/2
+		when a shuttle arrives
+			Tips or Dye
+				Wait for a set amount of time 
+				if pipette 1/2 Tips/Dye is needed > Send to Pipette 1/2
+				else > send to tips/dye
+			Well plate
+				move shuttle to X/Y position corresponding to recipe (grid based position)
+				wait Defined time
+				go to next recipe index
+				repeat until sample set completed
+				if recipeIsDone
+					sendToAnalyzer
+				else: 
+					request Tip
+				When Tip request has been answered
+					send shuttle to tip station
+					
+
+		The TBD destinations are something passed into the station where to send it? Maybe defined by a global recipe?
+	
+	//Dye and Tips stations
+		When Shuttle is present: Publish the type of shuttle present
+		when requested, send the shuttle to the requested station
+
+
+	Shuttle User Data
+		Destination
+		RecipeId
+		ShuttleType
+			WellPlate
+			CellSample
+			Tips
+			Dye
+		WellPlate Wells Status[bool:96]
+		
+		
+	Recipe Definition
+		FillTime
+		NumSamples
+		[Sample]
+			Sample: Color
+			SampleCount: 1-x
+*/
+
 void _CYCLIC ProgramCyclic(void)
 {
 	incubatorFb.Enable = enable;
