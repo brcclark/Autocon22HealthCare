@@ -411,7 +411,7 @@ void Shuttle::cyclic(){
                         this->_state = STATE_DIRECT_MOVE;
                     }
                     else if(this->_current_interface->get_destination_command()){
-                        this->_route_position_generator = ShuttleRoutePositionGenerator(this->_previous_destination, this->_next_destination);
+                        this->_route_position_generator = ShuttleRoutePositionGenerator(this->_previous_destination, this->_next_destination, this->_current_interface->get_waypoint());
                         if(this->_route_position_generator++){
                             this->_move_in_plane.Parameters.Position.X = _route_position_generator.position.X;
                             this->_move_in_plane.Parameters.Position.Y = _route_position_generator.position.Y;

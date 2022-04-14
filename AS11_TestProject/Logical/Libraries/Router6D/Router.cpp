@@ -157,7 +157,7 @@ void Router::cyclic(){
             
             std::strcpy(this->_ar_event_log_create.Name, router_6d_log_name);
             this->_ar_event_log_create.Size = 10000; //TODO
-            this->_ar_event_log_create.Persistence = arEVENTLOG_PERSISTENCE_VOLATILE; //TODO
+            this->_ar_event_log_create.Persistence = arEVENTLOG_PERSISTEN CE_PERSIST; //TODO
             this->_ar_event_log_create.Execute = 1;
             this->_state = STATE_EVENT_LOG_CREATE;
             

@@ -4,8 +4,10 @@
 #include <Router6D.h>
 
 #include <Destination.hpp>
+#include <Waypoint.hpp>
 
 class Destination; //Forward Declaration
+class Waypoint; //Forward Declaration
 
 /**
  \brief A ShuttleIf is an interface that can be used to command shuttles
@@ -25,6 +27,8 @@ class ShuttleIf : public std::enable_shared_from_this<ShuttleIf>{
     UDINT get_type_id(void);
     //! Issue move destination command
     void set_destination(std::shared_ptr<Destination> destination, REAL velocity, REAL acceleration);
+    //! Issue move destination via waypoint command
+    void set_destination_waypoint(std::shared_ptr<Destination> destination, std::weak_ptr<Waypoint> waypoint, REAL velocity, REAL acceleration);
     //! Check for move destination command
     bool get_destination_command(void);
     //! Issue move destination direct command
@@ -33,6 +37,8 @@ class ShuttleIf : public std::enable_shared_from_this<ShuttleIf>{
     bool get_destination_direct_command(void);
     //! Get the destination commanded
     std::shared_ptr<Destination> get_destination(void);
+    //! Get the waypoint commanded
+    std::weak_ptr<Waypoint> get_waypoint(void);
     //! Set aborted status
     void set_aborted(void);
     //! Get aborted status
@@ -80,6 +86,8 @@ class ShuttleIf : public std::enable_shared_from_this<ShuttleIf>{
     bool _move_destination_direct = 0;
     //! Destination
     std::shared_ptr<Destination> _destination;
+    //! Route Waypoint
+    std::weak_ptr<Waypoint> _waypoint;
     //! Velocity
     REAL _velocity;
     //! Acceleration

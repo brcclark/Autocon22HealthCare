@@ -7,6 +7,9 @@ VAR
 	tipsFb : rl6dDestinationMonitor;
 	moveShFb : rl6dShuttleMoveDestination;
 	nextStation : DestinationsEnum;
+	optionalWaypoint : WaypointListEnum;
 	currentStation : DestinationsEnum;
 	enable : BOOL;
+	vel : REAL;
+	accel : REAL;
 END_VAR

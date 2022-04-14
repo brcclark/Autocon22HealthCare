@@ -227,6 +227,7 @@ FUNCTION_BLOCK rl6dShuttleMoveDestination (*Move shuttle to destination*)
 	VAR_INPUT
 		RouterShuttle : REFERENCE TO rl6dShuttleType; (*Shuttle to control*)
 		Destination : REFERENCE TO rl6dDestinationType; (*Destination to move to*)
+		Waypoint : REFERENCE TO rl6dWaypointType; (*Optional waypoint to override the waypoint specified by the previous destination*)
 		Velocity : REAL; (*Velocity of shuttle movement*)
 		Acceleration : REAL; (*Acceleration of shuttle movement*)
 		Execute : BOOL; (*Start moving shuttle to destination*)

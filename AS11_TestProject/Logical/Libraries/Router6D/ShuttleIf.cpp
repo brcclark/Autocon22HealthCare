@@ -17,6 +17,13 @@ void ShuttleIf::set_destination(std::shared_ptr<Destination> destination, REAL v
     this->_acceleration = acceleration;
     this->_move_destination = 1;
 }
+void ShuttleIf::set_destination_waypoint(std::shared_ptr<Destination> destination, std::weak_ptr<Waypoint> waypoint,REAL velocity, REAL acceleration){
+    this->_destination = destination;
+    this->_waypoint = waypoint;
+    this->_velocity = velocity;
+    this->_acceleration = acceleration;
+    this->_move_destination = 1;
+}
 bool ShuttleIf::get_destination_command(){
     return this->_move_destination;
 }
@@ -31,6 +38,9 @@ bool ShuttleIf::get_destination_direct_command(){
 }
 std::shared_ptr<Destination> ShuttleIf::get_destination(){
     return this->_destination;
+}
+std::weak_ptr<Waypoint> ShuttleIf::get_waypoint(){
+    return this->_waypoint;
 }
 void ShuttleIf::set_aborted(){
     this->_aborted = 1;

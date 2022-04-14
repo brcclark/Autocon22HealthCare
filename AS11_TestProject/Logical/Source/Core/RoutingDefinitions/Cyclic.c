@@ -151,7 +151,7 @@ void _CYCLIC ProgramCyclic(void)
 					//Setup the waypoints
 					fbs.createWaypointFb.Router = &fbs.routerFb.Router;
 					fbs.createWaypointFb.Position = gWps[i].Position;
-					brsstrcpy(&fbs.createWaypointFb.Name,gWps[i].Name);
+					brsstrcpy(&fbs.createWaypointFb.Name,&gWps[i].Name);
 					fbs.createWaypointFb.Execute = TRUE;
 					
 					state = DEF_INIT_WAYPOINTS;

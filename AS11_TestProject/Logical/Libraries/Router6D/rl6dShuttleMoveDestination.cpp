@@ -8,6 +8,8 @@ extern "C" _BUR_PUBLIC void rl6dShuttleMoveDestination(struct rl6dShuttleMoveDes
     
     Destination* d;
     std::shared_ptr<Destination> destination;
+    Waypoint* w;
+    std::weak_ptr<Waypoint> waypoint;
     Shuttle* s;
     std::shared_ptr<Shuttle> shuttle;
     ShuttleIf* i;
@@ -51,8 +53,23 @@ extern "C" _BUR_PUBLIC void rl6dShuttleMoveDestination(struct rl6dShuttleMoveDes
                     if(error == ERR_OK){
                         i = reinterpret_cast<ShuttleIf*>(inst->Internal.Reference);
                         interface = i->get_shared_ptr();
-                        interface->set_destination(destination, inst->Velocity, inst->Acceleration);
-                        inst->Internal.State = state_move;
+                        if (inst->Waypoint != nullptr){
+                            error = check_waypoint_reference(inst->Waypoint);
+                            if(error == ERR_OK){
+                                w = reinterpret_cast<Waypoint*>(inst->Waypoint->Ident);
+                                waypoint = w->get_shared_ptr();
+                                interface->set_destination_waypoint(destination, waypoint, inst->Velocity, inst->Acceleration);
+                            }
+                            else{
+                                inst->ErrorID = error;
+                                inst->Error = 1;
+                                inst->Internal.State = state_error;
+                            }
+                        }
+                        else{
+                            interface->set_destination(destination, inst->Velocity, inst->Acceleration);
+                            inst->Internal.State = state_move;
+                        }
                     }
                     else{
                         inst->ErrorID = error;

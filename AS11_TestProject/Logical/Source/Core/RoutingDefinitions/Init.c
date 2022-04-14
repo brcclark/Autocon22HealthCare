@@ -146,12 +146,12 @@ void _INIT ProgramInit(void)
 	brsstrcpy(&gWps[WP_4].Name,&"Waypoint 4");
 	gWps[WP_4].Position.X = 0.30;
 	gWps[WP_4].Position.Y = 0.30;
-	gWps[WP_4].NextWaypoint = WP_4;
+	gWps[WP_4].NextWaypoint = WP_1;
 	gWps[WP_4].Destinations[0] = DEST_ANALYZER;
 	gWps[WP_4].Destinations[1] = DEST_INCUBATOR;
 	
 	//******** Way Point 5
-	brsstrcpy(&gWps[WP_1].Name,&"Waypoint 5");
+	brsstrcpy(&gWps[WP_5].Name,&"Waypoint 5");
 	gWps[WP_5].Position.X = 0.54;
 	gWps[WP_5].Position.Y = 0.30;
 	gWps[WP_5].NextWaypoint = WP_3;

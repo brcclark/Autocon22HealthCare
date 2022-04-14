@@ -100,7 +100,6 @@
     <LibraryObject Name="Acp6dHlpr" Source="Libraries.Acp6dHlpr.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="McBase" Source="Libraries.McBase.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="McAcp6D" Source="Libraries.McAcp6D.lby" Memory="UserROM" Language="binary" Debugging="true" />
-    <LibraryObject Name="Router6D" Source="Libraries.Router6D.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <LibraryObject Name="AsSem" Source="Libraries.AsSem.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="ArEventLog" Source="Libraries.ArEventLog.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
@@ -120,5 +119,6 @@
     <LibraryObject Name="aruser" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="McAcpTrak" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="MpAxis" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="Router6D" Source="Libraries.Router6D.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </Libraries>
 </SwConfiguration>

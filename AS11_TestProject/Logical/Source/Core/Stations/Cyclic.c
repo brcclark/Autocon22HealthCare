@@ -20,8 +20,8 @@ void _CYCLIC ProgramCyclic(void)
 	dyeFb.Enable = enable;
 	dyeFb.Destination = &gDests[DEST_DYE].Destination;
 	
-	moveShFb.Velocity = 1.0;
-	moveShFb.Acceleration = 10.0;
+	moveShFb.Velocity = vel;
+	moveShFb.Acceleration = accel;
 	moveShFb.Destination = &gDests[nextStation].Destination;
 	
 	switch (currentStation){
@@ -44,6 +44,28 @@ void _CYCLIC ProgramCyclic(void)
 			moveShFb.RouterShuttle = &tipsFb.RouterShuttle;
 			break;		
 	}
+	switch (optionalWaypoint)
+	{
+		case WP_NONE:
+			moveShFb.Waypoint = 0;
+			break;
+		case WP_1:
+			moveShFb.Waypoint = &gWps[WP_1].Waypoint;
+			break;
+		case WP_2:
+			moveShFb.Waypoint = &gWps[WP_2].Waypoint;
+			break;
+		case WP_3:
+			moveShFb.Waypoint = &gWps[WP_3].Waypoint;
+			break;
+		case WP_4:
+			moveShFb.Waypoint = &gWps[WP_4].Waypoint;
+			break;
+		case WP_5:
+			moveShFb.Waypoint = &gWps[WP_5].Waypoint;
+			break;
+	}
+     
 	rl6dDestinationMonitor(&incubatorFb);
 	rl6dDestinationMonitor(&analyzerFb);
 	rl6dDestinationMonitor(&pipette1Fb);

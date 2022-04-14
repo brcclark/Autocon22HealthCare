@@ -7,5 +7,6 @@
 
 void _INIT ProgramInit(void)
 {
-
+	vel = 0.25;
+	accel = 5;
 }
