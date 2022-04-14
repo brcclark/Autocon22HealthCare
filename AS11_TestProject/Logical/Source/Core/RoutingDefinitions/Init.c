@@ -11,7 +11,7 @@ void _INIT ProgramInit(void)
 {
 	//Define the destinations & their paths
 	
-	//******Incubator Destination
+	//*******Incubator Destination
 	brsstrcpy(&gDests[DEST_INCUBATOR].StationName,&"Incubator");
 	gDests[DEST_INCUBATOR].Position.X = 0.06;
 	gDests[DEST_INCUBATOR].Position.Y = 0.06;
