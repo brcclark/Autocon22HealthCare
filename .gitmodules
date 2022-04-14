@@ -1,0 +1,3 @@
+[submodule "AS11_TestProject/Logical/Libraries/Router6D"]
+	path = AS11_TestProject/Logical/Libraries/Router6D
+	url = https://github.com/br-na-pm/6DRoutingLibrary.git
