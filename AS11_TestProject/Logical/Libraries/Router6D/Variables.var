@@ -47,6 +47,7 @@ VAR CONSTANT
 	rl6dINFO_DIRECT_MOVE_START : DINT := 1611595787; (*A direct move has started*)
 	rl6dINFO_MOVE_PATH_START : DINT := 1611595788; (*Move along a path has started*)
 	rl6dINFO_MOVE_WAYPOINT : DINT := 1611595789; (*A move to a waypoint has started*)
+	rl6dINFO_ROUTED_MOVE_WAYPOINT : DINT := 1611595790; (*A routed move has started via a specified waypoint*)
 	rl6dINFO_DESTINATION_ARRIVE : DINT := 1611595796; (*A shuttle has arrived at a destination*)
 	rl6dINFO_DESTINATION_UPDATE : DINT := 1611595797; (*A shuttle route destination has been changed*)
 	rl6dINFO_GET_SHUTTLES_START : DINT := 1611595806; (*Router has started to get shuttles on the assembly*)

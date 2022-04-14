@@ -59,6 +59,7 @@ extern "C" _BUR_PUBLIC void rl6dShuttleMoveDestination(struct rl6dShuttleMoveDes
                                 w = reinterpret_cast<Waypoint*>(inst->Waypoint->Ident);
                                 waypoint = w->get_shared_ptr();
                                 interface->set_destination_waypoint(destination, waypoint, inst->Velocity, inst->Acceleration);
+                                inst->Internal.State = state_move;
                             }
                             else{
                                 inst->ErrorID = error;

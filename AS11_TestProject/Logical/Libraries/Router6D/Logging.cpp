@@ -365,6 +365,70 @@ bool log_waypoint_move(UINT shuttle, std::string waypoint){
     
 }
 
+bool log_routed_move_waypoint(UINT shuttle, std::string destination, std::string waypoint){
+
+    struct ArEventLogGetIdent get_ident;
+    struct ArEventLogWrite write;
+    
+    bool status;
+    UDINT buffer_size = destination.length() + 1;
+    buffer_size += waypoint.length() +1;
+    buffer_size += rl6d_log_buffer_min_size + rl6d_log_buffer_size_udint;
+    char buffer [buffer_size];
+    status = ArEventLogAddDataInit(reinterpret_cast<UDINT>(buffer), buffer_size, arEVENTLOG_ADDFORMAT_CODED);
+    if(status){
+        status = ArEventLogAddDataUdint(reinterpret_cast<UDINT>(buffer), buffer_size, shuttle);
+    }
+    if(status){
+        status = ArEventLogAddDataString(reinterpret_cast<UDINT>(buffer), buffer_size, reinterpret_cast<UDINT>(destination.c_str()));
+    }
+    if(status){
+        status = ArEventLogAddDataString(reinterpret_cast<UDINT>(buffer), buffer_size, reinterpret_cast<UDINT>(waypoint.c_str()));
+    }
+    
+    std::memset(&get_ident, 0, sizeof(get_ident));
+    
+    std::strcpy(get_ident.Name, router_6d_log_name);
+    get_ident.Execute = 0;
+    
+    if(status){
+        ArEventLogGetIdent(&get_ident);
+        get_ident.Execute = 1;
+        ArEventLogGetIdent(&get_ident);
+        status = get_ident.Done;
+        if(!status){
+            get_ident.Execute = 0;
+            ArEventLogGetIdent(&get_ident);
+        }
+    }
+    
+    std::memset(&write, 0, sizeof(write));
+    
+    std::string object = "RouterShuttle";
+    object.append(std::to_string(shuttle));
+    
+    write.Ident = get_ident.Ident;
+    std::strcpy(reinterpret_cast<char*>(&write.ObjectID), object.c_str());
+    write.EventID = rl6dINFO_ROUTED_MOVE_WAYPOINT;
+    write.AddData = reinterpret_cast<UDINT>(buffer);
+    write.AddDataFormat = arEVENTLOG_ADDFORMAT_CODED;
+    write.Execute = 0;
+    
+    if(status){
+        ArEventLogWrite(&write);
+        write.Execute = 1;
+        ArEventLogWrite(&write);
+        status = write.Done;
+        write.Execute = 0;
+        ArEventLogWrite(&write);
+        get_ident.Execute = 0;
+        ArEventLogGetIdent(&get_ident);
+    }
+    
+    return status;
+    
+}
+
 bool log_asm_get_sh_start(){
     
     struct ArEventLogGetIdent get_ident;

@@ -126,10 +126,11 @@ bool ShuttleRoutePositionGenerator::operator++(int){
                 bool destination_accessible = waypoint->check_destination_accessible(this->_next_destination);
                 if(destination_accessible){
                     this->_departure_path = waypoint->get_destination_departure_path(this->_next_destination);
+                    waypoint->sem_release();
                     this->_phase = ROUTED_MOVE_PHASE_DEPART_WAYPOINT_START;
                 }
-                waypoint->sem_release();
-                if(!destination_accessible){
+                else{
+                    waypoint->sem_release();
                     this->_current_waypoint = waypoint->get_next_waypoint();
                     if(!this->_current_waypoint.expired()){
                         waypoint = this->_current_waypoint.lock();
@@ -150,7 +151,10 @@ bool ShuttleRoutePositionGenerator::operator++(int){
                 return false;
             }
         }
-        this->_phase = ROUTED_MOVE_PHASE_ENTER_DEST_START; //Something went wrong here
+        else{
+            //Something went wrong here - the waypoint should not be expired
+            this->_phase = ROUTED_MOVE_PHASE_ENTER_DEST_START;
+        }
         
     }
     if(this->_phase == ROUTED_MOVE_PHASE_DEPART_WAYPOINT_START){
@@ -411,12 +415,18 @@ void Shuttle::cyclic(){
                         this->_state = STATE_DIRECT_MOVE;
                     }
                     else if(this->_current_interface->get_destination_command()){
-                        this->_route_position_generator = ShuttleRoutePositionGenerator(this->_previous_destination, this->_next_destination, this->_current_interface->get_waypoint());
+                        this->_optional_waypoint = this->_current_interface->get_waypoint();
+                        this->_route_position_generator = ShuttleRoutePositionGenerator(this->_previous_destination, this->_next_destination, this->_optional_waypoint);
                         if(this->_route_position_generator++){
                             this->_move_in_plane.Parameters.Position.X = _route_position_generator.position.X;
                             this->_move_in_plane.Parameters.Position.Y = _route_position_generator.position.Y;
                             this->_move_in_plane.Execute = 1;
-                            log_routed_move_start(this->get_shuttle_id(), this->_next_destination->get_name());
+                            if(this->_optional_waypoint.expired()){
+                                log_routed_move_start(this->get_shuttle_id(), this->_next_destination->get_name());
+                            }
+                            else{
+                                log_routed_move_waypoint(this->get_shuttle_id(), this->_next_destination->get_name(), this->_optional_waypoint.lock()->get_name());
+                            }
                             this->_log_event(this->_route_position_generator.event);
                             this->_state = STATE_ROUTED_MOVE;
                         }
@@ -435,7 +445,12 @@ void Shuttle::cyclic(){
                 this->_move_in_plane.Parameters.Position.X = _route_position_generator.position.X;
                 this->_move_in_plane.Parameters.Position.Y = _route_position_generator.position.Y;
                 this->_move_in_plane.Execute = 1;
-                log_routed_move_start(this->get_shuttle_id(), this->_next_destination->get_name());
+                if(this->_optional_waypoint.expired()){
+                    log_routed_move_start(this->get_shuttle_id(), this->_next_destination->get_name());
+                }
+                else{
+                    log_routed_move_waypoint(this->get_shuttle_id(), this->_next_destination->get_name(), this->_optional_waypoint.lock()->get_name());
+                }
                 this->_log_event(this->_route_position_generator.event);
                 this->_state = STATE_ROUTED_MOVE;
             }

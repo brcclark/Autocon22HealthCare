@@ -19,6 +19,8 @@ bool log_path_start(UINT shuttle, std::string path);
 
 bool log_waypoint_move(UINT shuttle, std::string waypoint);
 
+bool log_routed_move_waypoint(UINT shuttle, std::string destination, std::string waypoint);
+
 bool log_asm_get_sh_start(void);
 
 bool log_asm_get_sh_done(UINT shuttles);

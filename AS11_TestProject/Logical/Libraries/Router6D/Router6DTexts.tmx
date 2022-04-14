@@ -25,9 +25,19 @@
         <seg>Shuttle {1} is now moving to waypoint {2}.</seg>
       </tuv>
     </tu>
+    <tu tuid="1611595790">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} has started a routed move to {2} via waypoint {3}.</seg>
+      </tuv>
+    </tu>
     <tu tuid="1611595796">
       <tuv xml:lang="en">
         <seg>Shuttle {1} has arrived at {2}.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1611595797">
+      <tuv xml:lang="en">
+        <seg>Shuttle {1} route interrupted to new destination {2}.</seg>
       </tuv>
     </tu>
     <tu tuid="1611595806">

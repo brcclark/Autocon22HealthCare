@@ -199,6 +199,8 @@ class Shuttle : public RouterSemBase, public std::enable_shared_from_this<Shuttl
     UDINT _user_data_size;
     //! Route position generator
     ShuttleRoutePositionGenerator _route_position_generator;
+    //! Optional route waypoint
+    std::weak_ptr<Waypoint> _optional_waypoint;
 
 };    
 
