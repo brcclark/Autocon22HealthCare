@@ -192,7 +192,8 @@ void _CYCLIC ProgramCyclic(void)
 						state = DEF_LINK_WAYPOINTS_TO_DESTS;
 					}
 					else{
-						
+						i++;
+						state = DEF_LINK_WAYPOINTS_TO_DESTS;
 					}
 				}
 				else{
