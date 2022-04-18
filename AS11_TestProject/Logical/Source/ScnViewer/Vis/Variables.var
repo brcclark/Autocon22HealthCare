@@ -1,0 +1,5 @@
+VAR
+	i : USINT;
+	Vis : VisTyp;
+	shInfoFB : ARRAY[0..MAX_SH_IDX] OF MC_BR_ShReadInfo_Acp6D;
+END_VAR

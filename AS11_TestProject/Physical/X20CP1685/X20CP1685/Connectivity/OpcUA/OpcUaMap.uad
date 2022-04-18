@@ -24,6 +24,7 @@
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
         <Variable Name="gSysRecipe" AutomaticEnable="True" />
+        <Variable Name="gAcp6DIf" AutomaticEnable="True" />
       </GlobalVariables>
       <Task Name="RDICore">
         <Variable Name="Vis" AutomaticEnable="True">
@@ -121,6 +122,20 @@
               <Variable Name="ShuttleIDString" EnableArrayElements="True" />
             </Variable>
           </Variable>
+        </Variable>
+      </Task>
+      <Task Name="RoutingDef">
+        <Variable Name="Init" />
+        <Variable Name="fbs">
+          <Variable Name="recoverFb">
+            <Variable Name="Execute" />
+          </Variable>
+        </Variable>
+      </Task>
+      <Task Name="Stations" />
+      <Task Name="Vis">
+        <Variable Name="Vis" AutomaticEnable="True">
+          <Variable Name="Shuttles" EnableArrayElements="True" />
         </Variable>
       </Task>
     </Module>
