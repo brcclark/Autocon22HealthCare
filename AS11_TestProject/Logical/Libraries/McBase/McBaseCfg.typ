@@ -4,9 +4,6 @@ TYPE
 		( (*Configuration system enum*)
 		mcCFG_NONE := 0, (*None -*)
 		mcCFG_MMCFG := 10, (*Associated with data type McCfgMMCfgType*)
-		mcCFG_ALMI := 100, (*Associated with data type McCfgAlmIntType*)
-		mcCFG_OBJ_HIER_GCS := 210, (*Associated with data type McCfgObjHierGCSType*)
-		mcCFG_OBJ_HIER := 200, (*Associated with data type McCfgObjHierType*)
 		mcCFG_WS := 800, (*Associated with data type McCfgWorkspaceType*)
 		mcCFG_TOOLTBL := 900, (*Tooltable -*)
 		mcCFG_FRMTBL := 1000, (*Associated with data type McCfgFrmTblType*)
@@ -15,12 +12,6 @@ TYPE
 		mcCFG_LIMSET_LIN := 1411, (*Associated with data type McCfgLimSetLinType*)
 		mcCFG_LIMSET_ROT := 1412, (*Associated with data type McCfgLimSetRotType*)
 		mcCFG_PROC_PT_LST := 1600, (*Associated with data type McCfgProcPtLstType*)
-		mcCFG_TRK_PATH := 1700, (*Associated with data type McCfgTrkPathType*)
-		mcCFG_PICK_CORE := 2100, (*Associated with data type MpCfgPickCoreType*)
-		mcCFG_PICK_JOB := 2101, (*Associated with data type MpCfgPickJobType*)
-		mcCFG_PICK_OP_MOD := 2102, (*Associated with data type MpCfgPickOpModType*)
-		mcCFG_PICK_REG := 2110, (*Associated with data type MpCfgPickRegType*)
-		mcCFG_PICK_OBJ_LST := 2120, (*Associated with data type MpCfgPickObjLstType*)
 		mcCFG_AX := 10000, (*Associated with data type McCfgAxType*)
 		mcCFG_AX_BASE_TYP := 10011, (*Associated with data type McCfgAxBaseTypType*)
 		mcCFG_AX_MOVE_LIM := 10012, (*Associated with data type McCfgAxMoveLimType*)
@@ -32,6 +23,7 @@ TYPE
 		mcCFG_AX_FEAT_ALT_VAL_SRC := 10104, (*Associated with data type McCfgAxFeatAltValSrcType*)
 		mcCFG_AX_FEAT_BRK := 10105, (*Associated with data type McCfgAxFeatBrkType*)
 		mcCFG_AX_FEAT_MECH_DEV_COMP := 10106, (*Associated with data type McCfgAxFeatMechDevCompType*)
+		mcCFG_AX_FEAT_ACP_NETW_ERR_REAC := 10108, (*Associated with data type McCfgAxFeatAcpNetwErrReacType*)
 		mcCFG_MOT_SYN := 10500, (*Associated with data type McCfgMotSynType*)
 		mcCFG_MOT_INDUCT := 10501, (*Associated with data type McCfgMotInductType*)
 		mcCFG_IO_PL_IN_CARD := 10510, (*IOPlugInCard -*)
@@ -134,7 +126,6 @@ TYPE
 		mcCFG_AXGRP_FEAT_PATH_PREVIEW := 21122, (*Associated with data type McCfgAxGrpFeatPathPreviewType*)
 		mcCFG_AXGRP_FEAT_TAN_TOOL := 21124, (*Associated with data type McCfgAxGrpFeatTanToolType*)
 		mcCFG_AXGRP_FEAT_REV_MOVE := 21125, (*Associated with data type McCfgAxGrpFeatRevMoveType*)
-		mcCFG_AXGRP_FEAT_TRK := 21126, (*Associated with data type McCfgAxGrpFeatTrkType*)
 		mcCFG_ASM := 31000, (*Associated with data type McCfgAsmType*)
 		mcCFG_ASM_FEAT_CPLG := 31101, (*Associated with data type McCfgAsmFeatCplgType*)
 		mcCFG_ASM_FEAT_SIM_SH_DEF := 31102, (*Associated with data type McCfgAsmFeatSimShDefType*)
@@ -174,8 +165,7 @@ TYPE
 		mcCFG_MS_5AX_ROB_B := 52502, (*Associated with data type McCfgMS5AxRobBType*)
 		mcCFG_MS_6AX_ROB_A := 52601, (*Associated with data type McCfgMS6AxRobAType*)
 		mcCFG_MS_6AX_ROB_B := 52602, (*Associated with data type McCfgMS6AxRobBType*)
-		mcCFG_MS_6AX_ROB_C := 52603, (*Associated with data type McCfgMS6AxRobCType*)
-		mcCFG_MS_6AX_ROB_D := 52604 (*Associated with data type McCfgMS6AxRobDType*)
+		mcCFG_MS_6AX_ROB_C := 52603 (*Associated with data type McCfgMS6AxRobCType*)
 		);
 	McCfgUnboundedArrayType : STRUCT (*General purpose datatype*)
 		NumberOfElements : UDINT;
@@ -266,35 +256,12 @@ TYPE
 		Used : McMMCLogSelUseType; (*Type mcMMCLS_USE settings*)
 	END_STRUCT;
 	McMMCLogType : STRUCT
-		mappMotionLoggerModuleSize : STRING[250]; (*[kByte]*)
 		Selective : McMMCLogSelType; (*Define which logging areas should be visible*)
 	END_STRUCT;
 	McCfgMMCfgType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_MMCFG*)
 		Processing : McMMCProcType;
 		Logger : McMMCLogType;
 	END_STRUCT;
-	McALMIEnum :
-		( (*Alarms selector setting*)
-		mcALMI_NONE := 0, (*None -*)
-		mcALMI_SHARED_ALM := 1, (*Shared alarms -*)
-		mcALMI_MPALARMX := 2 (*MpAlarmX - Advanced alarm system MpAlarmX*)
-		);
-	McALMISharedAlmType : STRUCT (*Type mcALMI_SHARED_ALM settings*)
-		ConfigPath : STRING[250];
-		ConfigLocation : STRING[250];
-	END_STRUCT;
-	McALMIType : STRUCT
-		Type : McALMIEnum; (*Alarms selector setting*)
-		SharedAlarms : McALMISharedAlmType; (*Type mcALMI_SHARED_ALM settings*)
-	END_STRUCT;
-	McCfgAlmIntType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_ALMI*)
-		Alarms : McALMIType;
-	END_STRUCT;
-	McOHGCSOTypEnum :
-		( (*Type selector setting*)
-		mcOHGCSOT_CMPT := 0, (*Component - Object type component*)
-		mcOHGCSOT_STD_FRM := 1 (*Standard frame - Object type standard frame*)
-		);
 	McCfgTransXYZType : STRUCT (*Translation parameters*)
 		X : LREAL; (*Translation in X direction [measurement units]*)
 		Y : LREAL; (*Translation in Y direction [measurement units]*)
@@ -304,115 +271,6 @@ TYPE
 		Angle1 : LREAL; (*Rotation around the first coordinate axis of the rotation order [measurement units]*)
 		Angle2 : LREAL; (*Rotation around the second coordinate axis of the rotation order [measurement units]*)
 		Angle3 : LREAL; (*Rotation around the third coordinate axis of the rotation order [measurement units]*)
-	END_STRUCT;
-	McOHGCSOTCType : STRUCT (*Type mcOHGCSOT_CMPT settings*)
-		ComponentReference : McCfgReferenceType;
-		Translation : McCfgTransXYZType; (*Translation parameters*)
-		Orientation : McCfgOrientType; (*Orientation parameters*)
-	END_STRUCT;
-	McOHGCSOTSFType : STRUCT (*Type mcOHGCSOT_STD_FRM settings*)
-		FrameName : STRING[250]; (*Standard frame name*)
-		Translation : McCfgTransXYZType; (*Translation parameters*)
-		Orientation : McCfgOrientType; (*Orientation parameters*)
-	END_STRUCT;
-	McOHGCSOTypType : STRUCT (*Object type*)
-		Type : McOHGCSOTypEnum; (*Type selector setting*)
-		Component : McOHGCSOTCType; (*Type mcOHGCSOT_CMPT settings*)
-		StandardFrame : McOHGCSOTSFType; (*Type mcOHGCSOT_STD_FRM settings*)
-	END_STRUCT;
-	McOHGCSObjType : STRUCT
-		ParentObjectName : STRING[250]; (*Name of the parent object*)
-		Type : McOHGCSOTypType; (*Object type*)
-	END_STRUCT;
-	McOHGCSType : STRUCT (*Systemwide reference frame*)
-		Object : McCfgUnboundedArrayType;
-	END_STRUCT;
-	McCfgObjHierGCSType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_OBJ_HIER_GCS*)
-		GlobalCoordinateSystem : McOHGCSType; (*Systemwide reference frame*)
-	END_STRUCT;
-	McOHMeasUnitLenMeasUnitEnum :
-		( (*Defines the measurement unit for length*)
-		mcOHMULMU_MILL := 5066068, (*Millimeters*)
-		mcOHMULMU_M := 5067858, (*Meters*)
-		mcOHMULMU_INCH := 4804168 (*Inches*)
-		);
-	McOHMeasUnitAngMeasUnitEnum :
-		( (*Defines the measurement unit for angles*)
-		mcOHMUAMU_DEG := 17476, (*Degrees*)
-		mcOHMUAMU_GRAD := 4274481, (*Gradians*)
-		mcOHMUAMU_REV := 5059636 (*Revolutions*)
-		);
-	McOHMeasUnitType : STRUCT (*Defines the measurement units*)
-		LengthMeasurementUnit : McOHMeasUnitLenMeasUnitEnum; (*Defines the measurement unit for length*)
-		AngleMeasurementUnit : McOHMeasUnitAngMeasUnitEnum; (*Defines the measurement unit for angles*)
-	END_STRUCT;
-	McOHRotDescEnum :
-		( (*Rotation description selector setting*)
-		mcOHRD_CA := 0, (*Cardan - Cardan angles*)
-		mcOHRD_EU := 1, (*Euler - Euler angles*)
-		mcOHRD_NAUTICAL := 2, (*Nautical - Nautical notation*)
-		mcOHRD_TAIT_BRYAN := 3 (*Tait Bryan - Tait Bryan notation*)
-		);
-	McOHRotDescCaRotOrdEnum :
-		( (*Order of rotations*)
-		mcOHRDCRO_XYZ := 0, (*XYZ - Rotation XYZ*)
-		mcOHRDCRO_XZY := 1, (*XZY - Rotation XZY*)
-		mcOHRDCRO_YXZ := 2, (*YXZ - Rotation YXZ*)
-		mcOHRDCRO_YZX := 3, (*YZX - Rotation YZX*)
-		mcOHRDCRO_ZXY := 4, (*ZXY - Rotation ZXY*)
-		mcOHRDCRO_ZYX := 5 (*ZYX - Rotation ZYX*)
-		);
-	McOHRotDescAngIntEnum :
-		( (*Interpretation of angles*)
-		mcOHRDAI_INTRINSIC := 0, (*Intrinsic - Intrinsic interpretation of angles*)
-		mcOHRDAI_EXTRINSIC := 1 (*Extrinsic - Extrinsic interpretation of angles*)
-		);
-	McOHRotDescRotMatIntEnum :
-		( (*Interpretation of angles for rotation matrix*)
-		mcOHRDRMI_DIR := 0, (*Direct - Direct interpretation of angles for rotation matrix*)
-		mcOHRDRMI_INDIRECT := 1 (*Indirect - Indirect interpretation of angles for rotation matrix*)
-		);
-	McOHRotDescMathSenseEnum :
-		( (*Mathematical sense of angles*)
-		mcOHRDMS_POS := 0, (*Positive - Positive mathematical sense of angles for rotation matrix*)
-		mcOHRDMS_NEG := 1 (*Negative - Negative mathematical sense of angles for rotation matrix*)
-		);
-	McOHRotDescCaType : STRUCT (*Type mcOHRD_CA settings*)
-		RotationOrder : McOHRotDescCaRotOrdEnum; (*Order of rotations*)
-		AngleInterpretation : McOHRotDescAngIntEnum; (*Interpretation of angles*)
-		RotationMatrixInterpretation : McOHRotDescRotMatIntEnum; (*Interpretation of angles for rotation matrix*)
-		MathematicalSense : McOHRotDescMathSenseEnum; (*Mathematical sense of angles*)
-	END_STRUCT;
-	McOHRotDescEuRotOrdEnum :
-		( (*Order of rotations*)
-		mcOHRDERO_XYZ := 0, (*XYZ - Rotation XYZ*)
-		mcOHRDERO_XZY := 1, (*XZY - Rotation XZY*)
-		mcOHRDERO_YXZ := 2, (*YXZ - Rotation YXZ*)
-		mcOHRDERO_YZX := 3, (*YZX - Rotation YZX*)
-		mcOHRDERO_ZXY := 4, (*ZXY - Rotation ZXY*)
-		mcOHRDERO_ZYX := 5, (*ZYX - Rotation ZYX*)
-		mcOHRDERO_XYX := 6, (*XYX - Rotation XYX*)
-		mcOHRDERO_XZX := 7, (*XZX - Rotation XZX*)
-		mcOHRDERO_YXY := 8, (*YXY - Rotation YXY*)
-		mcOHRDERO_YZY := 9, (*YZY - Rotation YZY*)
-		mcOHRDERO_ZXZ := 10, (*ZXZ - Rotation ZXZ*)
-		mcOHRDERO_ZYZ := 11 (*ZYZ - Rotation ZYZ*)
-		);
-	McOHRotDescEuType : STRUCT (*Type mcOHRD_EU settings*)
-		RotationOrder : McOHRotDescEuRotOrdEnum; (*Order of rotations*)
-		AngleInterpretation : McOHRotDescAngIntEnum; (*Interpretation of angles*)
-		RotationMatrixInterpretation : McOHRotDescRotMatIntEnum; (*Interpretation of angles for rotation matrix*)
-		MathematicalSense : McOHRotDescMathSenseEnum; (*Mathematical sense of angles*)
-	END_STRUCT;
-	McOHRotDescType : STRUCT (*Defines the description of the rotation*)
-		Type : McOHRotDescEnum; (*Rotation description selector setting*)
-		Cardan : McOHRotDescCaType; (*Type mcOHRD_CA settings*)
-		Euler : McOHRotDescEuType; (*Type mcOHRD_EU settings*)
-	END_STRUCT;
-	McCfgObjHierType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_OBJ_HIER*)
-		MeasurementUnits : McOHMeasUnitType; (*Defines the measurement units*)
-		RotationDescription : McOHRotDescType; (*Defines the description of the rotation*)
-		GlobalCoordinateSystem : McOHGCSType; (*Systemwide reference frame*)
 	END_STRUCT;
 	McWSCubeDimType : STRUCT (*Dimension parameters*)
 		X : LREAL; (*Dimension of the cuboid in the x-direction (endpoint) [measurement units]*)
@@ -693,13 +551,6 @@ TYPE
 	McPTCEnum :
 		( (*Cyclic task class for command processing*)
 		mcPTC_CYC_1 := 1, (*Cyclic #1 - Task class 1*)
-		mcPTC_CYC_2 := 2, (*Cyclic #2 - Task class 2*)
-		mcPTC_CYC_3 := 3, (*Cyclic #3 - Task class 3*)
-		mcPTC_CYC_4 := 4, (*Cyclic #4 - Task class 4*)
-		mcPTC_CYC_5 := 5, (*Cyclic #5 - Task class 5*)
-		mcPTC_CYC_6 := 6, (*Cyclic #6 - Task class 6*)
-		mcPTC_CYC_7 := 7, (*Cyclic #7 - Task class 7*)
-		mcPTC_CYC_8 := 8, (*Cyclic #8 - Task class 8*)
 		mcPTC_USE_MP_MOT_SET := 255 (*Use mapp Motion setting - Use the defined setting from the mapp Motion configuration or Task class 1 if no mapp Motion Configuration exists*)
 		);
 	McCfgVarDatTypEnum :

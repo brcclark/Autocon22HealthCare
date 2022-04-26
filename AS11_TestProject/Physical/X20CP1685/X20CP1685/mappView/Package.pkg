@@ -3,6 +3,8 @@
 <Package SubType="mappViewControl" PackageType="mappViewControl" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="File">Config.mappviewcfg</Object>
+    <Object Type="File">contentMain.binding</Object>
+    <Object Type="File">demo.vis</Object>
     <Object Type="Package">RDI</Object>
   </Objects>
 </Package>

@@ -23,10 +23,11 @@
   </Objects>
   <Configuration ModuleId="X20CP1685">
     <AutomationRuntime Version="B4.91" />
-    <Build GccVersion="6.3.0" PreBuildStep="PowerShell -ExecutionPolicy ByPass -File $(WIN32_AS_PROJECT_PATH)\Logical\Source\BuildVersion\BuildVersion.ps1 &quot;$(WIN32_AS_PROJECT_PATH)&quot; &quot;$(AS_VERSION)&quot; &quot;$(AS_USER_NAME)&quot; &quot;$(AS_PROJECT_NAME)&quot; &quot;$(AS_CONFIGURATION)&quot; &quot;$(AS_BUILD_MODE)&quot;" />
+    <Build GccVersion="6.3.0" IecAdditionalBuildOptions="" PreBuildStep="PowerShell -ExecutionPolicy ByPass -File $(WIN32_AS_PROJECT_PATH)\Logical\Source\BuildVersion\BuildVersion.ps1 &quot;$(WIN32_AS_PROJECT_PATH)&quot; &quot;$(AS_VERSION)&quot; &quot;$(AS_USER_NAME)&quot; &quot;$(AS_PROJECT_NAME)&quot; &quot;$(AS_CONFIGURATION)&quot; &quot;$(AS_BUILD_MODE)&quot;" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Safety SafetyRelease="0.0" />
-    <Transfer AddToUserPart="False" AdditionalUserDir="\Logical\UserPartition" AllowDowngrade="True" AllowInitialTransfer="False" AllowPartitioning="False" ExecuteInitExitProgram="False" ForceInitialTransfer="False" IdentificationTypeValue="" IgnoreVersion="True" KeepNonVolatileMemory="False" ModuleSystemForPip="" PreserveVariableValues="True" ProjectConsistent="False" RebootDuringTransfer="False" SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" TargetIdentificationType="Always" TryToBootInRunMode="False" UserFilesIgnoreDifference="True" />
+    <Transfer AddToUserPart="False" AdditionalUserDir="\Logical\UserPartition" AllowDowngrade="True" AllowInitialTransfer="False" AllowPartitioning="False" ExecuteInitExitProgram="True" ForceInitialTransfer="False" IdentificationTypeValue="" IgnoreVersion="True" KeepNonVolatileMemory="False" ModuleSystemForPip="" PreserveVariableValues="False" ProjectConsistent="True" RebootDuringTransfer="False" SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" TargetIdentificationType="Always" TryToBootInRunMode="False" UserFilesIgnoreDifference="True" />
     <Vc FirmwareVersion="V4.72.2" />
+    <OnlineConfiguration Name="ARsim_TCPIP" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=1" ConnectionParameters="/COMT=2500 /RT=1000 /AM=* /DAIP=192.168.10.81 /REPO=11160 /ANSL=1" Description="" />
   </Configuration>
 </Cpu>

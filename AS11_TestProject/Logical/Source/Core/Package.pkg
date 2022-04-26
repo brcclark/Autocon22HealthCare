@@ -7,6 +7,9 @@
     <Object Type="Program" Language="IEC">Acp6DCtrl</Object>
     <Object Type="Program" Language="IEC">Program</Object>
     <Object Type="Program" Language="ANSIC">RoutingDefinitions</Object>
+    <Object Type="Program" Language="ANSIC">DyeTipStations</Object>
     <Object Type="Program" Language="ANSIC">Stations</Object>
+    <Object Type="Program" Language="ANSIC">PipetteStations</Object>
+    <Object Type="Library" Language="ANSIC">StnLogic</Object>
   </Objects>
 </Package>

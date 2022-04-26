@@ -4,20 +4,6 @@ TYPE
 		In : Mc6DControllerFBIOType; (*Inputs*)
 		Out : Mc6DControllerFBIOType; (*Outputs*)
 	END_STRUCT;
-	UserDataType : 	STRUCT 
-		State : UserDataStateEnum;
-		Pass : BOOL;
-		Fail : BOOL;
-	END_STRUCT;
-	UserDataStateEnum : 
-		(
-		SHUTTLE_EMPTY,
-		SHUTTLE_TRAY,
-		SHUTTLE_BOTTOM_LOADED,
-		SHUTTLE_ELECTRONICS_LOADED,
-		SHUTTLE_ASSEMBLED,
-		SHUTTLE_ASSEMBLED_IMAGING
-		);
 END_TYPE
 
 (************************* Main If Typ*)
@@ -34,17 +20,21 @@ TYPE
 		ErrorReset : BOOL;
 	END_STRUCT;
 	SystemRecipeIfTyp : 	STRUCT 
+		DefaultVel : REAL;
+		DefaultAccel : REAL;
+		DefaultWaitTime : UDINT;
 		StartupPars : StartupPars;
-	END_STRUCT;
-	StirDemoPars : 	STRUCT 
-		Velocity : REAL;
-		Accel : REAL;
-		Decel : REAL;
-		MoveCount : USINT;
-		MoveList : ARRAY[0..maxMOVES_ARRAY]OF Acp6DMoveListTyp;
+		WellRecipe : ARRAY[0..1]OF FillRecipeTyp;
+		PipettePars : PipettePars;
 	END_STRUCT;
 	StartupPars : 	STRUCT 
 		MoveAsyncPars : McAcp6DMoveInPlaneAsyncParType;
+	END_STRUCT;
+	PipettePars : 	STRUCT 
+		HomePosition : REAL;
+		Vel : REAL;
+		SampleDistance : REAL;
+		WellDistance : REAL;
 	END_STRUCT;
 END_TYPE
 
@@ -95,6 +85,7 @@ TYPE
 	ShuttleIfCfgTyp : 	STRUCT 
 		ID : UINT;
 		Shuttle : Mc6DShuttleType;
+		RouterShuttle : rl6dShuttleType;
 	END_STRUCT;
 	ShuttleIfStsTyp : 	STRUCT 
 		Available : BOOL;
@@ -120,16 +111,6 @@ TYPE
 		Name : STRING[80];
 		Length : USINT;
 	END_STRUCT;
-	DestinationsEnum : 
-		(
-		DEST_DEFAULT,
-		DEST_INCUBATOR,
-		DEST_ANALYZER,
-		DEST_PIPETTE_1,
-		DEST_PIPETTE_2,
-		DEST_TIPS,
-		DEST_DYE
-		);
 	WaypointTyp : 	STRUCT 
 		Position : rl6dPositionType;
 		Name : STRING[80];
@@ -146,4 +127,58 @@ TYPE
 		WP_4,
 		WP_5
 		);
+	StationsIfTyp : 	STRUCT 
+		Cmd : StationsCmdTyp;
+		Par : StationsParTyp;
+		Sts : StationsStsTyp;
+	END_STRUCT;
+	StationsCmdTyp : 	STRUCT 
+		Enable : BOOL;
+		Run : BOOL;
+		Recover : BOOL;
+		RequestIncubator : BOOL;
+		RequestPipette : ARRAY[0..1]OF BOOL;
+		RequestDye : BOOL;
+		RequestTip : BOOL;
+		RequestFreshShuttle : BOOL;
+		RequestAnalyzer : BOOL;
+	END_STRUCT;
+	StationsParTyp : 	STRUCT 
+		Incubator : IncubatorParTyp;
+		Analyzer : IncubatorParTyp;
+		Pipette : ARRAY[0..1]OF PipetteParTyp;
+		Dye : DyeTipParTyp;
+		Tip : DyeTipParTyp;
+	END_STRUCT;
+	PipetteParTyp : 	STRUCT 
+		NextStation : DestinationsEnum;
+		Waypoint : WaypointListEnum;
+		ShuttleType : ShuttleType;
+	END_STRUCT;
+	DyeTipParTyp : 	STRUCT 
+		RequestDestination : DestinationsEnum;
+		Waypoint : WaypointListEnum;
+	END_STRUCT;
+	IncubatorParTyp : 	STRUCT 
+		SampleType : ColorEnum;
+		NextStation : DestinationsEnum;
+		Waypoint : WaypointListEnum;
+	END_STRUCT;
+	StationsStsTyp : 	STRUCT 
+		RoutingInitalized : BOOL;
+		IncubatorShuttlePresent : BOOL;
+		IncubatorActive : BOOL;
+		PipetteActive : ARRAY[0..1]OF BOOL;
+		PipetteNeedSample : ARRAY[0..1]OF BOOL;
+		PipetteShuttlePresent : ARRAY[0..1]OF BOOL;
+		PipetteReadyForShuttle : ARRAY[0..1]OF BOOL;
+		TipsShuttlePresent : BOOL;
+		DyeShuttlePresent : BOOL;
+		AnalyzerShuttlePresent : BOOL;
+	END_STRUCT;
+	AnalyzerParTyp : 	STRUCT 
+		NextStation : DestinationsEnum;
+		Waypoint : WaypointListEnum;
+		PipetteIndex : USINT;
+	END_STRUCT;
 END_TYPE

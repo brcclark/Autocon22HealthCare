@@ -158,16 +158,6 @@ TYPE
 		MaxMotorTemp : REAL; (*Maximum Motor temperature of all segments. Motor temperature is equivalemt to the top middle surface temperature of a segment*)
 	END_STRUCT;
 	
-	McAcp6DSerialNumType : STRUCT
-		SerialNumHigh	: UDINT; (* High 32 bits of serial number (left 4 bytes)*)
-		SerialNumLow	: UDINT; (* Low 32 bits of serial number (right 4 bytes)*)
-	END_STRUCT;
-	
-	McAcp6DVersionNumType : STRUCT
-		VersionNumHigh	: UDINT; (* High 32 bits of version number (left 4 bytes)*)
-		VersionNumLow	: UDINT; (* Low 32 bits of version number (right 4 bytes)*)
-	END_STRUCT;
-	
 	McAcp6DSegInfoType : 	STRUCT 
 		Power : REAL; (*Total power consumption. Sum of all segment power.*)
 		CPUTemp : REAL; (*CPU temperature of all segments. CPU temperature refers to the internal CPU inside the segment.*)
@@ -476,12 +466,7 @@ TYPE
 		Rz : REAL;
 	END_STRUCT;
 	
-	McAcp6DShVelocityType : STRUCT
-		Vx : REAL;
-		Vy : REAL;
-		Vz : REAL;
-		Vxyz : REAL;
-	END_STRUCT;
+	
 	
 	McAcp6DShForceType : STRUCT
 		Fx : REAL;
@@ -508,7 +493,6 @@ TYPE
 		ShuttleID 	: UINT;
 		State 		: McAcp6DShStateEnum;
 		Position	: McAcp6DShPositionType;
-		Velocity	: McAcp6DShVelocityType;
 	END_STRUCT;
 	
 	McAcp6DShGetInfoType : STRUCT
@@ -574,6 +558,7 @@ TYPE
 		Z : REAL;	
 	END_STRUCT;
 	
+	
 	McAcp6DShStereotypeParType: STRUCT
 		Name : STRING[33];
 		ShuttleType : McAcp6DShTypesEnum;
@@ -596,40 +581,37 @@ TYPE
 		MsgPartNStatus : DINT;
 	END_STRUCT;
 	
-	McAcp6DShWaitFBDITriggerEnum :
-	(
-		mcACP6D_SH_WAIT_FBDI_RE 	:= 0,	(* Rising edge *)
-		mcACP6D_SH_WAIT_FBDI_FE 	:= 1,	(* Falling edge *)
-		mcACP6D_SH_WAIT_FBDI_HL 	:= 2,	(* High level *)
-		mcACP6D_SH_WAIT_FBDI_LL 	:= 3	(* Low level *)
-		);
+	McAcp6DShuttleMonData : STRUCT (*Shuttles*)
+		Available : BOOL;
+		Position : McPosType;
+		Orientation : McOrientType;
+		Type : USINT;
+		UserData : UDINT;
+		Index : UINT;
+		State : McAcp6DShStateEnum; (* Current state of the shuttle *)
+	END_STRUCT;
 	
-	McAcp6DShWaitCmdLbTriggerEnum :
-	(
-		mcACP6D_SH_WAIT_CMDLB_START	:= 0,	(* Start of command execution *)
-		mcACP6D_SH_WAIT_CMDLB_END	:= 1,	(* End of command execution *)
-		mcACP6D_SH_WAIT_CMDLB_ANY	:= 2	(* Any point during command execution *)
-	);
-	
-	McAcp6DShWaitCmdLbLabelEnum :
-	(
-		mcACP6D_SH_WAIT_CMDLB_REGULAR	:= 0,	(* Regular Motion Cmd Label *)
-		mcACP6D_SH_WAIT_CMDLB_MACRO		:= 1	(* Run Macro Cmd Label *)
-	);
-	
-	McAcp6DShWaitDispModeEnum :
-	(
-		mcACP6D_SH_WAIT_DISP_X_ONLY		:= 0,	(* Using X only *)
-		mcACP6D_SH_WAIT_DISP_Y_ONLY		:= 1,	(* Using Y only *)
-		mcACP6D_SH_WAIT_DISP_STRLINE	:= 2	(* A straight line of arbitrary orientation *)
-	);
-	
-	McAcp6DShWaitDispTypeEnum :
-	(
-		mcACP6D_SH_WAIT_DISP_GT			:= 0,	(* Greater than boundary value *)
-		mcACP6D_SH_WAIT_DISP_LT			:= 1,	(* Less than boundary value *)
-		mcACP6D_SH_WAIT_DISP_RE			:= 2,	(* Rising above boundary value *)
-		mcACP6D_SH_WAIT_DISP_FE			:= 3	(* Falling below boundary value *)
-	);
+	McAcp6DAssemblyMonData : STRUCT
+		Shuttle : ARRAY[0..79] OF McAcp6DShuttleMonData;
+	END_STRUCT;
+
+	McAcp6DShuttleVisData : STRUCT
+		Available : BOOL; (* the shuttle is displayed in the scene *)
+		Reserved : ARRAY[0..2] OF USINT;
+		PositionX : REAL; (* X position of the shuttle *)
+		PositionY : REAL; (* Y position of the shuttle *)
+		PositionZ : REAL; (* Z position of the shuttle *)
+		RotationX : REAL; (* rotation of the shuttle around X axis *)
+		RotationY : REAL; (* rotation of the shuttle around Y axis *)
+		RotationZ : REAL; (* rotation of the shuttle around Z axis *)
+		Text : STRING[31]; (* text to be displayed for the shuttle *)
+		Color : ARRAY[0..2] OF REAL; (* Red, Green and Blue component of the shuttle color *)
+		Type : USINT; (* Shuttle type *)
+	END_STRUCT;
+
+	McAcp6DAssemblyVisData  : STRUCT (* representation of visualization communication buffer *)
+		Shuttle : ARRAY[0..79] OF McAcp6DShuttleVisData; (* shuttles *)
+	END_STRUCT;
+
 	
 END_TYPE

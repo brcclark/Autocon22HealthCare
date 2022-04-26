@@ -6,6 +6,9 @@ TYPE
 	ShuttleVisTyp : 	STRUCT 
 		Visible : BOOL;
 		Position : VisPositionTyp;
+		ShuttleColor : ColorEnum;
+		Wells : ARRAY[0..17]OF WellTyp;
+		ToolVisible : BOOL;
 	END_STRUCT;
 	VisPositionTyp : 	STRUCT 
 		X : REAL;

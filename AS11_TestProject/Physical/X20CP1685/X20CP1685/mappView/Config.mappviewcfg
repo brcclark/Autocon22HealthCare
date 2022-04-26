@@ -15,6 +15,7 @@
       <Group ID="DiagnosticPageConf">
         <Selector ID="DiagnosticPageSelection" Value="1" />
       </Group>
+      <Selector ID="Deployment" Value="DeploymentPLC" />
     </Group>
     <Group ID="OpcUa">
       <Property ID="ServerConnectionTimeout" Value="5000" />
@@ -31,9 +32,10 @@
         <Property ID="cachingSlots" Value="200" />
         <Property ID="preserveOldValues" Value="TRUE" />
       </Group>
-      <Property ID="defaultVisu" Value="Acp6D_HMI" />
+      <Property ID="defaultVisu" Value="visDemo" />
       <Group ID="Widget">
         <Selector ID="renderingPolicy" Value="1" />
+        <Selector ID="securityPolicy" Value="1" />
       </Group>
     </Group>
   </Element>

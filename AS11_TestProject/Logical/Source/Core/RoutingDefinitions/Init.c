@@ -11,6 +11,14 @@ void _INIT ProgramInit(void)
 {
 	//Define the destinations & their paths
 	
+	//*******Default Destination
+	brsstrcpy(&gDests[DEST_DEFAULT].StationName,&"Default");
+	gDests[DEST_DEFAULT].Position.X = 0.18;
+	gDests[DEST_DEFAULT].Position.Y = 0.18;
+	gDests[DEST_DEFAULT].RecoveryPts.X = 0.18;
+	gDests[DEST_DEFAULT].RecoveryPts.Y = 0.18;
+	
+	
 	//*******Incubator Destination
 	brsstrcpy(&gDests[DEST_INCUBATOR].StationName,&"Incubator");
 	gDests[DEST_INCUBATOR].Position.X = 0.06;
@@ -33,21 +41,21 @@ void _INIT ProgramInit(void)
 	
 	//******Analyzer Destination
 	brsstrcpy(&gDests[DEST_ANALYZER].StationName,&"Analyzer");
-	gDests[DEST_ANALYZER].Position.X = 0.66;
-	gDests[DEST_ANALYZER].Position.Y = 0.06;
-	gDests[DEST_ANALYZER].RecoveryPts.X = 0.66;
-	gDests[DEST_ANALYZER].RecoveryPts.Y = 0.06;
+	gDests[DEST_ANALYZER].Position.X = 0.06;
+	gDests[DEST_ANALYZER].Position.Y = 0.66;
+	gDests[DEST_ANALYZER].RecoveryPts.X = 0.06;
+	gDests[DEST_ANALYZER].RecoveryPts.Y = 0.66;
 	
 	brsstrcpy(&gDests[DEST_ANALYZER].Entry.Name,&"Analyzer Entry");
 	gDests[DEST_ANALYZER].Entry.PathPoints[0].X = 0.06;
-	gDests[DEST_ANALYZER].Entry.PathPoints[0].Y = 0.42;
+	gDests[DEST_ANALYZER].Entry.PathPoints[0].Y = 0.30;
 	gDests[DEST_ANALYZER].Entry.Length = 1;
 	
 	brsstrcpy(&gDests[DEST_ANALYZER].Exit.Name,&"Analyzer Exit");
 	gDests[DEST_ANALYZER].Exit.PathPoints[0].X = 0.18;
 	gDests[DEST_ANALYZER].Exit.PathPoints[0].Y = 0.66;
-	gDests[DEST_ANALYZER].Entry.PathPoints[1].X = 0.42;
-	gDests[DEST_ANALYZER].Entry.PathPoints[1].Y = 0.42;
+	gDests[DEST_ANALYZER].Exit.PathPoints[1].X = 0.18;
+	gDests[DEST_ANALYZER].Exit.PathPoints[1].Y = 0.42;
 	gDests[DEST_ANALYZER].Exit.Length = 2;
 	
 	//******Pipette 1 Destination
@@ -75,12 +83,12 @@ void _INIT ProgramInit(void)
 	gDests[DEST_PIPETTE_2].RecoveryPts.Y = 0.12;
 	
 	brsstrcpy(&gDests[DEST_PIPETTE_2].Entry.Name,&"Pipette 2 Entry");
-	gDests[DEST_PIPETTE_2].Entry.PathPoints[0].X = 0.30;
+	gDests[DEST_PIPETTE_2].Entry.PathPoints[0].X = 0.42;
 	gDests[DEST_PIPETTE_2].Entry.PathPoints[0].Y = 0.12;
 	gDests[DEST_PIPETTE_2].Entry.Length = 1;
 	
 	brsstrcpy(&gDests[DEST_PIPETTE_2].Exit.Name,&"Pipette 2 Exit");
-	gDests[DEST_PIPETTE_2].Exit.PathPoints[0].X = 0.42;
+	gDests[DEST_PIPETTE_2].Exit.PathPoints[0].X = 0.30;
 	gDests[DEST_PIPETTE_2].Exit.PathPoints[0].Y = 0.12;
 	gDests[DEST_PIPETTE_2].Exit.Length = 1;
 	
@@ -93,8 +101,10 @@ void _INIT ProgramInit(void)
 	
 	brsstrcpy(&gDests[DEST_TIPS].Entry.Name,&"Tips Entry");
 	gDests[DEST_TIPS].Entry.PathPoints[0].X = 0.54;
-	gDests[DEST_TIPS].Entry.PathPoints[0].Y = 0.30;
-	gDests[DEST_TIPS].Entry.Length = 1;
+	gDests[DEST_TIPS].Entry.PathPoints[0].Y = 0.42;
+	gDests[DEST_TIPS].Entry.PathPoints[1].X = 0.54;
+	gDests[DEST_TIPS].Entry.PathPoints[1].Y = 0.30;
+	gDests[DEST_TIPS].Entry.Length = 2;
 	
 	brsstrcpy(&gDests[DEST_TIPS].Exit.Name,&"Tips Exit");
 	gDests[DEST_TIPS].Exit.PathPoints[0].X = 0.54;

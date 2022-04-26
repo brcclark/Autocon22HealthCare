@@ -20,8 +20,8 @@
     <Object Type="Library" Language="IEC">Acp6dHlpr</Object>
     <Object Type="Library" Language="binary" Description="This library contains FBKs to use semaphores.">AsSem</Object>
     <Object Type="Library" Language="binary" Description="The ArEventLog library can be used to collect additional error information and for further processing.">ArEventLog</Object>
-    <Object Type="Library" Language="binary" Description="[mapp 6D] Technology package for Acopos 6D ">McAcp6D</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
     <Object Type="Package">Router6D</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
+    <Object Type="Library" Language="binary" Description="[mapp 6D] Technology package for Acopos 6D ">McAcp6D</Object>
   </Objects>
 </Package>

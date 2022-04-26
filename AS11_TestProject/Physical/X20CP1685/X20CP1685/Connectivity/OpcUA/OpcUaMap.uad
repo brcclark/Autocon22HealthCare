@@ -25,6 +25,13 @@
       <GlobalVariables Name="Global Variables">
         <Variable Name="gSysRecipe" AutomaticEnable="True" />
         <Variable Name="gAcp6DIf" AutomaticEnable="True" />
+        <Variable Name="gStationsIf" AutomaticEnable="True">
+          <Variable Name="Sts">
+            <Variable Name="PipetteActive" EnableArrayElements="True" />
+            <Variable Name="PipetteShuttlePresent" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+        <Variable Name="gSystemIf" AutomaticEnable="True" />
       </GlobalVariables>
       <Task Name="RDICore">
         <Variable Name="Vis" AutomaticEnable="True">
@@ -135,8 +142,18 @@
       <Task Name="Stations" />
       <Task Name="Vis">
         <Variable Name="Vis" AutomaticEnable="True">
-          <Variable Name="Shuttles" EnableArrayElements="True" />
+          <Variable Name="Shuttles" EnableArrayElements="True">
+            <Variable Name="Shuttles[0]">
+              <Variable Name="Wells" EnableArrayElements="True" />
+            </Variable>
+            <Variable Name="Shuttles[1]">
+              <Variable Name="Wells" EnableArrayElements="True" />
+            </Variable>
+          </Variable>
         </Variable>
+      </Task>
+      <Task Name="PipetteSta">
+        <Variable Name="shIf" EnableArrayElements="True" />
       </Task>
     </Module>
   </DefaultView>

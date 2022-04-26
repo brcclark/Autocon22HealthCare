@@ -1,0 +1,6 @@
+VAR
+	dyeStFb : stnGeneric;
+	dyeState : GenericStationStateEnum;
+	tipsStFb : stnGeneric;
+	tipsState : GenericStationStateEnum;
+END_VAR

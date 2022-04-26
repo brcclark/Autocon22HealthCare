@@ -1,0 +1,7 @@
+VAR
+	i : USINT;
+	pipetteState : ARRAY[0..1] OF PipetteStationStateEnum;
+	pipetteFb : ARRAY[0..1] OF stnPipette;
+	shIf : ARRAY[0..1] OF PipetteIfTyp;
+	shMoveFb : ARRAY[0..1] OF rl6dShuttleMoveDestination;
+END_VAR

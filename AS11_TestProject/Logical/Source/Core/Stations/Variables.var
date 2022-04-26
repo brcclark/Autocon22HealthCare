@@ -1,15 +1,8 @@
 VAR
-	incubatorFb : rl6dDestinationMonitor;
-	analyzerFb : rl6dDestinationMonitor;
-	pipette1Fb : rl6dDestinationMonitor;
-	pipette2Fb : rl6dDestinationMonitor;
-	dyeFb : rl6dDestinationMonitor;
-	tipsFb : rl6dDestinationMonitor;
-	moveShFb : rl6dShuttleMoveDestination;
-	nextStation : DestinationsEnum;
-	optionalWaypoint : WaypointListEnum;
-	currentStation : DestinationsEnum;
-	enable : BOOL;
-	vel : REAL;
-	accel : REAL;
+	initChecked : BOOL;
+	shCount : USINT;
+	incubatorStFb : stnGeneric;
+	incubatorState : IncubatorStationStateEnum;
+	analyzerState : AnalyzerStationStateEnum;
+	analyzerStFb : stnGeneric;
 END_VAR

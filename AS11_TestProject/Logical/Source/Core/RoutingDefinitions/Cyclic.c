@@ -14,9 +14,9 @@ void _CYCLIC ProgramCyclic(void)
 	switch (state)
 	{
 		case DEF_IDLE:
-			if(Init){
+			if(Init || gAcp6DIf.Sts.AssemblyReady){
 				fbs.routerFb.Assembly = &g6dAssembly;
-				fbs.routerFb.UserDataSize = 4;
+				fbs.routerFb.UserDataSize = sizeof(UserDataType);
 				fbs.routerFb.Enable = TRUE;
 				
 				//Starting from 1 because the 0 index is going to be the "emtpy or default" index for most items
@@ -47,7 +47,7 @@ void _CYCLIC ProgramCyclic(void)
 				gDests[i].Entry.Path = fbs.addPathFb.Path;
 				fbs.addPathFb.Execute = FALSE;
 				
-				i += 1;
+				i++;
 				if(i > numDestinations){
 					i = 1;
 					
@@ -76,12 +76,14 @@ void _CYCLIC ProgramCyclic(void)
 				gDests[i].Exit.Path = fbs.addPathFb.Path;
 				fbs.addPathFb.Execute = FALSE;
 				
-				i += 1;
+				i++;
 				if(i > numDestinations){
-					i = 1;
+					i = 0;
 					
 					fbs.createDestFb.Router = &fbs.routerFb.Router;
-					fbs.createDestFb.EntryPath = &gDests[i].Entry.Path;
+					if(gDests[i].Entry.Path.Ident != 0)
+						fbs.createDestFb.EntryPath = &gDests[i].Entry.Path;
+					if(gDests[i].Exit.Path.Ident != 0)
 					fbs.createDestFb.ExitPath = &gDests[i].Exit.Path;
 					fbs.createDestFb.Position = gDests[i].Position;
 					brsstrcpy(&fbs.createDestFb.Name,&gDests[i].StationName);
@@ -111,7 +113,7 @@ void _CYCLIC ProgramCyclic(void)
 				i++;
 				//Check to see if we've gone through all destinations
 				if(i > numDestinations){
-					i = 1;
+					i = 0;
 					
 					//Setup the recovery points
 					fbs.addRecPointFb.Destination = &gDests[i].Destination;
@@ -257,7 +259,7 @@ void _CYCLIC ProgramCyclic(void)
 				
 				i++;
 				//Check to see if we've gone through all waypoints
-				if(i == numWaypoints){
+				if(i > numWaypoints){
 					i = 1;
 					//We're all done!
 					state = DEF_DONE;	
@@ -275,6 +277,7 @@ void _CYCLIC ProgramCyclic(void)
 			}
 			break;
 		case DEF_DONE:
+			gStationsIf.Sts.RoutingInitalized = TRUE;
 			
 			Init = FALSE;
 			if(gAcp6DIf.Sts.AssemblyReady){
@@ -290,13 +293,27 @@ void _CYCLIC ProgramCyclic(void)
 			}
 			else if(fbs.addShToRouter.Done){
 				fbs.addShToRouter.Execute = FALSE;
+				state = DEF_READY;
+			}
+			break;
+		case DEF_READY:
+			fbs.recoverFb.Velocity = 1.0;
+			fbs.recoverFb.Acceleration = 10.0;
+			fbs.recoverFb.Router = &fbs.routerFb.Router;
+			if(gStationsIf.Cmd.Recover){
+				fbs.recoverFb.Execute = TRUE;
+				state = DEF_RECOVERY;
+			}
+			break;
+		case DEF_RECOVERY:
+			if(fbs.recoverFb.Done){
+				fbs.recoverFb.Execute = FALSE;
+				gStationsIf.Cmd.Recover = FALSE;
+				
 				state = DEF_RUNNING;
 			}
 			break;
 		case DEF_RUNNING:
-			fbs.recoverFb.Velocity = 1.0;
-			fbs.recoverFb.Acceleration = 10.0;
-			fbs.recoverFb.Router = &fbs.routerFb.Router;
 			break;
 		case DEF_ERROR:
 			break;

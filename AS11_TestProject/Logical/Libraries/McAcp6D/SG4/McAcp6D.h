@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McAcp6D 1.02.9 */
+/* McAcp6D 1.01.9 */
 
 #ifndef _MCACP6D_
 #define _MCACP6D_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McAcp6D_VERSION
-#define _McAcp6D_VERSION 1.02.9
+#define _McAcp6D_VERSION 1.01.9
 #endif
 
 #include <bur/plctypes.h>
@@ -217,37 +217,6 @@ typedef enum McAcp6DShPerformanceLevelEnum
 	mcACP6D_SH_PERF_AGGRESSIVE = 3
 } McAcp6DShPerformanceLevelEnum;
 
-typedef enum McAcp6DShWaitFBDITriggerEnum
-{	mcACP6D_SH_WAIT_FBDI_RE = 0,
-	mcACP6D_SH_WAIT_FBDI_FE = 1,
-	mcACP6D_SH_WAIT_FBDI_HL = 2,
-	mcACP6D_SH_WAIT_FBDI_LL = 3
-} McAcp6DShWaitFBDITriggerEnum;
-
-typedef enum McAcp6DShWaitCmdLbTriggerEnum
-{	mcACP6D_SH_WAIT_CMDLB_START = 0,
-	mcACP6D_SH_WAIT_CMDLB_END = 1,
-	mcACP6D_SH_WAIT_CMDLB_ANY = 2
-} McAcp6DShWaitCmdLbTriggerEnum;
-
-typedef enum McAcp6DShWaitCmdLbLabelEnum
-{	mcACP6D_SH_WAIT_CMDLB_REGULAR = 0,
-	mcACP6D_SH_WAIT_CMDLB_MACRO = 1
-} McAcp6DShWaitCmdLbLabelEnum;
-
-typedef enum McAcp6DShWaitDispModeEnum
-{	mcACP6D_SH_WAIT_DISP_X_ONLY = 0,
-	mcACP6D_SH_WAIT_DISP_Y_ONLY = 1,
-	mcACP6D_SH_WAIT_DISP_STRLINE = 2
-} McAcp6DShWaitDispModeEnum;
-
-typedef enum McAcp6DShWaitDispTypeEnum
-{	mcACP6D_SH_WAIT_DISP_GT = 0,
-	mcACP6D_SH_WAIT_DISP_LT = 1,
-	mcACP6D_SH_WAIT_DISP_RE = 2,
-	mcACP6D_SH_WAIT_DISP_FE = 3
-} McAcp6DShWaitDispTypeEnum;
-
 typedef struct Mc6DInternalAssemblyIfType
 {	plcdword vtable;
 } Mc6DInternalAssemblyIfType;
@@ -332,16 +301,6 @@ typedef struct McAcp6DAsmGetInfoType
 	float MaxAmplifierTemp;
 	float MaxMotorTemp;
 } McAcp6DAsmGetInfoType;
-
-typedef struct McAcp6DSerialNumType
-{	unsigned long SerialNumHigh;
-	unsigned long SerialNumLow;
-} McAcp6DSerialNumType;
-
-typedef struct McAcp6DVersionNumType
-{	unsigned long VersionNumHigh;
-	unsigned long VersionNumLow;
-} McAcp6DVersionNumType;
 
 typedef struct McAcp6DSegInfoType
 {	float Power;
@@ -525,13 +484,6 @@ typedef struct McAcp6DShPositionType
 	float Rz;
 } McAcp6DShPositionType;
 
-typedef struct McAcp6DShVelocityType
-{	float Vx;
-	float Vy;
-	float Vz;
-	float Vxyz;
-} McAcp6DShVelocityType;
-
 typedef struct McAcp6DShForceType
 {	float Fx;
 	float Fy;
@@ -556,7 +508,6 @@ typedef struct McAcp6DShInfoType
 {	unsigned short ShuttleID;
 	enum McAcp6DShStateEnum State;
 	struct McAcp6DShPositionType Position;
-	struct McAcp6DShVelocityType Velocity;
 } McAcp6DShInfoType;
 
 typedef struct McAcp6DShGetInfoType
@@ -620,6 +571,38 @@ typedef struct McAcp6DFuncInfoType
 	plcbit ReadFromPMC;
 	signed long MsgPartNStatus;
 } McAcp6DFuncInfoType;
+
+typedef struct McAcp6DShuttleMonData
+{	plcbit Available;
+	struct McPosType Position;
+	struct McOrientType Orientation;
+	unsigned char Type;
+	unsigned long UserData;
+	unsigned short Index;
+	enum McAcp6DShStateEnum State;
+} McAcp6DShuttleMonData;
+
+typedef struct McAcp6DAssemblyMonData
+{	struct McAcp6DShuttleMonData Shuttle[80];
+} McAcp6DAssemblyMonData;
+
+typedef struct McAcp6DShuttleVisData
+{	plcbit Available;
+	unsigned char Reserved[3];
+	float PositionX;
+	float PositionY;
+	float PositionZ;
+	float RotationX;
+	float RotationY;
+	float RotationZ;
+	plcstring Text[32];
+	float Color[3];
+	unsigned char Type;
+} McAcp6DShuttleVisData;
+
+typedef struct McAcp6DAssemblyVisData
+{	struct McAcp6DShuttleVisData Shuttle[80];
+} McAcp6DAssemblyVisData;
 
 typedef struct MC_BR_AsmPowerOn_Acp6D
 {
@@ -1789,113 +1772,6 @@ typedef struct MC_BR_ShGroupDelete_Acp6D
 	plcbit Error;
 } MC_BR_ShGroupDelete_Acp6D_typ;
 
-typedef struct MC_BR_ShWaitTime_Acp6D
-{
-	/* VAR_INPUT (analog) */
-	struct Mc6DShuttleType* Shuttle;
-	unsigned short CommandLabel;
-	float Delay;
-	/* VAR_OUTPUT (analog) */
-	signed long ErrorID;
-	/* VAR (analog) */
-	struct McInternalType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Execute;
-	/* VAR_OUTPUT (digital) */
-	plcbit Done;
-	plcbit Acknowledge;
-	plcbit Busy;
-	plcbit CommandAborted;
-	plcbit Error;
-} MC_BR_ShWaitTime_Acp6D_typ;
-
-typedef struct MC_BR_ShWaitFBDI_Acp6D
-{
-	/* VAR_INPUT (analog) */
-	struct Mc6DShuttleType* Shuttle;
-	unsigned short CommandLabel;
-	unsigned char TriggerDI;
-	enum McAcp6DShWaitFBDITriggerEnum TriggerType;
-	/* VAR_OUTPUT (analog) */
-	signed long ErrorID;
-	/* VAR (analog) */
-	struct McInternalType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Execute;
-	/* VAR_OUTPUT (digital) */
-	plcbit Done;
-	plcbit Acknowledge;
-	plcbit Busy;
-	plcbit CommandAborted;
-	plcbit Error;
-} MC_BR_ShWaitFBDI_Acp6D_typ;
-
-typedef struct MC_BR_ShWaitCmdLb_Acp6D
-{
-	/* VAR_INPUT (analog) */
-	struct Mc6DShuttleType* Shuttle;
-	unsigned short CommandLabel;
-	unsigned short TriggerXID;
-	enum McAcp6DShWaitCmdLbTriggerEnum TriggerType;
-	unsigned short TriggerCmdLb;
-	enum McAcp6DShWaitCmdLbLabelEnum LabelType;
-	/* VAR_OUTPUT (analog) */
-	signed long ErrorID;
-	/* VAR (analog) */
-	struct McInternalType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Execute;
-	/* VAR_OUTPUT (digital) */
-	plcbit Done;
-	plcbit Acknowledge;
-	plcbit Busy;
-	plcbit CommandAborted;
-	plcbit Error;
-} MC_BR_ShWaitCmdLb_Acp6D_typ;
-
-typedef struct MC_BR_ShWaitDisp_Acp6D
-{
-	/* VAR_INPUT (analog) */
-	struct Mc6DShuttleType* Shuttle;
-	unsigned short CommandLabel;
-	unsigned short TriggerXID;
-	enum McAcp6DShWaitDispModeEnum DispMode;
-	enum McAcp6DShWaitDispTypeEnum DispType;
-	float Treshold;
-	float PosXFactor;
-	float PosYFactor;
-	/* VAR_OUTPUT (analog) */
-	signed long ErrorID;
-	/* VAR (analog) */
-	struct McInternalType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Execute;
-	/* VAR_OUTPUT (digital) */
-	plcbit Done;
-	plcbit Acknowledge;
-	plcbit Busy;
-	plcbit CommandAborted;
-	plcbit Error;
-} MC_BR_ShWaitDisp_Acp6D_typ;
-
-typedef struct MC_BR_6DCtrlGetSerialNum_Acp6D
-{
-	/* VAR_INPUT (analog) */
-	struct Mc6DAssemblyType* Assembly;
-	/* VAR_OUTPUT (analog) */
-	signed long ErrorID;
-	struct McAcp6DSerialNumType SerialNum;
-	/* VAR (analog) */
-	struct McInternalType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Execute;
-	/* VAR_OUTPUT (digital) */
-	plcbit Done;
-	plcbit Busy;
-	plcbit CommandAborted;
-	plcbit Error;
-} MC_BR_6DCtrlGetSerialNum_Acp6D_typ;
-
 
 
 /* Prototyping of functions and function blocks */
@@ -1962,11 +1838,6 @@ _BUR_PUBLIC void MC_BR_ShGroupGetInfo_Acp6D(struct MC_BR_ShGroupGetInfo_Acp6D* i
 _BUR_PUBLIC void MC_BR_ShGroupCoupleCtrl_Acp6D(struct MC_BR_ShGroupCoupleCtrl_Acp6D* inst);
 _BUR_PUBLIC void MC_BR_ShGroupBuffer_Acp6D(struct MC_BR_ShGroupBuffer_Acp6D* inst);
 _BUR_PUBLIC void MC_BR_ShGroupDelete_Acp6D(struct MC_BR_ShGroupDelete_Acp6D* inst);
-_BUR_PUBLIC void MC_BR_ShWaitTime_Acp6D(struct MC_BR_ShWaitTime_Acp6D* inst);
-_BUR_PUBLIC void MC_BR_ShWaitFBDI_Acp6D(struct MC_BR_ShWaitFBDI_Acp6D* inst);
-_BUR_PUBLIC void MC_BR_ShWaitCmdLb_Acp6D(struct MC_BR_ShWaitCmdLb_Acp6D* inst);
-_BUR_PUBLIC void MC_BR_ShWaitDisp_Acp6D(struct MC_BR_ShWaitDisp_Acp6D* inst);
-_BUR_PUBLIC void MC_BR_6DCtrlGetSerialNum_Acp6D(struct MC_BR_6DCtrlGetSerialNum_Acp6D* inst);
 
 
 #ifdef __cplusplus

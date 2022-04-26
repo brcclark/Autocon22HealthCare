@@ -2,7 +2,7 @@ VAR
 	gFB : gFBType; (*6D Interfaces*)
 END_VAR
 VAR CONSTANT
-	NUM_SHUTTLES : USINT := 8;
+	NUM_SHUTTLES : USINT := 5;
 	MAX_SH_IDX : USINT := NUM_SHUTTLES - 1;
 END_VAR
 (*********************** Interface Variables*)
@@ -11,6 +11,7 @@ VAR
 	gSysRecipe : SystemRecipeIfTyp;
 	gSystemIf : MainIfTyp;
 	gShIfs : ARRAY[0..MAX_SH_IDX] OF ShuttleIfTyp;
+	gStationsIf : StationsIfTyp;
 END_VAR
 (*Routing Variables*)
 VAR
