@@ -2,17 +2,17 @@
 <Object objecttypeid="1" name="Scene" visible="1" mask="" binding="#80*::SVControl:Vis.Bind.Camera.Perspective#81*::SVControl:Vis.Bind.Camera.Fov#82*::SVControl:Vis.Bind.Camera.Zoom#100*::SVControl:Vis.Bind.Camera.ViewPoint.X#101*::SVControl:Vis.Bind.Camera.ViewPoint.Y#102*::SVControl:Vis.Bind.Camera.ViewPoint.Z#103*::SVControl:Vis.Bind.Camera.ViewVector.X#104*::SVControl:Vis.Bind.Camera.ViewVector.Y#105*::SVControl:Vis.Bind.Camera.ViewVector.Z#106*::SVControl:Vis.Bind.Camera.OrientationVector.X#107*::SVControl:Vis.Bind.Camera.OrientationVector.Y#108*::SVControl:Vis.Bind.Camera.OrientationVector.Z#120*::Vis:Vis.Shuttles[0].Wells2].Color" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
-	<ParID parid="82" val="0.21763"/>
+	<ParID parid="82" val="0.263332"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="-730.29"/>
-	<ParID parid="101" val="-2680.76"/>
-	<ParID parid="102" val="2993.9"/>
-	<ParID parid="103" val="0.144176"/>
-	<ParID parid="104" val="0.690008"/>
-	<ParID parid="105" val="-0.709297"/>
-	<ParID parid="106" val="0.0918474"/>
-	<ParID parid="107" val="0.704361"/>
-	<ParID parid="108" val="0.703875"/>
+	<ParID parid="100" val="2490.2"/>
+	<ParID parid="101" val="1928.83"/>
+	<ParID parid="102" val="2374.63"/>
+	<ParID parid="103" val="-0.604461"/>
+	<ParID parid="104" val="-0.44334"/>
+	<ParID parid="105" val="-0.661874"/>
+	<ParID parid="106" val="-0.504101"/>
+	<ParID parid="107" val="-0.430472"/>
+	<ParID parid="108" val="0.748716"/>
 	<ParID parid="110" val="0.5"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -30,7 +30,7 @@
 		<ParID parid="100" val="0"/>
 		<ParID parid="101" val="0"/>
 		<ParID parid="102" val="12000"/>
-		<ParID parid="130" val="0.2"/>
+		<ParID parid="130" val="0.01"/>
 		<ParID parid="140" val="1,1,1"/>
 		<ParID parid="150" val="FALSE"/>
 	</Object>
@@ -65,28 +65,94 @@
 			<ParID parid="105" val="0"/>
 			<ParID parid="120" val="0"/>
 			<ParID parid="130" val="1: Black Matte"/>
-			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
-				<ParID parid="100" val="120"/>
-				<ParID parid="101" val="120"/>
-				<ParID parid="102" val="50"/>
+			<Object objecttypeid="250" name="Pipette" visible="1" mask="" binding="#102*::PipetteSta:shIf[1].PipetteCtrl.Position" jointoparent="0">
+				<ParID parid="100" val="0"/>
+				<ParID parid="101" val="0"/>
+				<ParID parid="102" val="56.2001"/>
 				<ParID parid="103" val="0"/>
 				<ParID parid="104" val="0"/>
 				<ParID parid="105" val="0"/>
 				<ParID parid="106" val="1"/>
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
-				<ParID parid="120" val="10: Gray"/>
-				<ParID parid="121" val="32"/>
-				<ParID parid="122" val="FALSE"/>
-				<ParID parid="123" val="FALSE"/>
-				<ParID parid="140" val="10"/>
-				<ParID parid="141" val="1"/>
-				<ParID parid="142" val="20"/>
+				<ParID parid="124" val="100"/>
+				<ParID parid="125" val="FALSE"/>
+				<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="#14*::PipetteSta:shIf[1].TipPresent" jointoparent="0">
+					<ParID parid="100" val="120"/>
+					<ParID parid="101" val="120"/>
+					<ParID parid="102" val="20"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="10: Gray"/>
+					<ParID parid="121" val="32"/>
+					<ParID parid="122" val="FALSE"/>
+					<ParID parid="123" val="FALSE"/>
+					<ParID parid="140" val="8"/>
+					<ParID parid="141" val="1"/>
+					<ParID parid="142" val="50"/>
+				</Object>
+				<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="#120*::PipetteSta:shIf[1].CurrentSample" jointoparent="0">
+					<ParID parid="100" val="120"/>
+					<ParID parid="101" val="120"/>
+					<ParID parid="102" val="70"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="11: White Matte"/>
+					<ParID parid="121" val="32"/>
+					<ParID parid="122" val="FALSE"/>
+					<ParID parid="123" val="FALSE"/>
+					<ParID parid="140" val="10"/>
+					<ParID parid="141" val="10"/>
+					<ParID parid="142" val="20"/>
+					<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+						<ParID parid="100" val="80"/>
+						<ParID parid="101" val="0"/>
+						<ParID parid="102" val="5"/>
+						<ParID parid="103" val="0"/>
+						<ParID parid="104" val="0"/>
+						<ParID parid="105" val="0"/>
+						<ParID parid="106" val="1"/>
+						<ParID parid="107" val="1"/>
+						<ParID parid="108" val="1"/>
+						<ParID parid="120" val="10: Gray"/>
+						<ParID parid="122" val="FALSE"/>
+						<ParID parid="123" val="0"/>
+						<ParID parid="140" val="150"/>
+						<ParID parid="141" val="20"/>
+						<ParID parid="142" val="10"/>
+					</Object>
+				</Object>
+				<Object objecttypeid="180" name="VisualDispense" visible="0" mask="" binding="#14*::AsGlobalPV:gStationsIf.Sts.PipetteDispensing[1]#120*::PipetteSta:shIf[1].CurrentSample" jointoparent="0">
+					<ParID parid="100" val="120"/>
+					<ParID parid="101" val="120"/>
+					<ParID parid="102" val="20"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="11: White Matte"/>
+					<ParID parid="121" val="32"/>
+					<ParID parid="122" val="FALSE"/>
+					<ParID parid="123" val="FALSE"/>
+					<ParID parid="140" val="9"/>
+					<ParID parid="141" val="1"/>
+					<ParID parid="142" val="50"/>
+				</Object>
 			</Object>
-			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="#120*::PipetteSta:shIf[1].CurrentSample" jointoparent="0">
-				<ParID parid="100" val="120"/>
+			<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="280"/>
 				<ParID parid="101" val="120"/>
-				<ParID parid="102" val="70"/>
+				<ParID parid="102" val="-200"/>
 				<ParID parid="103" val="0"/>
 				<ParID parid="104" val="0"/>
 				<ParID parid="105" val="0"/>
@@ -94,12 +160,11 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="10: Gray"/>
-				<ParID parid="121" val="32"/>
 				<ParID parid="122" val="FALSE"/>
-				<ParID parid="123" val="FALSE"/>
-				<ParID parid="140" val="10"/>
-				<ParID parid="141" val="10"/>
-				<ParID parid="142" val="20"/>
+				<ParID parid="123" val="0"/>
+				<ParID parid="140" val="20"/>
+				<ParID parid="141" val="40"/>
+				<ParID parid="142" val="400"/>
 			</Object>
 		</Object>
 		<Object objecttypeid="1140" name="ACOPOS 6D Segment 3" visible="1" mask="" binding="" jointoparent="0">
@@ -151,10 +216,10 @@
 			<ParID parid="105" val="0"/>
 			<ParID parid="120" val="0"/>
 			<ParID parid="130" val="1: Black Matte"/>
-			<Object objecttypeid="250" name="Pipette" visible="1" mask="" binding="" jointoparent="0">
+			<Object objecttypeid="250" name="Pipette" visible="1" mask="" binding="#102*::PipetteSta:shIf[0].PipetteCtrl.Position" jointoparent="0">
 				<ParID parid="100" val="0"/>
 				<ParID parid="101" val="0"/>
-				<ParID parid="102" val="0"/>
+				<ParID parid="102" val="70"/>
 				<ParID parid="103" val="0"/>
 				<ParID parid="104" val="0"/>
 				<ParID parid="105" val="0"/>
@@ -173,15 +238,32 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="8: Dark Yellow Matte"/>
+					<ParID parid="120" val="11: White Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
 					<ParID parid="140" val="10"/>
 					<ParID parid="141" val="10"/>
 					<ParID parid="142" val="20"/>
+					<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+						<ParID parid="100" val="80"/>
+						<ParID parid="101" val="0"/>
+						<ParID parid="102" val="5"/>
+						<ParID parid="103" val="0"/>
+						<ParID parid="104" val="0"/>
+						<ParID parid="105" val="0"/>
+						<ParID parid="106" val="1"/>
+						<ParID parid="107" val="1"/>
+						<ParID parid="108" val="1"/>
+						<ParID parid="120" val="10: Gray"/>
+						<ParID parid="122" val="FALSE"/>
+						<ParID parid="123" val="0"/>
+						<ParID parid="140" val="150"/>
+						<ParID parid="141" val="20"/>
+						<ParID parid="142" val="10"/>
+					</Object>
 				</Object>
-				<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="#14*::PipetteSta:shIf[0].TipPresent" jointoparent="0">
 					<ParID parid="100" val="120"/>
 					<ParID parid="101" val="120"/>
 					<ParID parid="102" val="20"/>
@@ -199,6 +281,41 @@
 					<ParID parid="141" val="1"/>
 					<ParID parid="142" val="50"/>
 				</Object>
+				<Object objecttypeid="180" name="VisualDispense" visible="0" mask="" binding="#14*::AsGlobalPV:gStationsIf.Sts.PipetteDispensing[0]#120*::PipetteSta:shIf[0].CurrentSample" jointoparent="0">
+					<ParID parid="100" val="120"/>
+					<ParID parid="101" val="120"/>
+					<ParID parid="102" val="20"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="11: White Matte"/>
+					<ParID parid="121" val="32"/>
+					<ParID parid="122" val="FALSE"/>
+					<ParID parid="123" val="FALSE"/>
+					<ParID parid="140" val="9"/>
+					<ParID parid="141" val="1"/>
+					<ParID parid="142" val="50"/>
+				</Object>
+			</Object>
+			<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="280"/>
+				<ParID parid="101" val="120"/>
+				<ParID parid="102" val="-200"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="10: Gray"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="0"/>
+				<ParID parid="140" val="20"/>
+				<ParID parid="141" val="40"/>
+				<ParID parid="142" val="400"/>
 			</Object>
 		</Object>
 		<Object objecttypeid="250" name="Transform coordinate system" visible="1" mask="" binding="" jointoparent="0">
@@ -224,7 +341,7 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="WellPlate.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="19: Well Plate"/>
 				<ParID parid="130" val="1"/>
 			</Object>
 			<Object objecttypeid="110" name="Empty Well Plates" visible="1" mask="" binding="" jointoparent="0">
@@ -238,7 +355,7 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="WellPlate.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="19: Well Plate"/>
 				<ParID parid="130" val="1"/>
 			</Object>
 			<Object objecttypeid="110" name="Empty Well Plates" visible="1" mask="" binding="" jointoparent="0">
@@ -252,7 +369,7 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="WellPlate.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="19: Well Plate"/>
 				<ParID parid="130" val="1"/>
 			</Object>
 			<Object objecttypeid="110" name="Empty Well Plates" visible="1" mask="" binding="" jointoparent="0">
@@ -266,7 +383,7 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="WellPlate.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="19: Well Plate"/>
 				<ParID parid="130" val="1"/>
 			</Object>
 		</Object>
@@ -319,7 +436,7 @@
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
 					<ParID parid="120" val="HolderVials.stl"/>
-					<ParID parid="121" val="10: Gray"/>
+					<ParID parid="121" val="18: Support Gray"/>
 					<ParID parid="130" val="1"/>
 				</Object>
 			</Object>
@@ -360,7 +477,7 @@
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
 					<ParID parid="120" val="HolderVials.stl"/>
-					<ParID parid="121" val="10: Gray"/>
+					<ParID parid="121" val="18: Support Gray"/>
 					<ParID parid="130" val="1"/>
 				</Object>
 			</Object>
@@ -401,7 +518,7 @@
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
 					<ParID parid="120" val="HolderVials.stl"/>
-					<ParID parid="121" val="10: Gray"/>
+					<ParID parid="121" val="18: Support Gray"/>
 					<ParID parid="130" val="1"/>
 				</Object>
 			</Object>
@@ -428,7 +545,7 @@
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
 					<ParID parid="120" val="Vials.stl"/>
-					<ParID parid="121" val="15: Light Orange Matte"/>
+					<ParID parid="121" val="8: Dark Yellow Matte"/>
 					<ParID parid="130" val="1"/>
 				</Object>
 				<Object objecttypeid="110" name="Holder" visible="1" mask="" binding="" jointoparent="0">
@@ -442,7 +559,89 @@
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
 					<ParID parid="120" val="HolderVials.stl"/>
-					<ParID parid="121" val="10: Gray"/>
+					<ParID parid="121" val="18: Support Gray"/>
+					<ParID parid="130" val="1"/>
+				</Object>
+			</Object>
+			<Object objecttypeid="250" name="Sample5" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="-120"/>
+				<ParID parid="101" val="-120"/>
+				<ParID parid="102" val="0"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="124" val="100"/>
+				<ParID parid="125" val="FALSE"/>
+				<Object objecttypeid="110" name="Vials" visible="1" mask="" binding="" jointoparent="0">
+					<ParID parid="100" val="-30"/>
+					<ParID parid="101" val="-30"/>
+					<ParID parid="102" val="80"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="Vials.stl"/>
+					<ParID parid="121" val="14: Dark Orange Matte"/>
+					<ParID parid="130" val="1"/>
+				</Object>
+				<Object objecttypeid="110" name="Holder" visible="1" mask="" binding="" jointoparent="0">
+					<ParID parid="100" val="-30"/>
+					<ParID parid="101" val="-30"/>
+					<ParID parid="102" val="80"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="HolderVials.stl"/>
+					<ParID parid="121" val="18: Support Gray"/>
+					<ParID parid="130" val="1"/>
+				</Object>
+			</Object>
+			<Object objecttypeid="250" name="Sample6" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="0"/>
+				<ParID parid="101" val="-120"/>
+				<ParID parid="102" val="0"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="124" val="100"/>
+				<ParID parid="125" val="FALSE"/>
+				<Object objecttypeid="110" name="Vials" visible="1" mask="" binding="" jointoparent="0">
+					<ParID parid="100" val="-30"/>
+					<ParID parid="101" val="-30"/>
+					<ParID parid="102" val="80"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="Vials.stl"/>
+					<ParID parid="121" val="12: Dark Purple Matte"/>
+					<ParID parid="130" val="1"/>
+				</Object>
+				<Object objecttypeid="110" name="Holder" visible="1" mask="" binding="" jointoparent="0">
+					<ParID parid="100" val="-30"/>
+					<ParID parid="101" val="-30"/>
+					<ParID parid="102" val="80"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="HolderVials.stl"/>
+					<ParID parid="121" val="18: Support Gray"/>
 					<ParID parid="130" val="1"/>
 				</Object>
 			</Object>
@@ -461,8 +660,8 @@
 		<ParID parid="124" val="100"/>
 		<ParID parid="125" val="FALSE"/>
 		<Object objecttypeid="1150" name="ACOPOS 6D Shuttle 1" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[0].Visible#100*::Vis:Vis.Shuttles[0].Position.X#101*::Vis:Vis.Shuttles[0].Position.Y#102*::Vis:Vis.Shuttles[0].Position.Z" jointoparent="0">
-			<ParID parid="100" val="420"/>
-			<ParID parid="101" val="419.85"/>
+			<ParID parid="100" val="403.509"/>
+			<ParID parid="101" val="594.673"/>
 			<ParID parid="102" val="0.999908"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
@@ -474,7 +673,7 @@
 			<Object objecttypeid="110" name="Geometric mesh" visible="1" mask="" binding="" jointoparent="0">
 				<ParID parid="100" val="0"/>
 				<ParID parid="101" val="0"/>
-				<ParID parid="102" val="10"/>
+				<ParID parid="102" val="0"/>
 				<ParID parid="103" val="0"/>
 				<ParID parid="104" val="0"/>
 				<ParID parid="105" val="0"/>
@@ -482,7 +681,7 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="WellPlate.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="19: Well Plate"/>
 				<ParID parid="130" val="1"/>
 				<Object objecttypeid="180" name="Well 0-0" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[0].Wells[0].Present#120*::Vis:Vis.Shuttles[0].Wells[0].Color" jointoparent="0">
 					<ParID parid="100" val="-30"/>
@@ -602,7 +801,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="7: Light Green Matte"/>
+					<ParID parid="120" val="13: Light Purple Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -620,7 +819,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="7: Light Green Matte"/>
+					<ParID parid="120" val="13: Light Purple Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -638,7 +837,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="7: Light Green Matte"/>
+					<ParID parid="120" val="13: Light Purple Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -656,7 +855,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="7: Light Green Matte"/>
+					<ParID parid="120" val="13: Light Purple Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -674,7 +873,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="7: Light Green Matte"/>
+					<ParID parid="120" val="13: Light Purple Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -692,7 +891,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="7: Light Green Matte"/>
+					<ParID parid="120" val="13: Light Purple Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -710,7 +909,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="8: Dark Yellow Matte"/>
+					<ParID parid="120" val="9: Light Yellow Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -728,7 +927,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="8: Dark Yellow Matte"/>
+					<ParID parid="120" val="9: Light Yellow Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -746,7 +945,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="8: Dark Yellow Matte"/>
+					<ParID parid="120" val="9: Light Yellow Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -764,7 +963,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="8: Dark Yellow Matte"/>
+					<ParID parid="120" val="9: Light Yellow Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -775,8 +974,8 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="1150" name="ACOPOS 6D Shuttle 2" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Visible#100*::Vis:Vis.Shuttles[1].Position.X#101*::Vis:Vis.Shuttles[1].Position.Y#102*::Vis:Vis.Shuttles[1].Position.Z" jointoparent="0">
-			<ParID parid="100" val="419.85"/>
-			<ParID parid="101" val="300"/>
+			<ParID parid="100" val="312.769"/>
+			<ParID parid="101" val="420"/>
 			<ParID parid="102" val="0.999908"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
@@ -788,7 +987,7 @@
 			<Object objecttypeid="110" name="Geometric mesh" visible="1" mask="" binding="" jointoparent="0">
 				<ParID parid="100" val="0"/>
 				<ParID parid="101" val="0"/>
-				<ParID parid="102" val="10"/>
+				<ParID parid="102" val="0"/>
 				<ParID parid="103" val="0"/>
 				<ParID parid="104" val="0"/>
 				<ParID parid="105" val="0"/>
@@ -796,7 +995,7 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="WellPlate.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="19: Well Plate"/>
 				<ParID parid="130" val="1"/>
 				<Object objecttypeid="180" name="Well 0-0" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[0].Present#120*::Vis:Vis.Shuttles[1].Wells[0].Color" jointoparent="0">
 					<ParID parid="100" val="-30"/>
@@ -852,7 +1051,7 @@
 					<ParID parid="141" val="4"/>
 					<ParID parid="142" val="4"/>
 				</Object>
-				<Object objecttypeid="180" name="Well 0-3" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[3].Present#120*::Vis:Vis.Shuttles[1].Wells[3].Color" jointoparent="0">
+				<Object objecttypeid="180" name="Well 0-3" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[3].Present#120*::Vis:Vis.Shuttles[1].Wells[3].Color" jointoparent="0">
 					<ParID parid="100" val="30"/>
 					<ParID parid="101" val="-30"/>
 					<ParID parid="102" val="14"/>
@@ -862,7 +1061,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="0: Undefined"/>
+					<ParID parid="120" val="4: Dark Blue Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -870,7 +1069,7 @@
 					<ParID parid="141" val="4"/>
 					<ParID parid="142" val="4"/>
 				</Object>
-				<Object objecttypeid="180" name="Well 1-0" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[4].Present#120*::Vis:Vis.Shuttles[1].Wells[4].Color" jointoparent="0">
+				<Object objecttypeid="180" name="Well 1-0" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[4].Present#120*::Vis:Vis.Shuttles[1].Wells[4].Color" jointoparent="0">
 					<ParID parid="100" val="-30"/>
 					<ParID parid="101" val="-10"/>
 					<ParID parid="102" val="14"/>
@@ -880,7 +1079,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="0: Undefined"/>
+					<ParID parid="120" val="4: Dark Blue Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -888,7 +1087,7 @@
 					<ParID parid="141" val="4"/>
 					<ParID parid="142" val="4"/>
 				</Object>
-				<Object objecttypeid="180" name="Well 1-1" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[5].Present#120*::Vis:Vis.Shuttles[1].Wells[5].Color" jointoparent="0">
+				<Object objecttypeid="180" name="Well 1-1" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[5].Present#120*::Vis:Vis.Shuttles[1].Wells[5].Color" jointoparent="0">
 					<ParID parid="100" val="-10"/>
 					<ParID parid="101" val="-10"/>
 					<ParID parid="102" val="14"/>
@@ -898,7 +1097,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="0: Undefined"/>
+					<ParID parid="120" val="4: Dark Blue Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -906,7 +1105,7 @@
 					<ParID parid="141" val="4"/>
 					<ParID parid="142" val="4"/>
 				</Object>
-				<Object objecttypeid="180" name="Well 1-2" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[6].Present#120*::Vis:Vis.Shuttles[1].Wells[6].Color" jointoparent="0">
+				<Object objecttypeid="180" name="Well 1-2" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[6].Present#120*::Vis:Vis.Shuttles[1].Wells[6].Color" jointoparent="0">
 					<ParID parid="100" val="10"/>
 					<ParID parid="101" val="-10"/>
 					<ParID parid="102" val="14"/>
@@ -916,7 +1115,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="0: Undefined"/>
+					<ParID parid="120" val="4: Dark Blue Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -924,7 +1123,7 @@
 					<ParID parid="141" val="4"/>
 					<ParID parid="142" val="4"/>
 				</Object>
-				<Object objecttypeid="180" name="Well 1-3" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[7].Present#120*::Vis:Vis.Shuttles[1].Wells[7].Color" jointoparent="0">
+				<Object objecttypeid="180" name="Well 1-3" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[7].Present#120*::Vis:Vis.Shuttles[1].Wells[7].Color" jointoparent="0">
 					<ParID parid="100" val="30"/>
 					<ParID parid="101" val="-10"/>
 					<ParID parid="102" val="14"/>
@@ -934,7 +1133,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="0: Undefined"/>
+					<ParID parid="120" val="4: Dark Blue Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -942,7 +1141,7 @@
 					<ParID parid="141" val="4"/>
 					<ParID parid="142" val="4"/>
 				</Object>
-				<Object objecttypeid="180" name="Well 2-0" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[8].Present#120*::Vis:Vis.Shuttles[1].Wells[8].Color" jointoparent="0">
+				<Object objecttypeid="180" name="Well 2-0" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Wells[8].Present#120*::Vis:Vis.Shuttles[1].Wells[8].Color" jointoparent="0">
 					<ParID parid="100" val="-30"/>
 					<ParID parid="101" val="10"/>
 					<ParID parid="102" val="14"/>
@@ -952,7 +1151,7 @@
 					<ParID parid="106" val="1"/>
 					<ParID parid="107" val="1"/>
 					<ParID parid="108" val="1"/>
-					<ParID parid="120" val="0: Undefined"/>
+					<ParID parid="120" val="4: Dark Blue Matte"/>
 					<ParID parid="121" val="32"/>
 					<ParID parid="122" val="FALSE"/>
 					<ParID parid="123" val="FALSE"/>
@@ -1089,8 +1288,8 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="1150" name="ACOPOS 6D Shuttle 3" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[2].Visible#100*::Vis:Vis.Shuttles[2].Position.X#101*::Vis:Vis.Shuttles[2].Position.Y#102*::Vis:Vis.Shuttles[2].Position.Z" jointoparent="0">
-			<ParID parid="100" val="300.15"/>
-			<ParID parid="101" val="420"/>
+			<ParID parid="100" val="60"/>
+			<ParID parid="101" val="60"/>
 			<ParID parid="102" val="0.999908"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
@@ -1108,7 +1307,7 @@
 				<ParID parid="200" val=""/>
 				<ParID parid="201" val="Sample"/>
 			</Object>
-			<Object objecttypeid="110" name="Vials" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[2].ToolVisible#121*::Vis:Vis.Shuttles[2].ShuttleColor" jointoparent="0">
+			<Object objecttypeid="110" name="Vials" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[2].ToolVisible#121*::Vis:Vis.Shuttles[2].ShuttleColor" jointoparent="0">
 				<ParID parid="100" val="-30"/>
 				<ParID parid="101" val="-30"/>
 				<ParID parid="102" val="80"/>
@@ -1119,10 +1318,10 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="Vials.stl"/>
-				<ParID parid="121" val="4: Dark Blue Matte"/>
+				<ParID parid="121" val="0: Undefined"/>
 				<ParID parid="130" val="1"/>
 			</Object>
-			<Object objecttypeid="110" name="Holder" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[2].ToolVisible" jointoparent="0">
+			<Object objecttypeid="110" name="Holder" visible="0" mask="" binding="#14*::Vis:Vis.Shuttles[2].ToolVisible" jointoparent="0">
 				<ParID parid="100" val="-30"/>
 				<ParID parid="101" val="-30"/>
 				<ParID parid="102" val="80"/>
@@ -1133,13 +1332,13 @@
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
 				<ParID parid="120" val="HolderVials.stl"/>
-				<ParID parid="121" val="10: Gray"/>
+				<ParID parid="121" val="18: Support Gray"/>
 				<ParID parid="130" val="1"/>
 			</Object>
 		</Object>
 		<Object objecttypeid="1150" name="ACOPOS 6D Shuttle 4" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[3].Visible#100*::Vis:Vis.Shuttles[3].Position.X#101*::Vis:Vis.Shuttles[3].Position.Y#102*::Vis:Vis.Shuttles[3].Position.Z" jointoparent="0">
-			<ParID parid="100" val="300"/>
-			<ParID parid="101" val="300.15"/>
+			<ParID parid="100" val="592.78"/>
+			<ParID parid="101" val="300"/>
 			<ParID parid="102" val="0.999908"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
@@ -1157,10 +1356,63 @@
 				<ParID parid="200" val=""/>
 				<ParID parid="201" val="Tips"/>
 			</Object>
+			<Object objecttypeid="180" name="VisualDispense" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="15"/>
+				<ParID parid="101" val="0"/>
+				<ParID parid="102" val="10"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="10: Gray"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="9"/>
+				<ParID parid="141" val="1"/>
+				<ParID parid="142" val="50"/>
+			</Object>
+			<Object objecttypeid="180" name="VisualDispense" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="-15"/>
+				<ParID parid="101" val="0"/>
+				<ParID parid="102" val="10"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="1: Black Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="9"/>
+				<ParID parid="141" val="1"/>
+				<ParID parid="142" val="50"/>
+			</Object>
+			<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="0"/>
+				<ParID parid="101" val="0"/>
+				<ParID parid="102" val="10"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="16: New material"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="0"/>
+				<ParID parid="140" val="50"/>
+				<ParID parid="141" val="30"/>
+				<ParID parid="142" val="10"/>
+			</Object>
 		</Object>
 		<Object objecttypeid="1150" name="ACOPOS 6D Shuttle 5" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[4].Visible#100*::Vis:Vis.Shuttles[4].Position.X#101*::Vis:Vis.Shuttles[4].Position.Y#102*::Vis:Vis.Shuttles[4].Position.Z" jointoparent="0">
-			<ParID parid="100" val="660"/>
-			<ParID parid="101" val="420"/>
+			<ParID parid="100" val="360"/>
+			<ParID parid="101" val="120"/>
 			<ParID parid="102" val="0.999908"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
@@ -1178,42 +1430,113 @@
 				<ParID parid="200" val=""/>
 				<ParID parid="201" val="Dye"/>
 			</Object>
-			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+			<Object objecttypeid="110" name="Geometric mesh" visible="1" mask="" binding="" jointoparent="0">
 				<ParID parid="100" val="0"/>
 				<ParID parid="101" val="0"/>
-				<ParID parid="102" val="10"/>
+				<ParID parid="102" val="8"/>
 				<ParID parid="103" val="0"/>
 				<ParID parid="104" val="0"/>
 				<ParID parid="105" val="0"/>
 				<ParID parid="106" val="1"/>
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
-				<ParID parid="120" val="11: White Matte"/>
-				<ParID parid="121" val="32"/>
-				<ParID parid="122" val="FALSE"/>
-				<ParID parid="123" val="FALSE"/>
-				<ParID parid="140" val="25"/>
-				<ParID parid="141" val="20"/>
-				<ParID parid="142" val="20"/>
+				<ParID parid="120" val="DyeReservoir.stl"/>
+				<ParID parid="121" val="16: New material"/>
+				<ParID parid="130" val="1"/>
+				<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+					<ParID parid="100" val="0"/>
+					<ParID parid="101" val="0"/>
+					<ParID parid="102" val="0"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="11: White Matte"/>
+					<ParID parid="122" val="FALSE"/>
+					<ParID parid="123" val="0"/>
+					<ParID parid="140" val="80"/>
+					<ParID parid="141" val="40"/>
+					<ParID parid="142" val="25"/>
+				</Object>
+				<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+					<ParID parid="100" val="0"/>
+					<ParID parid="101" val="-3"/>
+					<ParID parid="102" val="0"/>
+					<ParID parid="103" val="0"/>
+					<ParID parid="104" val="0"/>
+					<ParID parid="105" val="0"/>
+					<ParID parid="106" val="1"/>
+					<ParID parid="107" val="1"/>
+					<ParID parid="108" val="1"/>
+					<ParID parid="120" val="1: Black Matte"/>
+					<ParID parid="122" val="FALSE"/>
+					<ParID parid="123" val="0"/>
+					<ParID parid="140" val="100"/>
+					<ParID parid="141" val="60"/>
+					<ParID parid="142" val="5"/>
+				</Object>
 			</Object>
-			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
-				<ParID parid="100" val="0"/>
-				<ParID parid="101" val="0"/>
-				<ParID parid="102" val="10"/>
-				<ParID parid="103" val="0"/>
-				<ParID parid="104" val="0"/>
-				<ParID parid="105" val="0"/>
-				<ParID parid="106" val="1"/>
-				<ParID parid="107" val="1"/>
-				<ParID parid="108" val="1"/>
-				<ParID parid="120" val="1: Black Matte"/>
-				<ParID parid="121" val="32"/>
-				<ParID parid="122" val="FALSE"/>
-				<ParID parid="123" val="FALSE"/>
-				<ParID parid="140" val="30"/>
-				<ParID parid="141" val="20"/>
-				<ParID parid="142" val="19"/>
-			</Object>
+		</Object>
+	</Object>
+	<Object objecttypeid="250" name="Scenery" visible="1" mask="" binding="" jointoparent="0">
+		<ParID parid="100" val="0"/>
+		<ParID parid="101" val="0"/>
+		<ParID parid="102" val="0"/>
+		<ParID parid="103" val="0"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1"/>
+		<ParID parid="107" val="1"/>
+		<ParID parid="108" val="1"/>
+		<ParID parid="124" val="100"/>
+		<ParID parid="125" val="FALSE"/>
+		<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="-400"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="1"/>
+			<ParID parid="107" val="1"/>
+			<ParID parid="108" val="1"/>
+			<ParID parid="120" val="17: Floor"/>
+			<ParID parid="122" val="FALSE"/>
+			<ParID parid="123" val="0"/>
+			<ParID parid="140" val="20000"/>
+			<ParID parid="141" val="10000"/>
+			<ParID parid="142" val="10"/>
+		</Object>
+		<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="-120"/>
+			<ParID parid="101" val="300"/>
+			<ParID parid="102" val="-20"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="1"/>
+			<ParID parid="107" val="1"/>
+			<ParID parid="108" val="1"/>
+			<ParID parid="120" val="16: New material"/>
+			<ParID parid="122" val="FALSE"/>
+			<ParID parid="123" val="0"/>
+			<ParID parid="140" val="220"/>
+			<ParID parid="141" val="900"/>
+			<ParID parid="142" val="10"/>
+		</Object>
+		<Object objecttypeid="260" name="Gitter box" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="240"/>
+			<ParID parid="101" val="360"/>
+			<ParID parid="102" val="-360"/>
+			<ParID parid="103" val="90"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="1"/>
+			<ParID parid="107" val="1.25"/>
+			<ParID parid="108" val="1"/>
+			<ParID parid="120" val="TRUE"/>
 		</Object>
 	</Object>
 </Object>
@@ -1226,7 +1549,7 @@
 	<Material ID="5" Name="Light Blue Matte" Ambient="0.000000 1.000000 1.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
 	<Material ID="6" Name="Dark Green Matte" Ambient="0.000000 0.800000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
 	<Material ID="7" Name="Light Green Matte" Ambient="0.400000 1.000000 0.200000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
-	<Material ID="8" Name="Dark Yellow Matte" Ambient="1.000000 1.000000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+	<Material ID="8" Name="Dark Yellow Matte" Ambient="1.000000 1.000000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="38.400002"/>
 	<Material ID="9" Name="Light Yellow Matte" Ambient="1.000000 1.000000 0.400000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
 	<Material ID="10" Name="Gray" Ambient="0.500000 0.500000 0.500000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.639999"/>
 	<Material ID="11" Name="White Matte" Ambient="1.000000 1.000000 1.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
@@ -1234,6 +1557,10 @@
 	<Material ID="13" Name="Light Purple Matte" Ambient="0.800000 0.000000 0.800000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
 	<Material ID="14" Name="Dark Orange Matte" Ambient="0.760000 0.500000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
 	<Material ID="15" Name="Light Orange Matte" Ambient="1.000000 0.600000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
+	<Material ID="16" Name="New material" Ambient="0.600000 0.600000 0.600000 1.000000" Specular="0.390000 0.400000 0.390000 1.000000" Emission="0.340000 0.340000 0.400000 1.000000" Shininess="27.520000"/>
+	<Material ID="17" Name="Floor" Ambient="0.390000 0.450000 0.700000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
+	<Material ID="18" Name="Support Gray" Ambient="0.740000 0.800000 0.800000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
+	<Material ID="19" Name="Well Plate" Ambient="0.510000 0.510000 0.540000 1.000000" Specular="0.400000 0.400000 0.400000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
 </Materials>
 <Views/>
 <Connection>

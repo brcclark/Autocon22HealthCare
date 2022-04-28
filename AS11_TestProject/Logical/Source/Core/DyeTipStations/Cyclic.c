@@ -83,7 +83,7 @@ void _CYCLIC ProgramCyclic(void)
 		case GEN_WAIT_SHUTTLE:
 			gStationsIf.Sts.TipsShuttlePresent = tipsStFb.ShuttlePresent;
 			if(gStationsIf.Sts.TipsShuttlePresent){
-				//gStationsIf.Cmd.RequestTip = FALSE;
+				gStationsIf.Cmd.RequestTip = FALSE;
 				tipsState = GEN_WAIT_REQUEST;
 			}
 			

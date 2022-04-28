@@ -23,6 +23,7 @@
 		ShuttlePresent : BOOL;
 		ShUserData : UserDataType;
 		Shuttle : rl6dShuttleType;
+		Waiting : BOOL;
 		OperateDone : USINT;
 		WaitComplete : BOOL;
 	END_VAR
@@ -58,5 +59,30 @@ END_FUNCTION_BLOCK
 	END_VAR
 	VAR
 		internal : stnGenericIntTyp;
+	END_VAR
+END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK tipReplace
+	VAR_INPUT
+		Shuttle : REFERENCE TO Mc6DShuttleType;
+		TipNeedsReplaced : BOOL;
+		TipZSwapHeight : REAL;
+		TipHomeZPosition : REAL;
+		TipZVelocity : REAL;
+		ShuttleAccel : REAL;
+		ShuttleVel : REAL;
+		NewTipPosition : rl6dPositionType;
+		OldTipPosition : rl6dPositionType;
+		TipSwapTime : BOOL;
+		Execute : BOOL;
+	END_VAR
+	VAR_OUTPUT
+		Active : BOOL;
+		NoTip : BOOL;
+		TipZPosition : REAL;
+		Done : BOOL;
+	END_VAR
+	VAR
+		internal : tipReplaceInternalType;
 	END_VAR
 END_FUNCTION_BLOCK

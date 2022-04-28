@@ -2,45 +2,33 @@
 <vdef:Visualization id="visDemo" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
   <StartPage pageRefId="pgMain" />
   <Pages>
-    <Page refId="pgMain"/>
+    <Page refId="pgMain" />
   </Pages>
-  <Navigations>
-    <!--<Navigation refId="" />-->
-  </Navigations>  
+  <Navigations />
   <BindingsSets>
     <BindingsSet refId="contentMain_binding" />
   </BindingsSets>
   <EventBindingsSets>
-    <!--<EventBindingsSet refId="" />-->
+    <EventBindingsSet refId="eventbinding_0" />
   </EventBindingsSets>
-  <Dialogs>
-    <!--<Dialog refId="" />-->
-  </Dialogs>
-  <Contents>
-    <!--<Content refId="" />-->
-  </Contents>
-  <SnippetsSets>
-    <!--<SnippetsSet refId=""/>-->
-  </SnippetsSets>
-  <ExpressionsSets>
-    <!--<ExpressionsSet refId=""/>-->
-  </ExpressionsSets>
-  <VariablesSets>
-    <!--<VariablesSet refId="" />-->
-  </VariablesSets>
+  <Dialogs />
+  <Contents />
+  <SnippetsSets />
+  <VariablesSets />
+  <ExpressionsSets />
   <StartTheme themeRefId="CuRWebDay" />
   <Themes>
-    <Theme refId="CuRWebDay"/>
+    <Theme refId="CuRWebDay" />
   </Themes>
   <Configurations>
     <Configuration key="activityCount" value="false" />
-	  <Gestures>
-		  <!--<SystemGesture1 touchPoints="2" />
+    <Gestures>
+      <!--<SystemGesture1 touchPoints="2" />
 		  <SystemGesture2 touchPoints="2" />
 		  <SystemGesture3 touchPoints="2" />-->
-	  </Gestures>
+    </Gestures>
     <VirtualKeyboards>
       <!--<InputProcessing onKeyDown="true" />-->
-    </VirtualKeyboards> 
+    </VirtualKeyboards>
   </Configurations>
 </vdef:Visualization>

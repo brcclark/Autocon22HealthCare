@@ -7,6 +7,7 @@
     <File Description="Exported functions and function blocks">StnLogic.fun</File>
     <File>stnGeneric.c</File>
     <File>stnPipette.c</File>
+    <File>tipReplaceFb.c</File>
   </Files>
   <Dependencies>
     <Dependency ObjectName="Router6D" />

@@ -4,4 +4,6 @@ VAR
 	pipetteFb : ARRAY[0..1] OF stnPipette;
 	shIf : ARRAY[0..1] OF PipetteIfTyp;
 	shMoveFb : ARRAY[0..1] OF rl6dShuttleMoveDestination;
+	startupFlag : ARRAY[0..1] OF BOOL;
+	tipReplaceFb : ARRAY[0..1] OF tipReplace;
 END_VAR

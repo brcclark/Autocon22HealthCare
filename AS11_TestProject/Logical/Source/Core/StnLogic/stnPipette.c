@@ -63,7 +63,9 @@ void stnPipette(struct stnPipette* fb)
 		//******************** Ready and Waiting For a Shuttle State
 		case STN_PIPETTE_READY:
 			fb->ShuttlePresent = fb->internal.fbs.destMonFb.ShuttlePresent;
-			if(fb->internal.fbs.destMonFb.ShuttlePresent){
+			if(fb->ShuttlePresent)
+				rl6dShCopyUserDataSync(&fb->internal.fbs.destMonFb.RouterShuttle,rl6dSH_COPY_USER_DATA_READ,&fb->ShUserData,sizeof(fb->ShUserData));
+			if(fb->internal.fbs.destMonFb.ShuttlePresent && fb->Operate){
 				fb->Shuttle = fb->internal.fbs.destMonFb.RouterShuttle;
 				rl6dShCopyUserDataSync(&fb->internal.fbs.destMonFb.RouterShuttle,rl6dSH_COPY_USER_DATA_READ,&fb->ShUserData,sizeof(fb->ShUserData));
 				if(fb->ShUserData.ShType != SH_WELL){
@@ -104,7 +106,9 @@ void stnPipette(struct stnPipette* fb)
 		//******************** "Wait" process State
 		case STN_PIPETTE_DO_WAIT:
 			rl6dShCopyUserDataSync(&fb->internal.fbs.destMonFb.RouterShuttle,rl6dSH_COPY_USER_DATA_READ,&fb->ShUserData,sizeof(fb->ShUserData));
+			fb->Waiting = TRUE;
 			if(fb->internal.fbs.waitFb.Q){
+				fb->Waiting = FALSE;
 				fb->internal.fbs.waitFb.IN = FALSE;
 				fb->WaitComplete = TRUE;
 				
@@ -130,7 +134,9 @@ void stnPipette(struct stnPipette* fb)
 					break;
 
 				case FILL_FILL:
+					fb->Waiting = TRUE;
 					if(fb->internal.fbs.waitFb.Q){
+						fb->Waiting = FALSE;
 						fb->internal.fbs.waitFb.IN = FALSE;
 						
 						if(fb->DyePresent){

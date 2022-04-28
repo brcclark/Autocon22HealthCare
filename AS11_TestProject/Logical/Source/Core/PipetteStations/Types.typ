@@ -15,10 +15,17 @@ TYPE
 		PIP_PROCESS_SHUTTLE,
 		PIP_REQUEST_DYE,
 		PIP_PROCESS_DYE,
+		PIP_MOVE_TIP_DOWN,
+		PIP_MOVE_TIP_UP,
 		PIP_CHECK_RECIPE,
 		PIP_SEND_ANALYZER,
 		PIP_ERROR
 		);
+	PipetteCtrl : 	STRUCT 
+		Position : REAL;
+		DestinationPosition : REAL;
+		RequestState : PipetteStationStateEnum;
+	END_STRUCT;
 	PipetteIfTyp : 	STRUCT 
 		TipNeedReplace : BOOL;
 		DyePresent : BOOL;
@@ -27,6 +34,7 @@ TYPE
 		ShuttleOperating : BOOL;
 		CurrentSample : ColorEnum;
 		NextSample : ColorEnum;
-		PipettePosition : REAL;
+		PipetteCtrl : PipetteCtrl;
+		TipPresent : BOOL;
 	END_STRUCT;
 END_TYPE

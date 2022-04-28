@@ -29,6 +29,7 @@
           <Variable Name="Sts">
             <Variable Name="PipetteActive" EnableArrayElements="True" />
             <Variable Name="PipetteShuttlePresent" EnableArrayElements="True" />
+            <Variable Name="PipetteDispensing" EnableArrayElements="True" />
           </Variable>
         </Variable>
         <Variable Name="gSystemIf" AutomaticEnable="True" />

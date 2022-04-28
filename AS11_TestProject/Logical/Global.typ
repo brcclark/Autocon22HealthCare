@@ -35,6 +35,7 @@ TYPE
 		Vel : REAL;
 		SampleDistance : REAL;
 		WellDistance : REAL;
+		TipPosition : REAL;
 	END_STRUCT;
 END_TYPE
 
@@ -175,6 +176,7 @@ TYPE
 		TipsShuttlePresent : BOOL;
 		DyeShuttlePresent : BOOL;
 		AnalyzerShuttlePresent : BOOL;
+		PipetteDispensing : ARRAY[0..1]OF BOOL;
 	END_STRUCT;
 	AnalyzerParTyp : 	STRUCT 
 		NextStation : DestinationsEnum;

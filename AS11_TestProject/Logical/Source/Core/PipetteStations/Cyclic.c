@@ -73,12 +73,14 @@ void _CYCLIC ProgramCyclic(void)
 		
 			case PIP_STARTUP:
 				if(pipetteFb[i].Active){
+					
 					gStationsIf.Sts.PipetteActive[i] = TRUE;
-					shIf[i].PipettePosition = gSysRecipe.PipettePars.HomePosition;
+					shIf[i].PipetteCtrl.Position = gSysRecipe.PipettePars.HomePosition;
 					pipetteState[i] = PIP_READY;
 				}
 				break;
 			case PIP_READY:
+				startupFlag[i] = FALSE;
 				pipetteState[i] = PIP_REQUEST_TIP;
 				
 				break;
@@ -89,16 +91,37 @@ void _CYCLIC ProgramCyclic(void)
 					gStationsIf.Par.Tip.RequestDestination = DEST_PIPETTE_1 + i;
 				}
 				if(pipetteFb[i].ShuttlePresent && pipetteFb[i].ShUserData.ShType == SH_TIPS){
-					gStationsIf.Cmd.RequestTip = FALSE;
+					//gStationsIf.Cmd.RequestTip = FALSE;
+					pipetteFb[i].Operate = TRUE;
 					pipetteState[i] = PIP_CHANGE_TIP;
 				}
 				break;
 			case PIP_CHANGE_TIP:
-				if(pipetteFb[i].WaitComplete){
-					shIf[i].TipNeedReplace = FALSE;
+				tipReplaceFb[i].TipNeedsReplaced = startupFlag[i];
+				startupFlag[i] = TRUE;
+				tipReplaceFb[i].Shuttle = &pipetteFb[i].internal.fbs.destMonFb.Mc6DShuttle;
+				tipReplaceFb[i].TipHomeZPosition = gSysRecipe.PipettePars.HomePosition;
+				tipReplaceFb[i].TipZVelocity = gSysRecipe.PipettePars.Vel * 0.004;
+				tipReplaceFb[i].TipZSwapHeight = gSysRecipe.PipettePars.TipPosition;
+				tipReplaceFb[i].ShuttleVel = gSysRecipe.DefaultVel;
+				tipReplaceFb[i].ShuttleAccel = gSysRecipe.DefaultAccel;
+				tipReplaceFb[i].NewTipPosition.X = -0.015;
+				tipReplaceFb[i].OldTipPosition.X = 0.015;
+				tipReplaceFb[i].Execute = TRUE;
+				
+				shIf[i].TipPresent = !tipReplaceFb[i].NoTip;
+				if(!shIf[i].TipPresent)
 					shIf[i].CurrentSample = COLOR_GRAY;
-					pipetteFb[i].NextDestination = &gDests[DEST_TIPS].Destination;
+				if(tipReplaceFb[i].Active)
+					shIf[i].PipetteCtrl.Position = tipReplaceFb[i].TipZPosition;
+				
+				if(tipReplaceFb[i].Done && pipetteFb[i].WaitComplete){
+					tipReplaceFb[i].Execute = FALSE;
+					pipetteFb[i].Operate = FALSE;
+					shIf[i].TipNeedReplace = FALSE;
 					pipetteFb[i].Send = TRUE;
+					pipetteFb[i].NextDestination = &gDests[DEST_TIPS].Destination;
+					
 					if(!shIf[i].ShuttleOperating){
 						//We haven't received a shuttle yet, we should go ahead and tell the system we're ready to receive a sample and shuttle and wait for one.
 						gStationsIf.Sts.PipetteReadyForShuttle[i] = TRUE;
@@ -125,18 +148,22 @@ void _CYCLIC ProgramCyclic(void)
 				break;
 			case PIP_WAIT_SAMPLE:
 				if(pipetteFb[i].ShuttlePresent && pipetteFb[i].ShUserData.ShType == SH_SAMPLE){
-					pipetteState[i] = PIP_OPERATE_SAMPLE;
+					shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.SampleDistance;
+					shIf[i].PipetteCtrl.RequestState = PIP_OPERATE_SAMPLE;
+					pipetteState[i] = PIP_MOVE_TIP_DOWN;
 				}
 				break;
 			case PIP_OPERATE_SAMPLE:
 				if(pipetteFb[i].WaitComplete){
+					pipetteFb[i].Operate = FALSE;
 					shIf[i].CurrentSample = pipetteFb[i].ShUserData.CurrentColor;
 					pipetteFb[i].NextDestination = &gDests[DEST_INCUBATOR].Destination;
-					pipetteFb[i].Send = TRUE;
 					
 					pipetteFb[i].DyePresent = FALSE;
 					
-					pipetteState[i] = PIP_REQUEST_SHUTTLE;
+					shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.HomePosition;
+					shIf[i].PipetteCtrl.RequestState = PIP_REQUEST_SHUTTLE;
+					pipetteState[i] = PIP_MOVE_TIP_UP;
 				}
 				break;
 			case PIP_REQUEST_SHUTTLE:
@@ -164,23 +191,30 @@ void _CYCLIC ProgramCyclic(void)
 					shMoveFb[i].Execute = FALSE;
 					
 					gStationsIf.Cmd.RequestPipette[i] = FALSE;
-					pipetteState[i] = PIP_PROCESS_SHUTTLE;
+					shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.WellDistance;
+					shIf[i].PipetteCtrl.RequestState = PIP_PROCESS_SHUTTLE;
+					pipetteState[i] = PIP_MOVE_TIP_DOWN;
 				}
 				break;
 			case PIP_PROCESS_SHUTTLE:
+				gStationsIf.Sts.PipetteDispensing[i] = pipetteFb[i].Waiting;
 				if(pipetteFb[i].OperateDone){
+					pipetteFb[i].Operate = FALSE;
 					if(!shIf[i].SamplePresent){
 						shIf[i].shuttleIf = pipetteFb[i].Shuttle;
 						shIf[i].SamplePresent = TRUE;
 						shIf[i].TipNeedReplace = TRUE;
 						pipetteFb[i].NextDestination = &gDests[DEST_DEFAULT].Destination;
-						pipetteFb[i].Send = TRUE;
 						
-						pipetteState[i] = PIP_REQUEST_TIP;
+						shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.HomePosition;
+						shIf[i].PipetteCtrl.RequestState = PIP_REQUEST_TIP;
+						pipetteState[i] = PIP_MOVE_TIP_UP;
 					}
 					else{
 						//Need to go check on the recipe now
-						pipetteState[i] = PIP_CHECK_RECIPE;
+						shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.HomePosition;
+						shIf[i].PipetteCtrl.RequestState = PIP_CHECK_RECIPE;
+						pipetteState[i] = PIP_MOVE_TIP_UP;
 					}
 				}
 				break;
@@ -191,14 +225,16 @@ void _CYCLIC ProgramCyclic(void)
 				}
 				if(pipetteFb[i].ShuttlePresent && pipetteFb[i].ShUserData.ShType == SH_DYE){
 					gStationsIf.Cmd.RequestDye = FALSE;
-					pipetteState[i] = PIP_PROCESS_DYE;
+					shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.WellDistance;
+					shIf[i].PipetteCtrl.RequestState = PIP_PROCESS_DYE;
+					pipetteState[i] = PIP_MOVE_TIP_DOWN;
 				}
 				break;
 			case PIP_PROCESS_DYE:
 				if(pipetteFb[i].WaitComplete){
+					pipetteFb[i].Operate = FALSE;
 					shIf[i].DyePresent = TRUE;
 					pipetteFb[i].NextDestination = &gDests[DEST_DYE].Destination;
-					pipetteFb[i].Send = TRUE;
 					shIf[i].CurrentSample = COLOR_WHITE;
 					pipetteFb[i].DyePresent = TRUE;
 					
@@ -207,13 +243,36 @@ void _CYCLIC ProgramCyclic(void)
 						shMoveFb[i].Velocity = gSysRecipe.DefaultVel;
 						shMoveFb[i].Acceleration = gSysRecipe.DefaultAccel;
 						shMoveFb[i].RouterShuttle = &shIf[i].shuttleIf;
-						shMoveFb[i].Execute = TRUE;
-						
-						pipetteState[i] = PIP_WAIT_WELL_TO_ARRIVE;
+												
+						shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.HomePosition;
+						shIf[i].PipetteCtrl.RequestState = PIP_WAIT_WELL_TO_ARRIVE;
+						pipetteState[i] = PIP_MOVE_TIP_UP;
 					}
 					else{
-						pipetteState[i] = PIP_REQUEST_SHUTTLE;
+						shIf[i].PipetteCtrl.DestinationPosition = gSysRecipe.PipettePars.HomePosition;
+						shIf[i].PipetteCtrl.RequestState = PIP_REQUEST_SHUTTLE;
+						pipetteState[i] = PIP_MOVE_TIP_UP;
 					}
+				}
+				break;
+			case PIP_MOVE_TIP_DOWN:
+				shIf[i].PipetteCtrl.Position -= (gSysRecipe.PipettePars.Vel * 0.004); //convert to mm/ms
+				if(shIf[i].PipetteCtrl.Position <= shIf[i].PipetteCtrl.DestinationPosition){
+					pipetteFb[i].Operate = TRUE;
+					pipetteState[i] = shIf[i].PipetteCtrl.RequestState;     
+				}
+				break;
+			case PIP_MOVE_TIP_UP:
+				shIf[i].PipetteCtrl.Position += (gSysRecipe.PipettePars.Vel  * 0.004); //convert to mm/ms
+				if(shIf[i].PipetteCtrl.Position >= shIf[i].PipetteCtrl.DestinationPosition){
+					//The check recipe state needs to do some special things, so we should wait to hit send if we're supposed to go here and let it handle it
+					if(shIf[i].PipetteCtrl.RequestState != PIP_CHECK_RECIPE) {
+						//In some situations, we also need to call off hte shuttle from the roundabout location, this if condition handles that
+						if(shIf[i].DyePresent && shIf[i].SamplePresent)
+							shMoveFb[i].Execute = TRUE;
+						pipetteFb[i].Send = TRUE;
+					}
+					pipetteState[i] = shIf[i].PipetteCtrl.RequestState;     
 				}
 				break;
 			case PIP_CHECK_RECIPE:
@@ -254,6 +313,7 @@ void _CYCLIC ProgramCyclic(void)
 		}    
 		stnPipette(&pipetteFb[i]);
 		rl6dShuttleMoveDestination(&shMoveFb[i]);
+		tipReplace(&tipReplaceFb[i]);
 		if(pipetteFb[i].Send && !pipetteFb[i].ShuttlePresent){
 			pipetteFb[i].Send = FALSE;
 		}

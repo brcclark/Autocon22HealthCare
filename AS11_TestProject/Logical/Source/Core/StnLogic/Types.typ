@@ -146,3 +146,27 @@ TYPE
 		Y : USINT;
 	END_STRUCT;
 END_TYPE
+
+(*Tip Replace Types*)
+
+TYPE
+	tipReplaceInternalType : 	STRUCT 
+		state : tipReplaceStateEnum;
+		tipReplaced : BOOL;
+		fbs : tipReplaceFbTyp;
+	END_STRUCT;
+	tipReplaceStateEnum : 
+		(
+		TIP_IDLE,
+		TIP_MOVE_OLD,
+		TIP_MOVE_NEW,
+		TIP_LOWER_TIP,
+		TIP_RAISE_TIP,
+		TIP_WAIT,
+		TIP_DONE
+		);
+	tipReplaceFbTyp : 	STRUCT 
+		movePlaneFb : MC_BR_MoveInPlane_Acp6D;
+		waitTon : TON;
+	END_STRUCT;
+END_TYPE

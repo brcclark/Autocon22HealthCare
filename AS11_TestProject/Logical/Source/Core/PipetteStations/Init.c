@@ -35,7 +35,7 @@ void _INIT ProgramInit(void)
 	gSysRecipe.WellRecipe[0].Samples[0].Sample = COLOR_DARK_BLUE;
 	gSysRecipe.WellRecipe[0].Samples[0].SampleCount = 6;
 	gSysRecipe.WellRecipe[0].Samples[1].CurrentCount = 0;
-	gSysRecipe.WellRecipe[0].Samples[1].Sample = COLOR_DARK_GREEN;
+	gSysRecipe.WellRecipe[0].Samples[1].Sample = COLOR_DARK_PURPLE;
 	gSysRecipe.WellRecipe[0].Samples[1].SampleCount = 6;
 	gSysRecipe.WellRecipe[0].Samples[2].CurrentCount = 0;
 	gSysRecipe.WellRecipe[0].Samples[2].Sample = COLOR_DARK_YELLOW;
@@ -53,6 +53,6 @@ void _INIT ProgramInit(void)
 	gSysRecipe.WellRecipe[1].Samples[2].Sample = COLOR_RED;
 	gSysRecipe.WellRecipe[1].Samples[2].SampleCount = 4;
 	gSysRecipe.WellRecipe[1].Samples[3].CurrentCount = 0;
-	gSysRecipe.WellRecipe[1].Samples[3].Sample = COLOR_DARK_GREEN;
+	gSysRecipe.WellRecipe[1].Samples[3].Sample = COLOR_DARK_ORANGE;
 	gSysRecipe.WellRecipe[1].Samples[3].SampleCount = 3;
 }
